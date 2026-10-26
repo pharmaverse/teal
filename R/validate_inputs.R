@@ -30,7 +30,7 @@
 #' Returns NULL if the final validation call passes and a `shiny.silent.error` if it fails.
 #'
 #' @seealso [`shinyvalidate::InputValidator`], [`shiny::validate`]
-#'
+#' @family validations
 #'
 #' @examplesShinylive
 #' library(teal)
@@ -211,7 +211,7 @@ any_names <- function(x) {
 #'  Condition should determine expected state, `FALSE` throws.
 #' @param message (`character(1)`) Character string of validation message to display.
 #' @param session Shiny session object
-#'
+#' @family validations
 #' @return `NULL` or `shiny.silent.error` when condition is not met
 #'
 #' @examples
@@ -357,7 +357,7 @@ need_input <- function(inputId, # nolint
                        session = shiny::getDefaultReactiveDomain()) {
   # Simple fingerprint based on inputId and message to ensure validation messages
   # in Javascript are not incorrectly removed.
-  fingerprint <- paste0(inputId, collapse = "|")
+  fingerprint <- paste0(c(inputId, rlang::hash(message)), collapse = "|")
 
   checkmate::assert_character(inputId, min.len = 1)
   checkmate::assert(
@@ -395,5 +395,8 @@ need_input <- function(inputId, # nolint
 #' @export
 use_validate_input_js <- function() {
   addResourcePath("js", system.file("js", package = "teal"))
-  singleton(tags$script(src = "js/input-validator.js"))
+  tagList(
+    include_css_files("validation.css"),
+    singleton(tags$script(src = "js/input-validator.js"))
+  )
 }

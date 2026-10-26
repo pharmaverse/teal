@@ -1,8 +1,13 @@
-# teal 1.2.1.9004
+# teal 1.2.1.9013
 
 ### Enhancements
 
 * Exported `select_decorators()` to help module developers resolve the decorators applied to a specific output (#1733).
+
+### Bug fixes
+
+* Prevent reporter buttons from appearing in subsequent tabs if functionality is disabled (#1727).
+* Multiple validation messages for the same input are now all displayed, each on its own line (#1717).
 
 # teal 1.2.1
 

@@ -1,0 +1,320 @@
+
+<!-- markdownlint-disable-file MD002 MD041 -->
+
+This package is part of the teal framework. The following configuration applies to all packages within the teal framework.
+
+## Package Structure and Organization
+
+### Key Directories
+
+Follow the standard R package structure with teal-specific conventions:
+
+```text
+package_name/
+├── .github           # CI/CD workflows
+├── R/                # R source code
+├── tests/testthat/   # Unit tests using testthat
+├── vignettes/        # Long-form documentation
+├── inst/             # Package assets
+├── AGENTS.md         # Development guide for AI agents (this file)
+├── DESCRIPTION       # Package metadata
+├── NAMESPACE         # Exports and imports
+├── NEWS.md           # Change log
+├── README.md         # Package overview
+├── _pkgdown.yml      # Documentation website config
+├── .lintr            # Linting configuration
+└── .Rbuildignore     # Build exclusions
+```
+
+### Naming Conventions
+
+- **Function names**: Use `snake_case` consistently
+- **Class names**: Use `PascalCase` (e.g., `TealAppDriver`)
+- **Module functions**: Prefix UI functions with `ui_` and server functions with `srv_`
+- **Internal functions**: Use descriptive names without export
+
+### File Organization
+
+- **One main function per file** when the function is substantial
+- **Group related utilities** in shared files (e.g., `utils.R`, `validations.R`)
+- **Module files**: Use pattern `tm_<name>.R` for teal modules
+- **Helper functions**: Prefix with the main function they support
+
+## Code Style and Standards
+
+### Code Quality
+
+- **Run `pre-commit` hooks**: Always run `pre-commit run --all-files` before committing, Fix any issues it reports - the error messages are informative and will guide you. It automatically checks code style, documentation and other quality issues. If pre-commit is not available, run the checks manually. Lint the R code manually as well if not called by pre-commit.
+- **Follow `tidyverse` style**: General R code style follows the `tidyverse` style guide.
+- **Documentation**: All exported functions must have `roxygen2` documentation with `@returns` and `@examples` fields.
+- **Formatting** rules are configured in the `.lintr` file.
+
+## Dependencies and Imports
+
+### Dependency Management
+
+- **Minimize dependencies**: Only add dependencies that provide significant value
+- **Version constraints**: Specify minimum versions for critical dependencies
+- **Ecosystem coherence**: Prefer packages already used within teal ecosystem
+
+### Import Best Practices
+
+Avoid importing package functions via roxygen2 (`#' @import pkg`)tags in favor of explicit namespacing for clarity when appropriate.
+When needed prefer specific imports over full package imports.
+
+<!-- Begins Module Section -->
+## Modules Development
+
+### Module features
+
+Each module should produce one or more Table, Listing, or Graph (TLG):
+
+- **Reproducibility**: All code being executed to generate TLGs should be run using `teal_data` and
+`within()` / `teal.code::eval_code()`
+  - At the end of the module this object should be returned to enable Reporter and "Show R code" functionalities
+- **User Parameters**: Configurable inputs via `teal.picks::picks()` for flexible data selection
+- **Transformators**: Optional pre-processing functions that derive variables and validate data before analysis
+- **Decorators**: Optional post-processing functions that customize output presentation (titles, legends, annotations)
+
+### Module Architecture
+
+Teal modules follow a specific pattern with UI and server components:
+
+```r
+# UI Function
+ui_example_module <- function(id, var_x, var_y, decorators) {
+  ns <- shiny::NS(id)
+  select_decorators <- getFromNamespace("select_decorators", "teal") # import from teal internal functions
+
+  shiny::tagList(
+    # Input controls
+    teal.widgets::standard_layout(
+      # Output displays
+      output = teal.widgets::white_small_well(
+        teal::ui_transform_teal_data("decorator_table", select_decorators(decorators, "plot")),
+        teal::ui_transform_teal_data("decorator_table", select_decorators(decorators, "table")),
+        shiny::tags$h4("Results"),
+        shiny::plotOutput(ns("plot")),
+        shiny::tags$h4("Summary data"),
+        gt::gt_output(ns("table"))
+      ),
+      # Encoding panel
+      encoding = shiny::tags$div(
+        shiny::tags$label("Encodings", class = "text-primary"),
+        shiny::tags$br(),
+        shiny::tags$div(
+          shiny::tags$strong("Select X-Axis Variable"),
+          teal.picks::picks_ui(ns("var_x"), var_x)
+        ),
+        shiny::tags$div(
+          shiny::tags$strong("Select Y-Axis Variable"),
+          teal.picks::picks_ui(ns("var_y"), var_y)
+        )
+      )
+    )
+  )
+}
+
+# Server Function
+srv_example_module <- function(id, data, var_x, var_y, decorators) {
+  checkmate::assert_string(id)
+  checkmate::assert_class(data, "reactive")
+
+  select_decorators <- getFromNamespace("select_decorators", "teal") # import from teal internal functions
+  shiny::moduleServer(id, function(input, output, session) {
+    selectors <- teal.picks::picks_srv("picks", picks = list(var_x = var_x, var_y = var_y), data = data)
+    merged <- teal.picks::merge_srv(
+      "merge_picks",
+      data = data,
+      selectors = selectors,
+      output_name = "anl",
+      join_fun = "dplyr::inner_join"
+    )
+    # Data preparation
+    validated_q <- shiny::reactive({
+      shiny::validate(
+        teal::need_input(
+          inputId = "var_x-variables-selected",
+          condition = length(selectors$var_x()$variables$selected) > 0,
+          message = "X-Axis Variable must be selected"
+        ),
+        teal::need_input(
+          inputId = "var_y-variables-selected",
+          condition = length(selectors$var_y()$variables$selected) > 0,
+          message = "Y-Axis Variable must be selected"
+        )
+      )
+      shiny::validate(
+        teal::need_input(
+          inputId = c("var_x-variables-selected", "var_y-variables-selected"),
+          condition = !any(selectors$var_x()$variables$selected %in% selectors$var_y()$variables$selected),
+          message = "X-axis variable and Y-axis variable must be different"
+        )
+      )
+      q <- merged$data()
+      teal.reporter::teal_card(q) <- c(teal.reporter::teal_card(q), "## Module's output")
+      q
+    })
+
+    # Generate plot inside qenv
+    qenv_plot <- reactive({
+      within(validated_q(), {
+        plot <- ggplot2::ggplot(anl) +
+          ggplot2::geom_point(ggplot2::aes(x = env_var_x, y = env_var_y))
+      }, env_var_x = as.name(merged$variables()$var_x), env_var_y = as.name(merged$variables()$var_y))
+    })
+    decorated_plot <- teal::srv_transform_teal_data(
+      "decorator_table",
+      qenv_plot,
+      select_decorators(decorators, "plot"),
+      expr = quote(plot)
+    )
+
+    qenv_table <- reactive({
+      within(validated_q(), {
+        table <- gtsummary::tbl_summary(anl, by = env_var_x, missing = "no")
+      }, env_var_x = as.name(merged$variables()$var_x), env_var_y = as.name(merged$variables()$var_y))
+    })
+    decorated_table <- teal::srv_transform_teal_data(
+      "decorator_table",
+      qenv_table,
+      select_decorators(decorators, "table"),
+      expr = quote(table)
+    )
+
+    # Output rendering: use ggplot2 for visualizations
+    output$plot <- shiny::renderPlot(decorated_plot()[["plot"]])
+    output$table <- gt::render_gt(expr = gtsummary::as_gt(decorated_table()[["table"]]))
+     # Return reactive
+
+    reactive(c(decorated_plot(), decorated_table()))
+  })
+}
+
+tm_example_module <- function(
+  label = "Example Module",
+  var_x = teal.picks::picks(teal.picks::datasets(), teal.picks::variables(is.numeric, selected = 1L)),
+  var_y = teal.picks::picks(teal.picks::datasets(), teal.picks::variables(is.numeric, selected = 2L)),
+  decorators = list(),
+  transformators = list()
+) {
+  checkmate::assert_string(label)
+  checkmate::assert_class(var_x, "picks")
+  checkmate::assert_class(var_y, "picks")
+  checkmate::assert_list(transformators, types = "teal_transform_module")
+  args <- list(var_x = var_x, var_y = var_y, decorators = decorators)
+  teal::module(
+    label = label,
+    server = srv_example_module,
+    ui = ui_example_module,
+    ui_args = args[names(args) %in% names(formals(ui_example_module))],
+    server_args = args[names(args) %in% names(formals(srv_example_module))],
+    transformators = transformators
+  )
+}
+```
+
+### Code Style for Modules
+
+- **Use `tidyverse` style**: Write clear, readable code using `dplyr`, `ggplot2` patterns
+- **Use `magrittr` pipes in reproducible execution**: For code executed for `teal_data`/`qenv` data objects with `eval_code()` and `within()`
+- **Use crane and gtsummary**: For statistical tables and summaries
+- **Error handling**: Implement proper validation using `checkmate` and `shiny::validate(teal::need_input(...))`
+
+```r
+# Good: Clear data manipulation
+plot_data <- data %>%
+  dplyr::filter(!is.na(variable)) %>%
+  dplyr::group_by(category) %>%
+  dplyr::summarise(
+    mean_value = mean(value),
+    n = dplyr::n(),
+    .groups = "drop"
+  )
+
+# Good: Descriptive ggplot2 code
+ggplot2::ggplot(plot_data, ggplot2::aes(x = category, y = mean_value)) +
+  ggplot2::geom_col(fill = "steelblue") +
+  ggplot2::labs(
+    title = "Mean Values by Category",
+    x = "Category",
+    y = "Mean Value"
+  ) +
+  ggplot2::theme_minimal()
+```
+<!-- Ends Module Section -->
+
+## Testing Framework
+
+### Testing Philosophy
+
+- **Test public functions only**: Internal utilities should be tested through public interfaces
+- **Precise, focused tests**: Each test should verify one specific behavior
+- **High coverage**: Maintain at least 80% test coverage as measured by `covr`
+- **Integration over units**: Test realistic usage patterns
+- **Test Dependencies**.: Add `testthat::skip_if_not_installed(package_name)` only for dependencies in `Suggests` or related to tests cases
+
+### Shiny Module Testing
+
+- **Server functions**: Test with `shiny::testServer()`
+- **UI functions**: Test basic usage with regular testing (class checks, error generation, snapshots, regexp search). Test UI scenarios and interactions with `teal:::TealAppDriver` (based on `shinytest2::AppDriver`) for integration testing
+- **Reactive behavior**: Test reactive chains and side effects
+
+### Test Organization and Naming
+
+- **One test file per R file**: `test-module_example.R` for `module_example.R`
+- **Descriptive test names**: Clearly describe what is being tested
+- **End to end test names**: `test-shinytest2-module_example.R` for `module_example.R`
+- **Logical grouping**: Group related tests using `describe()` and individual tests with `it()` when beneficial
+- **Test data**: Create minimal test datasets, avoid external dependencies
+
+## Documentation and Communication
+
+### Package Documentation
+
+- **`README.md`**: Clear overview, installation, basic usage examples
+- **Vignettes**: Comprehensive guides for complex functionality
+- **Function documentation**: All exported functions must have `roxygen2` documentation
+- **`NEWS.md`**: Detailed changelog of features, bugs and miscellanea  changes affecting the users
+
+### Package Version Management
+
+Do not change versions on your own.
+There is a CI/CD workflow that manages the versions automatically on the `main` branch.
+
+## CI/CD and Development Workflow
+
+Prefer to reuse templates from r.pkg.template. Main checks in place are:
+
+- `check.yaml`: R CMD check, unit tests, coverage
+- `docs.yaml`: Documentation building and deployment
+- `audit.yaml`: Security and dependency auditing
+- `pkgdown.yaml`: Website generation
+
+## Quality Assurance
+
+### Code Quality Metrics
+
+- **Test Coverage**: ≥80% line coverage
+- **Linting**: No lint violations using configured `.lintr`
+- **Documentation**: 100% of exports documented
+
+### Code Review Process
+
+- **Pull Request Reviews**: All changes require human review and approval
+- **Automated Checks**: CI must pass before merging
+- **Breaking Changes**: Require special consideration and communication
+- **Documentation Updates**: Must accompany functional changes
+
+### Performance Considerations
+
+- **Shiny Reactivity**: Minimize unnecessary reactive computations
+- **Data Processing**: Use efficient data manipulation patterns
+- **Memory Usage**: Consider memory implications for large datasets
+- **Loading Time**: Optimize package loading and module initialization
+
+## Maintenance Guidelines
+
+- **Long-term Support**: Maintain backward compatibility when possible
+- **Dependencies**: Minimal and justified dependencies only
+- **Deprecation**: Use `lifecycle` package for function deprecation
