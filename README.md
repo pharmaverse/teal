@@ -60,7 +60,7 @@ Please click the image below to start learning:
 
 [![A Complete Guide to Getting Started with teal](https://img.youtube.com/vi/N8ZamECICSI/0.jpg)](https://www.youtube.com/watch?v=N8ZamECICSI)
 
-teal is developed by [Roche](https://roche.com), [Appsilon](https://appsilon.com), and the wider open-source community. 
+teal is developed by [Roche](https://roche.com), [Appsilon](https://appsilon.com), and the wider open-source community.  
 [Roche](https://roche.com) and [Appsilon](https://appsilon.com) are copyright holders of the project, which is hosted in the [pharmaverse](https://pharmaverse.org) GitHub organisation.
 
 ## Installation
