@@ -297,8 +297,8 @@ To learn more about the `teal` framework we recommend first exploring some of th
 
 For example see:
 
-* [general analysis modules](https://pharmaverse.github.io/teal.modules.general/)
-* [clinical trial reporting modules](https://pharmaverse.github.io/teal.modules.clinical/)
+* [general analysis modules](https://insightsengineering.github.io/teal.modules.general/)
+* [clinical trial reporting modules](https://insightsengineering.github.io/teal.modules.clinical/)
 * [modules for analyzing `MultiAssayExperiment` objects](https://insightsengineering.github.io/teal.modules.hermes/)
 
 For a demo of `teal` apps see:
