@@ -6,20 +6,19 @@ interactive data analysis environment.
 ## Details
 
 To learn mode about the package, visit the [project
-website](https://insightsengineering.github.io/teal/latest-tag/) or read
-the
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md)
-manual page.
+website](https://pharmaverse.github.io/teal/latest-tag/) or read the
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md) manual
+page.
 
 ## See also
 
 Useful links:
 
-- <https://insightsengineering.github.io/teal/>
+- <https://pharmaverse.github.io/teal/>
 
-- <https://github.com/insightsengineering/teal/>
+- <https://github.com/pharmaverse/teal/>
 
-- Report bugs at <https://github.com/insightsengineering/teal/issues>
+- Report bugs at <https://github.com/pharmaverse/teal/issues>
 
 ## Author
 

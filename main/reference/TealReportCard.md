@@ -1,7 +1,7 @@
 # `TealReportCard`
 
 **\[experimental\]** Child class of
-[`teal.reporter::ReportCard`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html)
+[`teal.reporter::ReportCard`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html)
 that is used for `teal` specific applications. In addition to the parent
 methods, it supports rendering `teal` specific elements such as the
 source code, the encodings panel content and the filter panel content as
@@ -9,7 +9,7 @@ part of the meta data.
 
 ## Super class
 
-[`teal.reporter::ReportCard`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html)
+[`teal.reporter::ReportCard`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html)
 -\> `TealReportCard`
 
 ## Methods
@@ -26,22 +26,22 @@ part of the meta data.
 
 Inherited methods
 
-- [`teal.reporter::ReportCard$append_content()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-append_content)
-- [`teal.reporter::ReportCard$append_html()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-append_html)
-- [`teal.reporter::ReportCard$append_metadata()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-append_metadata)
-- [`teal.reporter::ReportCard$append_plot()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-append_plot)
-- [`teal.reporter::ReportCard$append_rcode()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-append_rcode)
-- [`teal.reporter::ReportCard$append_table()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-append_table)
-- [`teal.reporter::ReportCard$append_text()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-append_text)
-- [`teal.reporter::ReportCard$from_list()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-from_list)
-- [`teal.reporter::ReportCard$get_content()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-get_content)
-- [`teal.reporter::ReportCard$get_metadata()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-get_metadata)
-- [`teal.reporter::ReportCard$get_name()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-get_name)
-- [`teal.reporter::ReportCard$initialize()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-initialize)
-- [`teal.reporter::ReportCard$reset()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-reset)
-- [`teal.reporter::ReportCard$set_content_names()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-set_content_names)
-- [`teal.reporter::ReportCard$set_name()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-set_name)
-- [`teal.reporter::ReportCard$to_list()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/ReportCard.html#method-to_list)
+- [`teal.reporter::ReportCard$append_content()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-append_content)
+- [`teal.reporter::ReportCard$append_html()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-append_html)
+- [`teal.reporter::ReportCard$append_metadata()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-append_metadata)
+- [`teal.reporter::ReportCard$append_plot()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-append_plot)
+- [`teal.reporter::ReportCard$append_rcode()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-append_rcode)
+- [`teal.reporter::ReportCard$append_table()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-append_table)
+- [`teal.reporter::ReportCard$append_text()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-append_text)
+- [`teal.reporter::ReportCard$from_list()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-from_list)
+- [`teal.reporter::ReportCard$get_content()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-get_content)
+- [`teal.reporter::ReportCard$get_metadata()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-get_metadata)
+- [`teal.reporter::ReportCard$get_name()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-get_name)
+- [`teal.reporter::ReportCard$initialize()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-initialize)
+- [`teal.reporter::ReportCard$reset()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-reset)
+- [`teal.reporter::ReportCard$set_content_names()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-set_content_names)
+- [`teal.reporter::ReportCard$set_name()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-set_name)
+- [`teal.reporter::ReportCard$to_list()`](https://rdrr.io/pkg/teal.reporter/man/ReportCard.html#method-to_list)
 
 ------------------------------------------------------------------------
 
@@ -96,7 +96,7 @@ to the `content`.
 - `fs`:
 
   (`teal_slices`) object returned from
-  [`teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md)
+  [`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md)
   function.
 
 #### Returns

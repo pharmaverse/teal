@@ -26,9 +26,9 @@ srv_teal(
 
   (`teal_modules`) `teal_modules` object. These are the specific output
   modules which will be displayed in the `teal` application. See
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   and
-  [`module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   for more details.
 
 - data:
@@ -39,7 +39,7 @@ srv_teal(
 - filter:
 
   (`teal_slices`) Optionally, specifies the initial filter using
-  [`teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md).
+  [`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md).
 
 - reporter:
 
@@ -53,11 +53,11 @@ srv_teal(
 ## Details
 
 This module can be used instead of
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md)
-in custom Shiny applications. Unlike
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md),
-it doesn't automatically include
-[`module_session_info`](https://insightsengineering.github.io/teal/reference/module_session_info.md).
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md) in
+custom Shiny applications. Unlike
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md), it
+doesn't automatically include
+[`module_session_info`](https://pharmaverse.github.io/teal/reference/module_session_info.md).
 
 Module is responsible for creating the main `shiny` app layout and
 initializing all the necessary components. This module establishes
@@ -82,8 +82,8 @@ converted to `reactive` returning `teal_data` in this module. On this
 
 `teal` is designed in such way that app will never crash if the error is
 introduced in any custom `shiny` module provided by app developer (e.g.
-[`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md),
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)).
+[`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md),
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)).
 If any module returns a failing object, the app will halt the evaluation
 and display a warning message. App user should always have a chance to
 fix the improper input and continue without restarting the session.

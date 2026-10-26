@@ -1,7 +1,7 @@
 # Function for validating the title parameter of `teal::init`
 
 Checks if the input of the title from
-[`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
+[`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
 will create a valid title and favicon tag.
 
 ## Usage

@@ -7,7 +7,7 @@ included on the right side. Based on the selections made in the filter
 panel, filter expressions are executed before passing data to `teal`
 modules. The technical details of the filter panel are extensively
 described in [`teal.slice`
-documentation](https://insightsengineering.github.io/teal.slice/latest-tag/).
+documentation](https://pharmaverse.github.io/teal.slice/latest-tag/).
 
 By default, `init` initializes the filter panel without any active
 filters but allows the user to add filters on any column. To start a
@@ -16,16 +16,16 @@ filters but allows the user to add filters on any column. To start a
 using the `teal_slice` function and wrapped together with `teal_slices`.
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, CARS ``=`` ``mtcars``)``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)``,`\
-`  filter ``=`` `[`teal_slices`](https://insightsengineering.github.io/teal/reference/teal_slices.md)`(`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"IRIS"``, varname ``=`` ``"Sepal.Length"``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"IRIS"``, varname ``=`` ``"Species"``, selected ``=`` ``"setosa"``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"CARS"``, varname ``=`` ``"mpg"``, selected ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``20``, ``Inf``)``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"CARS"``, expr ``=`` ``"qsec < 20"``, title ``=`` ``"1/4 mile under 20 sec"``, id ``=`` ``"qsec_20"``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, CARS ``=`` ``mtcars``)``,`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)``,`\
+`  filter ``=`` `[`teal_slices`](https://pharmaverse.github.io/teal/reference/teal_slices.md)`(`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"IRIS"``, varname ``=`` ``"Sepal.Length"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"IRIS"``, varname ``=`` ``"Species"``, selected ``=`` ``"setosa"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"CARS"``, varname ``=`` ``"mpg"``, selected ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``20``, ``Inf``)``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"CARS"``, expr ``=`` ``"qsec < 20"``, title ``=`` ``"1/4 mile under 20 sec"``, id ``=`` ``"qsec_20"``)`\
 `  ``)`\
 `)`\
 \
@@ -38,21 +38,21 @@ using the `teal_slice` function and wrapped together with `teal_slices`.
 ### Filter panel respective to `teal_module`
 
 Each `teal_module` (see
-[`?module`](https://insightsengineering.github.io/teal/reference/teal_modules.md))
+[`?module`](https://pharmaverse.github.io/teal/reference/teal_modules.md))
 object contains the `datanames` attribute that determines which data
 sets are to be sent to that module. The filter panel will display only
 those data sets and hide the rest when this module is active.
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, CARS ``=`` ``mtcars``)``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"all datasets"``)``,`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"IRIS only"``, datanames ``=`` ``"IRIS"``)``,`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"CARS only"``, datanames ``=`` ``"CARS"``)``,`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"no filter panel"``, datanames ``=`` ``NULL``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, CARS ``=`` ``mtcars``)``,`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"all datasets"``)``,`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"IRIS only"``, datanames ``=`` ``"IRIS"``)``,`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"CARS only"``, datanames ``=`` ``"CARS"``)``,`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"no filter panel"``, datanames ``=`` ``NULL``)`\
 `  ``)`\
 `)`\
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -89,27 +89,27 @@ that module at startup. `teal_slice`s listed the element called
 
 For a detailed explanation about the filter states, see [this
 `teal.slice`
-vignette](https://insightsengineering.github.io/teal.slice/latest-tag/articles/filter-panel-for-developers.html).
+vignette](https://pharmaverse.github.io/teal.slice/latest-tag/articles/filter-panel-for-developers.html).
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``mtcars ``=`` ``mtcars``)``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 1"``)``,`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 2"``)``,`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 3"``)``,`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 4"``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``mtcars ``=`` ``mtcars``)``,`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 1"``)``,`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 2"``)``,`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 3"``)``,`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"module 4"``)`\
 `  ``)``,`\
-`  filter ``=`` `[`teal_slices`](https://insightsengineering.github.io/teal/reference/teal_slices.md)`(`\
+`  filter ``=`` `[`teal_slices`](https://pharmaverse.github.io/teal/reference/teal_slices.md)`(`\
 `    ``# filters created with id`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"mpg"``, id ``=`` ``"filter 1"``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"cyl"``, id ``=`` ``"filter 2"``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"disp"``, id ``=`` ``"filter 3"``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"hp"``, id ``=`` ``"filter 4"``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"drat"``, id ``=`` ``"filter 5"``)``,`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"wt"``, id ``=`` ``"filter 6"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"mpg"``, id ``=`` ``"filter 1"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"cyl"``, id ``=`` ``"filter 2"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"disp"``, id ``=`` ``"filter 3"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"hp"``, id ``=`` ``"filter 4"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"drat"``, id ``=`` ``"filter 5"``)``,`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"mtcars"``, varname ``=`` ``"wt"``, id ``=`` ``"filter 6"``)``,`\
 `    ``# module-specific filtering enabled`\
 `    module_specific ``=`` ``TRUE``,`\
 `    ``# filters mapped to modules`\

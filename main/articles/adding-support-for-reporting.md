@@ -28,11 +28,11 @@ Let us consider an example module, based on the example module from
 `teal`:
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 [`library`](https://rdrr.io/r/base/library.html)`(`[`teal.reporter`](https://github.com/insightsengineering/teal.reporter)`)`\
 \
 `my_module`` ``<-`` ``function``(``label`` ``=`` ``"example teal module"``)`` ``{`\
-`  `[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`  `[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    label ``=`` ``label``,`\
 `    server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `      ``checkmate``::`[`assert_class`](https://mllg.github.io/checkmate/reference/checkClass.html)`(`[`isolate`](https://rdrr.io/pkg/shiny/man/isolate.html)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``)``, ``"teal_data"``)`\
@@ -58,8 +58,8 @@ Let us consider an example module, based on the example module from
 Using `teal`, you can launch this example module with the following:
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
 `  modules ``=`` ``my_module``(``)`\
 `)`\
 \
@@ -76,7 +76,7 @@ report. See below:
 
 \
 `my_module_with_card`` ``<-`` ``function``(``label`` ``=`` ``"example teal module"``)`` ``{`\
-`  `[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`  `[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    label ``=`` ``label``,`\
 `    server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `      `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
@@ -85,11 +85,11 @@ report. See below:
 `        ``# Prepare the report:`\
 `        ``report`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``obj`` ``<-`` `[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`          `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``obj``)`` ``<-`\
+`          `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``obj``)`` ``<-`\
 `            `[`c`](https://rdrr.io/r/base/c.html)`(`\
-`              `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``"# Module with reporting"``)``,`\
-`              `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``obj``)``,`\
-`              `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``"## Module's code"``)`\
+`              `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``"# Module with reporting"``)``,`\
+`              `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``obj``)``,`\
+`              `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``"## Module's code"``)`\
 `            ``)`\
 `          ``obj`\
 `        ``}``)`\
@@ -97,7 +97,7 @@ report. See below:
 `        ``# Add to the report the code of the module`\
 `        ``data_r`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``teal_data`` ``<-`` ``report``(``)``, ``input``$``dataname``)`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``teal_data``, ``table``, table ``=`` `[`as.name`](https://rdrr.io/r/base/name.html)`(``input``$``dataname``)``)`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``teal_data``, ``table``, table ``=`` `[`as.name`](https://rdrr.io/r/base/name.html)`(``input``$``dataname``)``)`\
 `        ``}``)`\
 \
 `        ``output``$``dataset`` ``<-`` `[`renderPrint`](https://rdrr.io/pkg/shiny/man/renderPrint.html)`(``{`\
@@ -120,8 +120,8 @@ With these modifications, the module is now ready to be launched with
 `teal`:
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
 `  modules ``=`` ``my_module_with_card``(``)`\
 `)`\
 \
@@ -136,7 +136,7 @@ return the reporter object, enabling the module to be reported.
 
 \
 `my_module_with_reporting`` ``<-`` ``function``(``label`` ``=`` ``"example teal module"``)`` ``{`\
-`  `[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`  `[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    label ``=`` ``label``,`\
 `    server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `      `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
@@ -145,11 +145,11 @@ return the reporter object, enabling the module to be reported.
 `        ``# Prepare the report:`\
 `        ``report`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``obj`` ``<-`` `[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`          `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``obj``)`` ``<-`\
+`          `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``obj``)`` ``<-`\
 `            `[`c`](https://rdrr.io/r/base/c.html)`(`\
-`              `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``"# Module with reporting"``)``,`\
-`              `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``obj``)``,`\
-`              `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``"## Module's code"``)`\
+`              `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``"# Module with reporting"``)``,`\
+`              `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``obj``)``,`\
+`              `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``"## Module's code"``)`\
 `            ``)`\
 `          ``obj`\
 `        ``}``)`\
@@ -157,7 +157,7 @@ return the reporter object, enabling the module to be reported.
 `        ``# Add to the report the code of the module`\
 `        ``data_r`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``rtd`` ``<-`` ``report``(``)``, ``input``$``dataname``)`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``rtd``, ``table``, table ``=`` `[`as.name`](https://rdrr.io/r/base/name.html)`(``input``$``dataname``)``)`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``rtd``, ``table``, table ``=`` `[`as.name`](https://rdrr.io/r/base/name.html)`(``input``$``dataname``)``)`\
 `        ``}``)`\
 \
 `        ``output``$``dataset`` ``<-`` `[`renderPrint`](https://rdrr.io/pkg/shiny/man/renderPrint.html)`(``{`\
@@ -183,8 +183,8 @@ With these modifications, the module is now ready to be launched with
 `teal`:
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
 `  modules ``=`` ``my_module_with_reporting``(``)`\
 `)`\
 \
@@ -204,8 +204,8 @@ current state of the module. The report can be seen after clicking
 The user can modify the text of a card or add new text with the button
 `+ Add text block` present at the bottom of the card. Text can also be
 added inside the module by appending a
-[`teal_card()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)
-to the card of the report.
+[`teal_card()`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html) to
+the card of the report.
 
 As the module writer, you can also add any other content to the report
 you’d like: titles, text.
@@ -214,19 +214,19 @@ you’d like: titles, text.
 
 `teal.reporter` supports the addition of tables, charts, and more. For
 more information, explore the API of
-[`teal_report()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_report.html)
+[`teal_report()`](https://rdrr.io/pkg/teal.reporter/man/teal_report.html)
 to learn about the supported content types.
 
 ## Removing support for displaying reproducible code
 
 If your module supports a report but you want to disable the button that
 allows to display the module’s reproducible code (“Show R code”), use
-[`disable_src()`](https://insightsengineering.github.io/teal/reference/disable_src.md):
+[`disable_src()`](https://pharmaverse.github.io/teal/reference/disable_src.md):
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
-`  modules ``=`` ``my_module_with_reporting``(``)`` ``|>`` `[`disable_src`](https://insightsengineering.github.io/teal/reference/disable_src.md)`(``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
+`  modules ``=`` ``my_module_with_reporting``(``)`` ``|>`` `[`disable_src`](https://pharmaverse.github.io/teal/reference/disable_src.md)`(``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -234,25 +234,25 @@ allows to display the module’s reproducible code (“Show R code”), use
 `}`
 
 You can use
-[`disable_src()`](https://insightsengineering.github.io/teal/reference/disable_src.md)
+[`disable_src()`](https://pharmaverse.github.io/teal/reference/disable_src.md)
 on multiple modules at the same time and nested modules too. For example
 on:
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
 `  modules ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(`\
-`    `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`    `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `      label ``=`` ``"One nested module disabled"``,`\
-`      `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 1"``)``,`\
-`      `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 2"``)``,`\
-`      `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 3"``)`` ``|>`` `[`disable_src`](https://insightsengineering.github.io/teal/reference/disable_src.md)`(``)`\
+`      `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 1"``)``,`\
+`      `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 2"``)``,`\
+`      `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 3"``)`` ``|>`` `[`disable_src`](https://pharmaverse.github.io/teal/reference/disable_src.md)`(``)`\
 `    ``)``,`\
-`    `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`    `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `      label ``=`` ``"Nested modules without source"``,`\
-`      `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 1"``)``,`\
-`      `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 2"``)`\
-`    ``)`` ``|>`` `[`disable_src`](https://insightsengineering.github.io/teal/reference/disable_src.md)`(``)`\
+`      `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 1"``)``,`\
+`      `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``label ``=`` ``"Module 2"``)`\
+`    ``)`` ``|>`` `[`disable_src`](https://pharmaverse.github.io/teal/reference/disable_src.md)`(``)`\
 `  ``)`\
 `)`
 
@@ -260,12 +260,12 @@ on:
 
 If a module has the reporter functionality the teal app developer can
 disable it with
-[`disable_report()`](https://insightsengineering.github.io/teal/reference/disable_report.md).
+[`disable_report()`](https://pharmaverse.github.io/teal/reference/disable_report.md).
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
-`  modules ``=`` ``my_module_with_reporting``(``)`` ``|>`` `[`disable_report`](https://insightsengineering.github.io/teal/reference/disable_report.md)`(``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
+`  modules ``=`` ``my_module_with_reporting``(``)`` ``|>`` `[`disable_report`](https://pharmaverse.github.io/teal/reference/disable_report.md)`(``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -273,8 +273,8 @@ disable it with
 `}`
 
 To remove reporting from the whole application, set `reporter = NULL` in
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md).
-This will completely disable all the reporter related buttons on the
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md). This
+will completely disable all the reporter related buttons on the
 application:
 
 ![Screenshot of an app without the reporter
@@ -290,11 +290,11 @@ Additionally, cards can be added to the report before the application
 starts.
 
 \
-`reporter`` ``<-`` `[`Reporter`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/Reporter.html)`$``new``(``)`\
+`reporter`` ``<-`` `[`Reporter`](https://rdrr.io/pkg/teal.reporter/man/Reporter.html)`$``new``(``)`\
 `template_fun`` ``<-`` ``function``(``document``)`` ``{`\
-`  ``header`` ``<-`` `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``"Here comes header text."``)`\
-`  ``logo_url`` ``<-`` ``"https://raw.githubusercontent.com/insightsengineering/teal/refs/heads/main/man/figures/logo.svg"`\
-`  ``footer`` ``<-`` `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(`[`paste0`](https://rdrr.io/r/base/paste.html)`(`\
+`  ``header`` ``<-`` `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``"Here comes header text."``)`\
+`  ``logo_url`` ``<-`` ``"https://raw.githubusercontent.com/pharmaverse/teal/refs/heads/main/man/figures/logo.svg"`\
+`  ``footer`` ``<-`` `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(`[`paste0`](https://rdrr.io/r/base/paste.html)`(`\
 `    ``"Here comes footer text. Report generated with teal ![logo](%s 'teal logo'){height=70}"``,`\
 `    ``logo_url`\
 `  ``)``)`\
@@ -302,8 +302,8 @@ starts.
 `}`\
 `reporter``$``set_template``(``template_fun``)`\
 \
-`card1`` ``<-`` `[`teal_card`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)`(``"## Header 2 text"``, ``"Regular text"``)`\
-[`metadata`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/metadata.html)`(``card1``, ``"title"``)`` ``<-`` ``"Welcome card"`\
+`card1`` ``<-`` `[`teal_card`](https://rdrr.io/pkg/teal.reporter/man/teal_card.html)`(``"## Header 2 text"``, ``"Regular text"``)`\
+[`metadata`](https://rdrr.io/pkg/teal.reporter/man/metadata.html)`(``card1``, ``"title"``)`` ``<-`` ``"Welcome card"`\
 `reporter``$``append_cards``(``card1``)`
 
 Once the reporter is created we can use in the teal application.

@@ -16,7 +16,7 @@ assert_decorators(x, names = NULL, .var.name = checkmate::vname(x), add = NULL)
 - x:
 
   (named `list`) of
-  [`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+  [`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
   objects, or nested lists thereof.
 
 - names:
@@ -42,7 +42,7 @@ problem.
 
 ## See also
 
-[`module_transform_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)
+[`module_transform_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)
 
 ## Examples
 

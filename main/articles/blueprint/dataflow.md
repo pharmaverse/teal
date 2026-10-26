@@ -20,7 +20,7 @@ package:
     - Data sets are wrapped in a `teal_data` before being passed to the
       app;
     - The [`teal_data`
-      class](https://insightsengineering.github.io/teal/articles/blueprint/input_data.md)
+      class](https://pharmaverse.github.io/teal/articles/blueprint/input_data.md)
       facilitates reproducibility;
 2.  Data is passed to the filter panel;
     - Users *(or app developers)* can specify filters to apply;
@@ -28,7 +28,7 @@ package:
       specific modules;
     - Filtering code is appended to the data;
     - See the [Filter panel
-      vignette](https://insightsengineering.github.io/teal/articles/blueprint/filter_panel.md)
+      vignette](https://pharmaverse.github.io/teal/articles/blueprint/filter_panel.md)
       for details;
 3.  Filtered data is sent to `teal` modules for analysis;
     - Each module receives a `teal_data` object so analysis code applied

@@ -97,12 +97,12 @@ the global environment. This means it will be run every time the app
 starts, so use sparingly.
 
 Pass this module instead of a `teal_data` object in a call to
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md).
-Note that the server function must always return a `teal_data` object
-wrapped in a reactive expression.
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md). Note
+that the server function must always return a `teal_data` object wrapped
+in a reactive expression.
 
 See vignette
-[`vignette("data-as-shiny-module", package = "teal")`](https://insightsengineering.github.io/teal/articles/data-as-shiny-module.md)
+[`vignette("data-as-shiny-module", package = "teal")`](https://pharmaverse.github.io/teal/articles/data-as-shiny-module.md)
 for more details.
 
 `eval_code` evaluates given code in the environment of the `teal_data`
@@ -117,8 +117,8 @@ through the `...` argument: as `name:value` pairs are passed to `...`,
 
 ## See also
 
-[`teal.data::teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data-class.html),
-[`teal.code::qenv()`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html)
+[`teal.data::teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data-class.html),
+[`teal.code::qenv()`](https://rdrr.io/pkg/teal.code/man/qenv.html)
 
 ## Examples in Shinylive
 
@@ -172,7 +172,7 @@ eval_code(tdm, "dataset1 <- subset(dataset1, Species == 'virginica')")
 #>       ns <- NS(id)
 #>       object$ui(ns("mutate_inner"))
 #>     }
-#> <environment: 0x5642af723c78>
+#> <environment: 0x558333d8add0>
 #> 
 #> $server
 #> function(id) {
@@ -183,7 +183,7 @@ eval_code(tdm, "dataset1 <- subset(dataset1, Species == 'virginica')")
 #>           post = "Please make sure that this module returns a 'reactive` object containing 'teal_data' class of object." # nolint: line_length_linter.
 #>         )
 #>       }
-#> <environment: 0x5642af7238c0>
+#> <environment: 0x558333d8ab30>
 #> 
 #> attr(,"label")
 #> [1] "data module"
@@ -198,7 +198,7 @@ within(tdm, dataset1 <- subset(dataset1, Species == "virginica"))
 #>       ns <- NS(id)
 #>       object$ui(ns("mutate_inner"))
 #>     }
-#> <environment: 0x5642b2e58b08>
+#> <environment: 0x55833509bff0>
 #> 
 #> $server
 #> function(id) {
@@ -209,7 +209,7 @@ within(tdm, dataset1 <- subset(dataset1, Species == "virginica"))
 #>           post = "Please make sure that this module returns a 'reactive` object containing 'teal_data' class of object." # nolint: line_length_linter.
 #>         )
 #>       }
-#> <environment: 0x5642b2e588a0>
+#> <environment: 0x558335098540>
 #> 
 #> attr(,"label")
 #> [1] "data module"
@@ -226,7 +226,7 @@ within(tdm, dataset1 <- subset(dataset1, Species %in% species), species = valid_
 #>       ns <- NS(id)
 #>       object$ui(ns("mutate_inner"))
 #>     }
-#> <environment: 0x5642b280bbe8>
+#> <environment: 0x5583348e58f8>
 #> 
 #> $server
 #> function(id) {
@@ -237,7 +237,7 @@ within(tdm, dataset1 <- subset(dataset1, Species %in% species), species = valid_
 #>           post = "Please make sure that this module returns a 'reactive` object containing 'teal_data' class of object." # nolint: line_length_linter.
 #>         )
 #>       }
-#> <environment: 0x5642b3596710>
+#> <environment: 0x5583379a3dd0>
 #> 
 #> attr(,"label")
 #> [1] "data module"

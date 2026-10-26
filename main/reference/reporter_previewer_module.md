@@ -9,13 +9,13 @@ reporter. It is now deprecated in favor of the options:
   to control which buttons will be displayed in the drop-down.
 
 - `teal.reporter.rmd_output`: passed to
-  [`teal.reporter::download_report_button_srv()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/download_report_button.html)
+  [`teal.reporter::download_report_button_srv()`](https://rdrr.io/pkg/teal.reporter/man/download_report_button.html)
 
 - `teal.reporter.rmd_yaml_args`: passed to
-  [`teal.reporter::download_report_button_srv()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/download_report_button.html)
+  [`teal.reporter::download_report_button_srv()`](https://rdrr.io/pkg/teal.reporter/man/download_report_button.html)
 
 - `teal.reporter.global_knitr`: passed to
-  [`teal.reporter::download_report_button_srv()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/download_report_button.html)
+  [`teal.reporter::download_report_button_srv()`](https://rdrr.io/pkg/teal.reporter/man/download_report_button.html)
 
 ## Usage
 
@@ -29,7 +29,7 @@ reporter_previewer_module(label = "Report Previewer", server_args = list())
 
   (`character(1)`) Label shown in the navigation item for the module or
   module group. For
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   defaults to `"root"`. See `Details`.
 
 - server_args:

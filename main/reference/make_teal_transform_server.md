@@ -1,10 +1,10 @@
 # Make teal_transform_module's server
 
 A factory function to simplify creation of a
-[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)'s
+[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)'s
 server. Specified `expr` is wrapped in a shiny module function and
 output can be passed to the `server` argument in
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 call. Such a server function can be linked with ui and values from the
 inputs can be used in the expression. Object names specified in the
 expression will be substituted with the value of the respective input
@@ -23,7 +23,7 @@ make_teal_transform_server(expr)
 - expr:
 
   (`language`) An R call which will be evaluated within
-  [`teal.data::teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+  [`teal.data::teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)
   environment.
 
 ## Value

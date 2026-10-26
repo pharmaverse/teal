@@ -71,14 +71,14 @@ c(...)
 
   **\[experimental\]** *This is a new feature. Do kindly share your
   opinions on [`teal`'s GitHub
-  repository](https://github.com/insightsengineering/teal/).*
+  repository](https://github.com/pharmaverse/teal/).*
 
   (named `list`) specifies which filters will be active in which modules
   on app start. Elements should contain character vector of `teal_slice`
   `id`s (see
-  [`teal.slice::teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)).
+  [`teal.slice::teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)).
   Names of the list should correspond to `teal_module` `label` set in
-  [`module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   function.
 
   - `id`s listed under `"global_filters` will be active in all modules.
@@ -115,9 +115,9 @@ app applies filters. See argument descriptions for details.
 
 ## See also
 
-[`teal.slice::teal_slices`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slices.html),
-[`teal.slice::teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html),
-[`slices_store()`](https://insightsengineering.github.io/teal/reference/slices_store.md)
+[`teal.slice::teal_slices`](https://rdrr.io/pkg/teal.slice/man/teal_slices.html),
+[`teal.slice::teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html),
+[`slices_store()`](https://pharmaverse.github.io/teal/reference/slices_store.md)
 
 ## Examples in Shinylive
 

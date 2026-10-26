@@ -145,12 +145,12 @@ Bootstrap 5. To start, we launch the app with
 \
 [`options`](https://rdrr.io/r/base/options.html)`(``"teal.bs_theme"`` ``=`` ``bslib``::`[`bs_theme`](https://rstudio.github.io/bslib/reference/bs_theme.html)`(``version ``=`` ``"5"``)``)`\
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``)``, `\
-`  filter ``=`` `[`teal_slices`](https://insightsengineering.github.io/teal/reference/teal_slices.md)`(`[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``"IRIS"``, ``"Sepal.Length"``, selected ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``5``, ``7``)``)``)``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)``, `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)``)``,`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``)``, `\
+`  filter ``=`` `[`teal_slices`](https://pharmaverse.github.io/teal/reference/teal_slices.md)`(`[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``"IRIS"``, ``"Sepal.Length"``, selected ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``5``, ``7``)``)``)``,`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)``, `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)``)``,`\
 `)`\
 \
 `bslib``::`[`run_with_themer`](https://rstudio.github.io/bslib/reference/run_with_themer.html)`(`[`shinyApp`](https://rdrr.io/pkg/shiny/man/shinyApp.html)`(``app``$``ui``, ``app``$``server``)``)`
@@ -217,12 +217,12 @@ in.
 `  ``)`\
 `)`\
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``)``,`\
-`  filter ``=`` `[`teal_slices`](https://insightsengineering.github.io/teal/reference/teal_slices.md)`(`[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``"IRIS"``, ``"Sepal.Length"``, selected ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``5``, ``7``)``)``)``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)``, `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``)``,`\
+`  filter ``=`` `[`teal_slices`](https://pharmaverse.github.io/teal/reference/teal_slices.md)`(`[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``"IRIS"``, ``"Sepal.Length"``, selected ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``5``, ``7``)``)``)``,`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)``, `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\

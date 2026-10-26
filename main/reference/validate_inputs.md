@@ -52,14 +52,14 @@ header message is taken from `header`.
 [`shiny::validate`](https://rdrr.io/pkg/shiny/man/validate.html)
 
 Other validations:
-[`validate_has_data()`](https://insightsengineering.github.io/teal/reference/validate_has_data.md),
-[`validate_has_elements()`](https://insightsengineering.github.io/teal/reference/validate_has_elements.md),
-[`validate_has_variable()`](https://insightsengineering.github.io/teal/reference/validate_has_variable.md),
-[`validate_in()`](https://insightsengineering.github.io/teal/reference/validate_in.md),
-[`validate_input()`](https://insightsengineering.github.io/teal/reference/validate_input.md),
-[`validate_n_levels()`](https://insightsengineering.github.io/teal/reference/validate_n_levels.md),
-[`validate_no_intersection()`](https://insightsengineering.github.io/teal/reference/validate_no_intersection.md),
-[`validate_one_row_per_id()`](https://insightsengineering.github.io/teal/reference/validate_one_row_per_id.md)
+[`validate_has_data()`](https://pharmaverse.github.io/teal/reference/validate_has_data.md),
+[`validate_has_elements()`](https://pharmaverse.github.io/teal/reference/validate_has_elements.md),
+[`validate_has_variable()`](https://pharmaverse.github.io/teal/reference/validate_has_variable.md),
+[`validate_in()`](https://pharmaverse.github.io/teal/reference/validate_in.md),
+[`validate_input()`](https://pharmaverse.github.io/teal/reference/validate_input.md),
+[`validate_n_levels()`](https://pharmaverse.github.io/teal/reference/validate_n_levels.md),
+[`validate_no_intersection()`](https://pharmaverse.github.io/teal/reference/validate_no_intersection.md),
+[`validate_one_row_per_id()`](https://pharmaverse.github.io/teal/reference/validate_one_row_per_id.md)
 
 ## Examples in Shinylive
 

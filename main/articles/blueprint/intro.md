@@ -22,16 +22,16 @@ packages:
 
 | R package | Description |
 |----|:---|
-| [`teal`](https://insightsengineering.github.io/teal) | `shiny`-based interactive exploration framework for analyzing data |
-| [`teal.widgets`](https://insightsengineering.github.io/teal.widgets) | `shiny` UI components used within `teal` |
-| [`teal.data`](https://insightsengineering.github.io/teal.data) | provides the data structure used in all `teal` applications |
-| [`teal.slice`](https://insightsengineering.github.io/teal.slice) | provides the filter panel to allow dynamic filtering of data |
-| [`teal.code`](https://insightsengineering.github.io/teal.code) | provides a mechanism for tracking code to reproduce an analysis |
+| [`teal`](https://pharmaverse.github.io/teal) | `shiny`-based interactive exploration framework for analyzing data |
+| [`teal.widgets`](https://pharmaverse.github.io/teal.widgets) | `shiny` UI components used within `teal` |
+| [`teal.data`](https://pharmaverse.github.io/teal.data) | provides the data structure used in all `teal` applications |
+| [`teal.slice`](https://pharmaverse.github.io/teal.slice) | provides the filter panel to allow dynamic filtering of data |
+| [`teal.code`](https://pharmaverse.github.io/teal.code) | provides a mechanism for tracking code to reproduce an analysis |
 | [`teal.logger`](https://pharmaverse.github.io/teal.logger) | standardizes logging within `teal` framework |
-| [`teal.reporter`](https://insightsengineering.github.io/teal.reporter) | allows `teal` applications to generate reports |
+| [`teal.reporter`](https://pharmaverse.github.io/teal.reporter) | allows `teal` applications to generate reports |
 
 Although these packages are mentioned in the material, we strongly
 recommend visiting their vignettes to learn more about them.
 
 Learn on how to make your first `teal` application
-[here](https://insightsengineering.github.io/teal/articles/getting-started-with-teal.md)!
+[here](https://pharmaverse.github.io/teal/articles/getting-started-with-teal.md)!

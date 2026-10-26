@@ -2,7 +2,7 @@
 
 ## Introduction
 
-[![](images/filterpanel.png)](https://insightsengineering.github.io/teal/articles/blueprint/images/filterpanel.png)
+[![](images/filterpanel.png)](https://pharmaverse.github.io/teal/articles/blueprint/images/filterpanel.png)
 
 The `teal.slice` package provides `teal` applications with the **filter
 panel**, a powerful tool for exploring and analyzing data, and a key

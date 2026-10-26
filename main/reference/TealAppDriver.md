@@ -359,7 +359,7 @@ The value of the shiny output.
 ### `TealAppDriver$get_active_module_table_output()`
 
 Get the output from the module's
-[`teal.widgets::table_with_settings`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/table_with_settings.html)
+[`teal.widgets::table_with_settings`](https://rdrr.io/pkg/teal.widgets/man/table_with_settings.html)
 or [`DT::DTOutput`](https://rdrr.io/pkg/DT/man/dataTableOutput.html) in
 the `teal` app. This function will only access outputs from the name
 space of the current active teal module.
@@ -379,7 +379,7 @@ space of the current active teal module.
 
   (integer) If there is more than one table, which should be extracted.
   By default it will look for a table that is built using
-  [`teal.widgets::table_with_settings`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/table_with_settings.html).
+  [`teal.widgets::table_with_settings`](https://rdrr.io/pkg/teal.widgets/man/table_with_settings.html).
 
 #### Returns
 
@@ -390,7 +390,7 @@ The data.frame with table contents.
 ### `TealAppDriver$get_active_module_plot_output()`
 
 Get the output from the module's
-[`teal.widgets::plot_with_settings`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/plot_with_settings.html)
+[`teal.widgets::plot_with_settings`](https://rdrr.io/pkg/teal.widgets/man/plot_with_settings.html)
 in the `teal` app. This function will only access plots from the name
 space of the current active teal module.
 

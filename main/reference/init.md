@@ -24,9 +24,9 @@ init(
 
   (`teal_data` or `teal_data_module`) For constructing the data object,
   refer to
-  [`teal.data::teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+  [`teal.data::teal_data()`](https://rdrr.io/pkg/teal.data/man/teal_data.html)
   and
-  [`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md).
+  [`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md).
 
 - modules:
 
@@ -34,39 +34,39 @@ init(
   `teal_modules` or `teal_module` objects or a single `teal_modules` or
   `teal_module` object. These are the specific output modules which will
   be displayed in the `teal` application. See
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   and
-  [`module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   for more details.
 
 - filter:
 
   (`teal_slices`) Optionally, specifies the initial filter using
-  [`teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md).
+  [`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md).
 
 - title:
 
   (`shiny.tag` or `character(1)`) **\[deprecated\]** Optionally, the
   browser window title. Defaults to a title "teal app" with the icon of
   NEST. Can be created using the
-  [`build_app_title()`](https://insightsengineering.github.io/teal/reference/build_app_title.md)
+  [`build_app_title()`](https://pharmaverse.github.io/teal/reference/build_app_title.md)
   or by passing a valid `shiny.tag` which is a head tag with title and
   link tag. This parameter is no longer supported. Use
-  [`modify_title()`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)
+  [`modify_title()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
   on the teal app object instead.
 
 - header:
 
   (`shiny.tag` or `character(1)`) **\[deprecated\]** Optionally, the
   header of the app. This parameter is no longer supported. Use
-  [`modify_header()`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)
+  [`modify_header()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
   on the teal app object instead.
 
 - footer:
 
   (`shiny.tag` or `character(1)`) **\[deprecated\]** Optionally, the
   footer of the app. This parameter is no longer supported. Use
-  [`modify_footer()`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)
+  [`modify_footer()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
   on the teal app object instead.
 
 - id:
@@ -74,9 +74,9 @@ init(
   **\[deprecated\]** (`character`) Optionally, a string specifying the
   `shiny` module id in cases it is used as a `shiny` module rather than
   a standalone `shiny` app. This parameter is no longer supported. Use
-  [`ui_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md)
+  [`ui_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md)
   and
-  [`srv_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md)
+  [`srv_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md)
   instead.
 
 - reporter:

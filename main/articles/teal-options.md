@@ -51,7 +51,7 @@ values.
 This option controls the bootstrap theme and version used in `teal`
 apps. Achieve better UX with the customized UI of an app. Please see the
 [vignette on Bootstrap
-themes](https://insightsengineering.github.io/teal/articles/bootstrap-themes-in-teal.md)
+themes](https://pharmaverse.github.io/teal/articles/bootstrap-themes-in-teal.md)
 to read more about the functionality.
 
 Default: `` bslib::bs_theme(`font-size-base` = "0.875rem") ``
@@ -85,21 +85,21 @@ This specifies the list of arguments passed to every call to
 made in a `teal` application. This can be used to format `rtables`
 without making any changes to the application code. See the
 documentation of
-[`teal.widgets::basic_table_args`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/basic_table_args.html)
+[`teal.widgets::basic_table_args`](https://rdrr.io/pkg/teal.widgets/man/basic_table_args.html)
 for more information.
 
 Default:
-[`teal.widgets::basic_table_args()`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/basic_table_args.html).
+[`teal.widgets::basic_table_args()`](https://rdrr.io/pkg/teal.widgets/man/basic_table_args.html).
 
 #### `teal.ggplot2_args` (`ggplot2_args` object)
 
 This option allows modifying labels and themes of all `ggplot2` plots in
 a `teal` application. See the documentation of
-[`teal.widgets::ggplot2_args`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/ggplot2_args.html)
+[`teal.widgets::ggplot2_args`](https://rdrr.io/pkg/teal.widgets/man/ggplot2_args.html)
 for more information.
 
 Default:
-[`teal.widgets::ggplot2_args()`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/ggplot2_args.html).
+[`teal.widgets::ggplot2_args()`](https://rdrr.io/pkg/teal.widgets/man/ggplot2_args.html).
 
 #### `teal.plot_dpi` (integer value 24 or larger)
 
@@ -166,7 +166,7 @@ Values:
 Default: `"auto"`.
 
 To read more about lockfile usage creation check
-[`?teal::module_teal_lockfile`](https://insightsengineering.github.io/teal/reference/module_teal_lockfile.md).
+[`?teal::module_teal_lockfile`](https://pharmaverse.github.io/teal/reference/module_teal_lockfile.md).
 
 #### `teal.sidebar.position` (`character`)
 
@@ -262,9 +262,9 @@ Default: `FALSE`.
 This option controls whether the Snapshot Manager panel (the camera icon
 in the tabset bar) is rendered in a `teal` app. When set to `FALSE`,
 both
-[`ui_snapshot_manager_panel()`](https://insightsengineering.github.io/teal/reference/module_snapshot_manager.md)
+[`ui_snapshot_manager_panel()`](https://pharmaverse.github.io/teal/reference/module_snapshot_manager.md)
 and
-[`srv_snapshot_manager_panel()`](https://insightsengineering.github.io/teal/reference/module_snapshot_manager.md)
+[`srv_snapshot_manager_panel()`](https://pharmaverse.github.io/teal/reference/module_snapshot_manager.md)
 return `NULL`, so the panel is not displayed and no snapshot logic is
 attached.
 

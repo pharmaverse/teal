@@ -27,7 +27,7 @@ on the data object returned by the module.
 
 ## See also
 
-[`disable_report()`](https://insightsengineering.github.io/teal/reference/disable_report.md)
+[`disable_report()`](https://pharmaverse.github.io/teal/reference/disable_report.md)
 
 ## Examples in Shinylive
 

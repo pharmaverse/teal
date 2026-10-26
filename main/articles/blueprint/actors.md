@@ -67,7 +67,7 @@ Ultimately, one or more `teal` modules are employed to construct a
 
 To learn more about creating custom modules follow the [Tutorial on
 Creating a Custom
-Module](https://insightsengineering.github.io/teal/articles/creating-custom-modules.md).
+Module](https://pharmaverse.github.io/teal/articles/creating-custom-modules.md).
 
 ## Workflow in a clinical trial study
 

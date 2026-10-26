@@ -66,7 +66,7 @@ modules:
   framework, so a bug that manifests in this package might have a
   different origin.
 - Before changing code in the
-  [`init()`](https://insightsengineering.github.io/teal/reference/init.md)
+  [`init()`](https://pharmaverse.github.io/teal/reference/init.md)
   function, consider the compatibility of this change with the module
   packages.
 - The internal `TealAppDriver` object is used for end to end test the

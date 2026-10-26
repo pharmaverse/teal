@@ -6,9 +6,9 @@ decorators. The `object` is determined by what's selected in
 handled by
 [`renderPrint()`](https://rdrr.io/pkg/shiny/man/renderPrint.html). See
 the
-[`vignette("transform-module-output", package = "teal")`](https://insightsengineering.github.io/teal/articles/transform-module-output.md)
+[`vignette("transform-module-output", package = "teal")`](https://pharmaverse.github.io/teal/articles/transform-module-output.md)
 or
-[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 to read more about decorators.
 
 ## Usage
@@ -28,7 +28,7 @@ example_module(
 
   (`character(1)`) Label shown in the navigation item for the module or
   module group. For
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   defaults to `"root"`. See `Details`.
 
 - datanames:
@@ -48,7 +48,7 @@ example_module(
 
   (`list` of `teal_transform_module`) that will be applied to transform
   module's data input. To learn more check
-  [`vignette("transform-input-data", package = "teal")`](https://insightsengineering.github.io/teal/articles/transform-input-data.md).
+  [`vignette("transform-input-data", package = "teal")`](https://pharmaverse.github.io/teal/articles/transform-input-data.md).
 
 - decorators:
 
@@ -58,7 +58,7 @@ example_module(
 ## Value
 
 A `teal` module which can be included in the `modules` argument to
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md).
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md).
 
 ## Reporting
 
@@ -70,7 +70,7 @@ framework.
 
 For more information on reporting in `teal`, see the vignettes:
 
-- [`vignette("reportable-shiny-application", package = "teal.reporter")`](https://insightsengineering.github.io/teal.reporter/latest-tag/articles/reportable-shiny-application.html)
+- [`vignette("reportable-shiny-application", package = "teal.reporter")`](https://cran.rstudio.com/web/packages/teal.reporter/vignettes/reportable-shiny-application.html)
 
 - `vignette("adding-support-for-reporting-to-custom-modules", package = "teal")`
 

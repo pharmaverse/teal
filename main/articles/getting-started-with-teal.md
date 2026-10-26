@@ -27,21 +27,21 @@ This simple `teal` application takes the `iris` and `mtcars` datasets
 and displays their contents:
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``"Module 1"``)``,`\
-`    `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``"Module 2"``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``IRIS ``=`` ``iris``, MTCARS ``=`` ``mtcars``)``,`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``"Module 1"``)``,`\
+`    `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``"Module 2"``)`\
 `  ``)``,`\
-`  filter ``=`` `[`teal_slices`](https://insightsengineering.github.io/teal/reference/teal_slices.md)`(`\
-`    `[`teal_slice`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html)`(``dataname ``=`` ``"IRIS"``, varname ``=`` ``"Species"``, selected ``=`` ``"setosa"``)`\
+`  filter ``=`` `[`teal_slices`](https://pharmaverse.github.io/teal/reference/teal_slices.md)`(`\
+`    `[`teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)`(``dataname ``=`` ``"IRIS"``, varname ``=`` ``"Species"``, selected ``=`` ``"setosa"``)`\
 `  ``)`\
 `)`` ``|>`\
-`  `[`modify_title`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)`(``"My first teal application"``)`` ``|>`\
-`  `[`modify_header`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)`(`[`h3`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"My first teal application"``)``)`` ``|>`\
-`  `[`modify_footer`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)`(``tags``$``div``(`[`a`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"Powered by teal"``, href ``=`` ``"https://insightsengineering.github.io/teal/latest-tag/"``)``)``)`\
+`  `[`modify_title`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)`(``"My first teal application"``)`` ``|>`\
+`  `[`modify_header`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)`(`[`h3`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"My first teal application"``)``)`` ``|>`\
+`  `[`modify_footer`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)`(``tags``$``div``(`[`a`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"Powered by teal"``, href ``=`` ``"https://pharmaverse.github.io/teal/latest-tag/"``)``)``)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
 `  `[`shinyApp`](https://rdrr.io/pkg/shiny/man/shinyApp.html)`(``app``$``ui``, ``app``$``server``)`\
@@ -91,12 +91,12 @@ application must be passed through `teal_data` object. It is also
 possible to specify relationships between the datasets using the
 `join_keys` argument but in this case the datasets are not related. See
 [this
-vignette](https://insightsengineering.github.io/teal/articles/including-data-in-teal-applications.md)
+vignette](https://pharmaverse.github.io/teal/articles/including-data-in-teal-applications.md)
 for details. If data is not available and has to be pulled from a remote
 source, `init` must receive a `teal_data_module` that specifies how to
 obtain the desired datasets and put them into a `teal_data` object. See
 [this
-vignette](https://insightsengineering.github.io/teal/articles/data-as-shiny-module.md)
+vignette](https://pharmaverse.github.io/teal/articles/data-as-shiny-module.md)
 for details.
 
 In order to use CDISC clinical trial data in a `teal` application the
@@ -104,7 +104,7 @@ In order to use CDISC clinical trial data in a `teal` application the
 handled with `teal_data` and `join_keys`.
 
 For further details, we recommend exploring the
-[`teal.data`](https://insightsengineering.github.io/teal.data/) package
+[`teal.data`](https://pharmaverse.github.io/teal.data/) package
 documentation.
 
 ### Modules
@@ -114,7 +114,7 @@ The `modules` argument to `init` consists of a list of `teal` modules
 `teal` developers have created several universal `teal` modules that can
 be useful in any `teal` application. To learn how to create your own
 modules, please explore [Creating Custom Modules
-vignette](https://insightsengineering.github.io/teal/articles/creating-custom-modules.md).
+vignette](https://pharmaverse.github.io/teal/articles/creating-custom-modules.md).
 To use our predefined modules, see the references below for links to
 these modules.
 
@@ -123,19 +123,18 @@ these modules.
 The optional `filter` argument in `init` allows you to initialize the
 application with predefined filters. For further details see [Filter
 Panel
-vignette](https://insightsengineering.github.io/teal/articles/filter-panel.md).
+vignette](https://pharmaverse.github.io/teal/articles/filter-panel.md).
 
 ### Reporting
 
 If any of the `modules` in your `teal` application support reporting
-(see
-[`teal.reporter`](https://insightsengineering.github.io/teal.reporter/)
-for more details), users of your application can add the outputs of the
+(see [`teal.reporter`](https://pharmaverse.github.io/teal.reporter/) for
+more details), users of your application can add the outputs of the
 modules to a report. This report can then be downloaded and a special
 *Report Previewer* module will be added to your application as an
 additional tab, where users can view and configure their reports before
 downloading them. See more details in [this
-vignette](https://insightsengineering.github.io/teal/articles/adding-support-for-reporting.md).
+vignette](https://pharmaverse.github.io/teal/articles/adding-support-for-reporting.md).
 
 ### Reproducible code
 
@@ -144,13 +143,13 @@ in the application. Note that `teal` does not display the code, that is
 the modules’ responsibility. For example, the `example_module` function
 used above shows the code in the main panel together with other outputs.
 For more details see [this
-vignette](https://insightsengineering.github.io/teal/articles/including-data-in-teal-applications.md).
+vignette](https://pharmaverse.github.io/teal/articles/including-data-in-teal-applications.md).
 
 ### Embedding teal in shiny application
 
 Advanced `shiny` users can include teal application in their `shiny`
 application. For further details see [teal as a
-module](https://insightsengineering.github.io/teal/articles/teal-as-a-shiny-module.md).
+module](https://pharmaverse.github.io/teal/articles/teal-as-a-shiny-module.md).
 
 ## Where to go next
 
@@ -160,9 +159,9 @@ some of the available analysis modules.
 For example see:
 
 - [general analysis
-  modules](https://insightsengineering.github.io/teal.modules.general/)
+  modules](https://pharmaverse.github.io/teal.modules.general/)
 - [clinical trial reporting
-  modules](https://insightsengineering.github.io/teal.modules.clinical/)
+  modules](https://pharmaverse.github.io/teal.modules.clinical/)
 - [modules for analyzing `MultiAssayExperiment`
   objects](https://insightsengineering.github.io/teal.modules.hermes/)
 
@@ -179,7 +178,7 @@ The `teal` framework relies on a set of supporting packages whose
 documentation provides more in-depth information. The packages which are
 of most interest when defining `teal`applications are:
 
-- [`teal.data`](https://insightsengineering.github.io/teal.data/):
-  defining data for `teal` application.
-- [`teal.slice`](https://insightsengineering.github.io/teal.slice/):
-  defining data filtering before passing into `teal` modules.
+- [`teal.data`](https://pharmaverse.github.io/teal.data/): defining data
+  for `teal` application.
+- [`teal.slice`](https://pharmaverse.github.io/teal.slice/): defining
+  data filtering before passing into `teal` modules.

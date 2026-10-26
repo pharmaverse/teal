@@ -10,35 +10,35 @@ Downloads](http://cranlogs.r-pkg.org/badges/last-month/teal?color=green)](https:
 Downloads](http://cranlogs.r-pkg.org/badges/last-week/teal?color=green)](https://cran.r-project.org/package=teal)
 
 [![Check
-🛠](https://github.com/insightsengineering/teal/actions/workflows/check.yaml/badge.svg)](https://insightsengineering.github.io/teal/main/unit-test-report/)
+🛠](https://github.com/pharmaverse/teal/actions/workflows/check.yaml/badge.svg)](https://pharmaverse.github.io/teal/main/unit-test-report/)
 [![Docs
-📚](https://github.com/insightsengineering/teal/actions/workflows/docs.yaml/badge.svg)](https://insightsengineering.github.io/teal/)
+📚](https://github.com/pharmaverse/teal/actions/workflows/docs.yaml/badge.svg)](https://pharmaverse.github.io/teal/)
 [![Code Coverage
-📔](https://raw.githubusercontent.com/insightsengineering/teal/_xml_coverage_reports/data/main/badge.svg)](https://insightsengineering.github.io/teal/main/coverage-report/)
+📔](https://raw.githubusercontent.com/pharmaverse/teal/_xml_coverage_reports/data/main/badge.svg)](https://pharmaverse.github.io/teal/main/coverage-report/)
 
 ![GitHub
-forks](https://img.shields.io/github/forks/insightsengineering/teal?style=social)![GitHub
+forks](https://img.shields.io/github/forks/pharmaverse/teal?style=social)![GitHub
 repo
-stars](https://img.shields.io/github/stars/insightsengineering/teal?style=social)
+stars](https://img.shields.io/github/stars/pharmaverse/teal?style=social)
 
 ![GitHub commit
-activity](https://img.shields.io/github/commit-activity/m/insightsengineering/teal)![GitHub
-contributors](https://img.shields.io/github/contributors/insightsengineering/teal)![GitHub
+activity](https://img.shields.io/github/commit-activity/m/pharmaverse/teal)![GitHub
+contributors](https://img.shields.io/github/contributors/pharmaverse/teal)![GitHub
 last
-commit](https://img.shields.io/github/last-commit/insightsengineering/teal)![GitHub
+commit](https://img.shields.io/github/last-commit/pharmaverse/teal)![GitHub
 pull
-requests](https://img.shields.io/github/issues-pr/insightsengineering/teal)![GitHub
+requests](https://img.shields.io/github/issues-pr/pharmaverse/teal)![GitHub
 repo
-size](https://img.shields.io/github/repo-size/insightsengineering/teal)![GitHub
+size](https://img.shields.io/github/repo-size/pharmaverse/teal)![GitHub
 language
-count](https://img.shields.io/github/languages/count/insightsengineering/teal)[![Project
+count](https://img.shields.io/github/languages/count/pharmaverse/teal)[![Project
 Status: Active – The project has reached a stable, usable state and is
 being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Current
-Version](https://img.shields.io/github/r-package/v/insightsengineering/teal/main?color=purple&label=package%20version)](https://github.com/insightsengineering/teal/tree/main)
+Version](https://img.shields.io/github/r-package/v/pharmaverse/teal/main?color=purple&label=package%20version)](https://github.com/pharmaverse/teal/tree/main)
 [![Open
-Issues](https://img.shields.io/github/issues-raw/insightsengineering/teal?color=red&label=open%20issues)](https://github.com/insightsengineering/teal/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+Issues](https://img.shields.io/github/issues-raw/pharmaverse/teal?color=red&label=open%20issues)](https://github.com/pharmaverse/teal/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 
 `teal` is a `shiny`-based interactive exploration framework for
 analyzing data. `teal` applications require app developers to specify:
@@ -69,19 +69,17 @@ following packages:
 
 - [`teal.logger`](https://pharmaverse.github.io/teal.logger/latest-tag/):
   standardizes logging within `teal` framework.
-- [`teal.code`](https://insightsengineering.github.io/teal.code/latest-tag/):
+- [`teal.code`](https://pharmaverse.github.io/teal.code/latest-tag/):
   handles reproducibility of outputs.
-- [`teal.data`](https://insightsengineering.github.io/teal.data/latest-tag/):
+- [`teal.data`](https://pharmaverse.github.io/teal.data/latest-tag/):
   creating and loading the data needed for `teal` applications.
-- [`teal.widgets`](https://insightsengineering.github.io/teal.widgets/latest-tag/):
+- [`teal.widgets`](https://pharmaverse.github.io/teal.widgets/latest-tag/):
   `shiny` components used within `teal`.
-- [`teal.slice`](https://insightsengineering.github.io/teal.slice/latest-tag/):
+- [`teal.slice`](https://pharmaverse.github.io/teal.slice/latest-tag/):
   provides a filtering panel to allow filtering of data.
-- [`teal.reporter`](https://insightsengineering.github.io/teal.reporter/latest-tag/):
+- [`teal.reporter`](https://pharmaverse.github.io/teal.reporter/latest-tag/):
   allows `teal` applications to generate reports.
-- [`teal.picks`](https://insightsengineering.github.io/teal.picks/latest-tag/):
-  provides the selection and merge of data module for teal applications.
-- [`teal.transform`](https://insightsengineering.github.io/teal.transform/latest-tag/):
+- [`teal.transform`](https://pharmaverse.github.io/teal.transform/latest-tag/):
   allows the creation of reproducible transform and merge module for
   teal applications.
 
@@ -100,17 +98,17 @@ Alternatively, you might also use the development version.
 
 \
 `# install.packages("pak")`\
-`pak``::`[`pak`](https://pak.r-lib.org/reference/pak.html)`(``"insightsengineering/teal"``)`
+`pak``::`[`pak`](https://pak.r-lib.org/reference/pak.html)`(``"pharmaverse/teal"``)`
 
 ## Usage
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``iris ``=`` ``iris``)``,`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``iris ``=`` ``iris``)``,`\
 `  modules ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(`\
-`    `[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`    `[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `      label ``=`` ``"iris histogram"``,`\
 `      server ``=`` ``function``(``input``, ``output``, ``session``, ``data``)`` ``{`\
 `        `[`updateSelectInput`](https://rdrr.io/pkg/shiny/man/updateSelectInput.html)`(``session ``=`` ``session``,`\
@@ -147,11 +145,11 @@ and [TLG Catalog](https://insightsengineering.github.io/tlg-catalog/) to
 see examples of `teal` apps.
 
 Please start with the [“Technical Blueprint”
-article](https://insightsengineering.github.io/teal/latest-tag/articles/blueprint/index.html),
+article](https://pharmaverse.github.io/teal/latest-tag/articles/blueprint/index.html),
 [“Getting Started”
-article](https://insightsengineering.github.io/teal/latest-tag/articles/getting-started-with-teal.html),
+article](https://pharmaverse.github.io/teal/latest-tag/articles/getting-started-with-teal.html),
 and then other [package
-vignettes](https://insightsengineering.github.io/teal/latest-tag/articles/index.html)
+vignettes](https://pharmaverse.github.io/teal/latest-tag/articles/index.html)
 for more detailed guide.
 
 ## Getting help
@@ -171,57 +169,56 @@ stakeholders. We would like to thank everyone who contributed so far!
 
 Main functions needed to build a `teal` app
 
-- [`init()`](https://insightsengineering.github.io/teal/reference/init.md)
-  :
+- [`init()`](https://pharmaverse.github.io/teal/reference/init.md) :
 
   Create the server and UI function for the `shiny` app
 
-- [`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
-  [`eval_code(`*`<teal_data_module>`*`)`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
-  [`within(`*`<teal_data_module>`*`)`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+- [`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
+  [`eval_code(`*`<teal_data_module>`*`)`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
+  [`within(`*`<teal_data_module>`*`)`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
   **\[experimental\]** :
 
   Data module for `teal` applications
 
-- [`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+- [`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
   **\[experimental\]** :
 
   Data module for `teal` transformations and output customization
 
-- [`srv_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)
-  [`ui_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)
+- [`srv_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)
+  [`ui_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)
   :
 
   Apply `teal_transform_module` decorators to reactive `teal_data`
 
-- [`make_teal_transform_server()`](https://insightsengineering.github.io/teal/reference/make_teal_transform_server.md)
+- [`make_teal_transform_server()`](https://pharmaverse.github.io/teal/reference/make_teal_transform_server.md)
   : Make teal_transform_module's server
 
-- [`ui_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md)
-  [`srv_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md)
+- [`ui_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md)
+  [`srv_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md)
   :
 
   `teal` main module
 
-- [`ui_session_info()`](https://insightsengineering.github.io/teal/reference/module_session_info.md)
-  [`srv_session_info()`](https://insightsengineering.github.io/teal/reference/module_session_info.md)
+- [`ui_session_info()`](https://pharmaverse.github.io/teal/reference/module_session_info.md)
+  [`srv_session_info()`](https://pharmaverse.github.io/teal/reference/module_session_info.md)
   :
 
   `teal` user session info module
 
-- [`module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
-  [`format(`*`<teal_module>`*`)`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
-  [`format(`*`<teal_modules>`*`)`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
-  [`print(`*`<teal_module>`*`)`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
-  [`print(`*`<teal_modules>`*`)`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+- [`module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`format(`*`<teal_module>`*`)`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`format(`*`<teal_modules>`*`)`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`print(`*`<teal_module>`*`)`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`print(`*`<teal_modules>`*`)`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   :
 
   Create `teal_module` and `teal_modules` objects
 
-- [`teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md)
-  [`as.teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md)
-  [`c(`*`<teal_slices>`*`)`](https://insightsengineering.github.io/teal/reference/teal_slices.md)
+- [`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md)
+  [`as.teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md)
+  [`c(`*`<teal_slices>`*`)`](https://pharmaverse.github.io/teal/reference/teal_slices.md)
   :
 
   Filter settings for `teal` applications
@@ -230,14 +227,14 @@ Main functions needed to build a `teal` app
 
 Functions to modify the `teal` app object
 
-- [`modify_title()`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)
-  [`modify_header()`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)
-  [`modify_footer()`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)
+- [`modify_title()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
+  [`modify_header()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
+  [`modify_footer()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
   :
 
   Replace UI Elements in `teal` UI objects
 
-- [`add_landing_modal()`](https://insightsengineering.github.io/teal/reference/add_landing_modal.md)
+- [`add_landing_modal()`](https://pharmaverse.github.io/teal/reference/add_landing_modal.md)
   :
 
   Add a Landing Popup to `teal` Application
@@ -246,85 +243,85 @@ Functions to modify the `teal` app object
 
 Helper functions for `teal`
 
-- [`check_decorators()`](https://insightsengineering.github.io/teal/reference/check_decorators.md)
-  [`assert_decorators()`](https://insightsengineering.github.io/teal/reference/check_decorators.md)
+- [`check_decorators()`](https://pharmaverse.github.io/teal/reference/check_decorators.md)
+  [`assert_decorators()`](https://pharmaverse.github.io/teal/reference/check_decorators.md)
   : Check decorators list
-- [`build_app_title()`](https://insightsengineering.github.io/teal/reference/build_app_title.md)
+- [`build_app_title()`](https://pharmaverse.github.io/teal/reference/build_app_title.md)
   : Build app title with favicon
-- [`select_decorators()`](https://insightsengineering.github.io/teal/reference/select_decorators.md)
+- [`select_decorators()`](https://pharmaverse.github.io/teal/reference/select_decorators.md)
   : Subset decorators based on the scope
 
 ## Example module
 
 A simple `teal` module
 
-- [`example_module()`](https://insightsengineering.github.io/teal/reference/example_module.md)
+- [`example_module()`](https://pharmaverse.github.io/teal/reference/example_module.md)
   :
 
   An example `teal` module
 
 ## Creating reports
 
-- [`reporter_previewer_module()`](https://insightsengineering.github.io/teal/reference/reporter_previewer_module.md)
+- [`reporter_previewer_module()`](https://pharmaverse.github.io/teal/reference/reporter_previewer_module.md)
   **\[deprecated\]** :
 
   Create a `teal` module for previewing a report
 
-- [`TealReportCard`](https://insightsengineering.github.io/teal/reference/TealReportCard.md)
+- [`TealReportCard`](https://pharmaverse.github.io/teal/reference/TealReportCard.md)
   **\[experimental\]** :
 
   `TealReportCard`
 
-- [`report_card_template()`](https://insightsengineering.github.io/teal/reference/report_card_template.md)
+- [`report_card_template()`](https://pharmaverse.github.io/teal/reference/report_card_template.md)
   :
 
   Template function for `TealReportCard` creation and customization
 
-- [`disable_report()`](https://insightsengineering.github.io/teal/reference/disable_report.md)
+- [`disable_report()`](https://pharmaverse.github.io/teal/reference/disable_report.md)
   :
 
   Disable the report for a `teal_module`
 
 ## Modifying output of modules
 
-- [`disable_src()`](https://insightsengineering.github.io/teal/reference/disable_src.md)
+- [`disable_src()`](https://pharmaverse.github.io/teal/reference/disable_src.md)
   : Disable the "Show R Code" global button in the UI
 
-- [`disable_report()`](https://insightsengineering.github.io/teal/reference/disable_report.md)
+- [`disable_report()`](https://pharmaverse.github.io/teal/reference/disable_report.md)
   :
 
   Disable the report for a `teal_module`
 
 ## Functions for module developers
 
-- [`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
-  [`eval_code(`*`<teal_data_module>`*`)`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
-  [`within(`*`<teal_data_module>`*`)`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+- [`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
+  [`eval_code(`*`<teal_data_module>`*`)`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
+  [`within(`*`<teal_data_module>`*`)`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
   **\[experimental\]** :
 
   Data module for `teal` applications
 
 ## Validation functions
 
-- [`validate_has_data()`](https://insightsengineering.github.io/teal/reference/validate_has_data.md)
+- [`validate_has_data()`](https://pharmaverse.github.io/teal/reference/validate_has_data.md)
   : Validate that dataset has a minimum number of observations
-- [`validate_has_elements()`](https://insightsengineering.github.io/teal/reference/validate_has_elements.md)
+- [`validate_has_elements()`](https://pharmaverse.github.io/teal/reference/validate_has_elements.md)
   : Validates that vector has length greater than 0
-- [`validate_has_variable()`](https://insightsengineering.github.io/teal/reference/validate_has_variable.md)
+- [`validate_has_variable()`](https://pharmaverse.github.io/teal/reference/validate_has_variable.md)
   : Validates that dataset contains specific variable
-- [`validate_in()`](https://insightsengineering.github.io/teal/reference/validate_in.md)
+- [`validate_in()`](https://pharmaverse.github.io/teal/reference/validate_in.md)
   : Validates that vector includes all expected values
-- [`validate_input()`](https://insightsengineering.github.io/teal/reference/validate_input.md)
-  [`need_input()`](https://insightsengineering.github.io/teal/reference/validate_input.md)
-  [`use_validate_input_js()`](https://insightsengineering.github.io/teal/reference/validate_input.md)
+- [`validate_input()`](https://pharmaverse.github.io/teal/reference/validate_input.md)
+  [`need_input()`](https://pharmaverse.github.io/teal/reference/validate_input.md)
+  [`use_validate_input_js()`](https://pharmaverse.github.io/teal/reference/validate_input.md)
   : Validate input
-- [`validate_inputs()`](https://insightsengineering.github.io/teal/reference/validate_inputs.md)
+- [`validate_inputs()`](https://pharmaverse.github.io/teal/reference/validate_inputs.md)
   : Send input validation messages to output
-- [`validate_n_levels()`](https://insightsengineering.github.io/teal/reference/validate_n_levels.md)
+- [`validate_n_levels()`](https://pharmaverse.github.io/teal/reference/validate_n_levels.md)
   : Validate that variables has expected number of levels
-- [`validate_no_intersection()`](https://insightsengineering.github.io/teal/reference/validate_no_intersection.md)
+- [`validate_no_intersection()`](https://pharmaverse.github.io/teal/reference/validate_no_intersection.md)
   : Validates no intersection between two vectors
-- [`validate_one_row_per_id()`](https://insightsengineering.github.io/teal/reference/validate_one_row_per_id.md)
+- [`validate_one_row_per_id()`](https://pharmaverse.github.io/teal/reference/validate_one_row_per_id.md)
   : Validate that dataset has unique rows for key variables
 
 # Articles
@@ -332,36 +329,36 @@ A simple `teal` module
 ### Get started
 
 - [Getting Started with
-  teal](https://insightsengineering.github.io/teal/articles/getting-started-with-teal.md):
+  teal](https://pharmaverse.github.io/teal/articles/getting-started-with-teal.md):
 
 ### Data in `teal` apps
 
 - [Including Data in teal
-  Applications](https://insightsengineering.github.io/teal/articles/including-data-in-teal-applications.md):
+  Applications](https://pharmaverse.github.io/teal/articles/including-data-in-teal-applications.md):
 - [Data as shiny
-  Module](https://insightsengineering.github.io/teal/articles/data-as-shiny-module.md):
+  Module](https://pharmaverse.github.io/teal/articles/data-as-shiny-module.md):
 - [Filter
-  Panel](https://insightsengineering.github.io/teal/articles/filter-panel.md):
+  Panel](https://pharmaverse.github.io/teal/articles/filter-panel.md):
 - [Transform Input
-  Data](https://insightsengineering.github.io/teal/articles/transform-input-data.md):
+  Data](https://pharmaverse.github.io/teal/articles/transform-input-data.md):
 
 ### Extending `teal`
 
 - [Creating Custom
-  Modules](https://insightsengineering.github.io/teal/articles/creating-custom-modules.md):
+  Modules](https://pharmaverse.github.io/teal/articles/creating-custom-modules.md):
 - [Adding Support for Reporting to Custom
-  Modules](https://insightsengineering.github.io/teal/articles/adding-support-for-reporting.md):
+  Modules](https://pharmaverse.github.io/teal/articles/adding-support-for-reporting.md):
 - [Transform Module
-  Output](https://insightsengineering.github.io/teal/articles/transform-module-output.md):
+  Output](https://pharmaverse.github.io/teal/articles/transform-module-output.md):
 
 ### Using `teal`
 
 - [Teal as a Shiny
-  Module](https://insightsengineering.github.io/teal/articles/teal-as-a-shiny-module.md):
+  Module](https://pharmaverse.github.io/teal/articles/teal-as-a-shiny-module.md):
 - [Modifying a teal Application With R
-  Options](https://insightsengineering.github.io/teal/articles/teal-options.md):
+  Options](https://pharmaverse.github.io/teal/articles/teal-options.md):
 - [Bootstrap Themes in
-  teal](https://insightsengineering.github.io/teal/articles/bootstrap-themes-in-teal.md):
+  teal](https://pharmaverse.github.io/teal/articles/bootstrap-themes-in-teal.md):
 
 ### 📃 Technical blueprint
 
@@ -371,10 +368,10 @@ crucial `teal` concepts such as data flow, actors, and filter panel,
 among others.
 
 - [About Technical
-  Blueprint](https://insightsengineering.github.io/teal/articles/blueprint/index.md):
-- [Introduction](https://insightsengineering.github.io/teal/articles/blueprint/intro.md):
-- [Actors](https://insightsengineering.github.io/teal/articles/blueprint/actors.md):
+  Blueprint](https://pharmaverse.github.io/teal/articles/blueprint/index.md):
+- [Introduction](https://pharmaverse.github.io/teal/articles/blueprint/intro.md):
+- [Actors](https://pharmaverse.github.io/teal/articles/blueprint/actors.md):
 - [Data
-  Flow](https://insightsengineering.github.io/teal/articles/blueprint/dataflow.md):
+  Flow](https://pharmaverse.github.io/teal/articles/blueprint/dataflow.md):
 - [Product
-  Map](https://insightsengineering.github.io/teal/articles/blueprint/product_map.md):
+  Map](https://pharmaverse.github.io/teal/articles/blueprint/product_map.md):

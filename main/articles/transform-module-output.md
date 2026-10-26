@@ -7,7 +7,7 @@ created by the module developer and look a certain way. It is hard to
 design an output that will satisfy every possible user, so the form of
 the output should be considered a default value that can be customized.
 In [Transform Input
-Data](https://insightsengineering.github.io/teal/articles/transform-input-data.md)
+Data](https://pharmaverse.github.io/teal/articles/transform-input-data.md)
 we described how `teal_module`’s input data can be modified using
 `teal_transform_module`. Here we present how to utilize
 `teal_transform_module` to modify an output created by a `teal_module`,
@@ -19,7 +19,7 @@ rewriting the original module code.
 ## How to Transform outputs?
 
 Custom transformations for the output objects can be created with
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 and thus they are `shiny` modules. They are passed to `teal_module`
 constructors as arguments (see below). Their server logic will be used
 to modify objects such as plots or tables that exist in the server
@@ -63,13 +63,13 @@ input. Knowing that the module contains an object of class `ggplot2`
 named `plot`, we will modify its title and x-axis title:
 
 \
-`static_decorator`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`static_decorator`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Static decorator"``,`\
 `  server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `        `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
 `          ``plot`` ``<-`` ``plot`` ``+`\
 `            ``ggtitle``(``"This is a better title"``)`` ``+`\
 `            ``xlab``(``"the real x axis"``)`\
@@ -85,13 +85,13 @@ If the transformation requires a user input, a `ui` function can be
 added. Here, the x-axis title is obtained from a `textInput` widget,
 giving the user some flexibility. Note how the input values are passed
 to the
-[`within()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+[`within()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
 function using its `...` argument. See
-[`?teal.code::within.qenv`](https://insightsengineering.github.io/teal.code/latest-tag/reference/within.qenv.html)
+[`?teal.code::within.qenv`](https://rdrr.io/pkg/teal.code/man/within.qenv.html)
 for more examples.
 
 \
-`interactive_decorator`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`interactive_decorator`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Interactive decorator"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -103,7 +103,7 @@ for more examples.
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `        `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `          ``{`\
 `            ``plot`` ``<-`` ``plot`` ``+`\
 `              ``ggtitle``(``"This is a better title"``)`` ``+`\
@@ -129,7 +129,7 @@ transformator, allowing it to work with multiple modules.
 
 \
 `dynamic_decorator`` ``<-`` ``function``(``output_name``)`` ``{`\
-`  `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`  `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `    label ``=`` ``"Dynamic decorator"``,`\
 `    ui ``=`` ``function``(``id``)`` ``{`\
 `      ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -141,7 +141,7 @@ transformator, allowing it to work with multiple modules.
 `      `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `        `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `            ``{`\
 `              ``output_name`` ``<-`` ``output_name`` ``+`\
 `                ``xlab``(``x_axis_title``)`\
@@ -167,7 +167,7 @@ Transformations are applied to a `teal` module as follows:
 1.  A list of transformations is passed to the module constructor
     function (*e.g.* `tm_my_module`).
 2.  The module constructor calls the module generator function
-    ([`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md))
+    ([`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md))
     and passes the transformations to the `ui_args` and `server_args`
     arguments.
 3.  The module functions, UI and server, take a list of transformations
@@ -182,7 +182,7 @@ Here is a minimal illustration:
 `  ``label`` ``=`` ``"Pseudo Module with Decorator Support"``,`\
 `  ``decorators`` ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``)``                                                       ``# <--- added block (1)`\
 `)`` ``{`\
-`  `[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`  `[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    label ``=`` ``label``,`\
 `    ui_args ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``decorators ``=`` ``decorators``)``,                                  ``# <--- added block (2)`\
 `    server_args ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``decorators ``=`` ``decorators``)``,                              ``# <--- added block (2)`\
@@ -191,7 +191,7 @@ Here is a minimal illustration:
 `      `[`div`](https://rstudio.github.io/htmltools/reference/builder.html)`(`\
 `        ``# <input widgets>,`\
 `        ``# <output widgets>,`\
-`        `[`ui_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate"``)``, transformators ``=`` ``decorators``)``   ``# <--- added block (3)`\
+`        `[`ui_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate"``)``, transformators ``=`` ``decorators``)``   ``# <--- added block (3)`\
 `      ``)`\
 `    ``}``,`\
 `    server ``=`` ``function``(``id``, ``data``, ``decorators``)`` ``{`\
@@ -199,9 +199,9 @@ Here is a minimal illustration:
 `        ``# <receive inputs>`\
 `        ``# <process data>`\
 `        ``data_with_output`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``output_item`` ``<-`` ``generate_output``(``)``)`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``output_item`` ``<-`` ``generate_output``(``)``)`\
 `        ``}``)`\
-`        ``data_with_output_decorated`` ``<-`` `[`srv_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(``                ``# <--- added block (3)`\
+`        ``data_with_output_decorated`` ``<-`` `[`srv_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(``                ``# <--- added block (3)`\
 `          ``"decorate"``,                                                         ``# <-`\
 `          data ``=`` ``data_with_output``,                                            ``# <-`\
 `          transformators ``=`` ``decorators``                                         ``# <-`\
@@ -229,7 +229,7 @@ displays the reproducible code used to obtain the plot.
 `tm_decorated_plot`` ``<-`` ``function``(``label`` ``=`` ``"module"``, ``decorators`` ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``)``)`` ``{`\
 `  ``checkmate``::`[`assert_list`](https://mllg.github.io/checkmate/reference/checkList.html)`(``decorators``, ``"teal_transform_module"``, null.ok ``=`` ``TRUE``)`\
 \
-`  `[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`  `[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    label ``=`` ``label``,`\
 `    ui_args ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``decorators ``=`` ``decorators``)``,`\
 `    server_args ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``decorators ``=`` ``decorators``)``,`\
@@ -239,7 +239,7 @@ displays the reproducible code used to obtain the plot.
 `        `[`selectInput`](https://rdrr.io/pkg/shiny/man/selectInput.html)`(``ns``(``"dataname"``)``, label ``=`` ``"select dataname"``, choices ``=`` ``NULL``)``,`\
 `        `[`selectInput`](https://rdrr.io/pkg/shiny/man/selectInput.html)`(``ns``(``"x"``)``, label ``=`` ``"select x"``, choices ``=`` ``NULL``)``,`\
 `        `[`selectInput`](https://rdrr.io/pkg/shiny/man/selectInput.html)`(``ns``(``"y"``)``, label ``=`` ``"select y"``, choices ``=`` ``NULL``)``,`\
-`        `[`ui_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate"``)``, transformators ``=`` ``decorators``)``,`\
+`        `[`ui_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate"``)``, transformators ``=`` ``decorators``)``,`\
 `        `[`plotOutput`](https://rdrr.io/pkg/shiny/man/plotOutput.html)`(``ns``(``"plot"``)``)``,`\
 `        `[`verbatimTextOutput`](https://rdrr.io/pkg/shiny/man/textOutput.html)`(``ns``(``"text"``)``)`\
 `      ``)`\
@@ -269,7 +269,7 @@ displays the reproducible code used to obtain the plot.
 `        ``# Plot is created within the teal_data object`\
 `        ``data_with_plot`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``dataname``(``)``, ``x``(``)``, ``y``(``)``)`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `            ``{`\
 `              ``plot`` ``<-`` ``ggplot2``::`[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``dataname``, ``ggplot2``::`[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``x ``=`` ``x``, y ``=`` ``y``)``)`` ``+`\
 `                ``ggplot2``::`[`geom_point`](https://ggplot2.tidyverse.org/reference/geom_point.html)`(``)`\
@@ -281,7 +281,7 @@ displays the reproducible code used to obtain the plot.
 `        ``}``)`\
 \
 `        ``# Decorators are applied`\
-`        ``data_with_plot_decorated`` ``<-`` `[`srv_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(`\
+`        ``data_with_plot_decorated`` ``<-`` `[`srv_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(`\
 `          ``"decorate"``,`\
 `          data ``=`` ``data_with_plot``,`\
 `          transformators ``=`` ``decorators`\
@@ -296,8 +296,8 @@ displays the reproducible code used to obtain the plot.
 `        ``## This does not affect the analysis but when the code is "replayed"`\
 `        ``## in an interactive session it will send the plot to a graphics device.`\
 `        ``reproducible_code`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``data_with_plot_decorated``(``)``, expr ``=`` ``plot``)`` ``|>`\
-`            ``teal.code``::`[`get_code`](https://insightsengineering.github.io/teal.code/latest-tag/reference/get_code.html)`(``)`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``data_with_plot_decorated``(``)``, expr ``=`` ``plot``)`` ``|>`\
+`            ``teal.code``::`[`get_code`](https://rdrr.io/pkg/teal.code/man/get_code.html)`(``)`\
 `        ``}``)`\
 \
 `        ``output``$``plot`` ``<-`` `[`renderPlot`](https://rdrr.io/pkg/shiny/man/renderPlot.html)`(``plot_r``(``)``)`\
@@ -313,9 +313,9 @@ Note that every call to the module constructor (`tm_decorated_plot`)
 takes a list containing *one* transformator.
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``iris ``=`` ``iris``, mtcars ``=`` ``mtcars``)``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``iris ``=`` ``iris``, mtcars ``=`` ``mtcars``)``,`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    ``tm_decorated_plot``(``"undecorated"``)``,`\
 `    ``tm_decorated_plot``(``"static"``, decorators ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``static_decorator``)``)``,`\
 `    ``tm_decorated_plot``(``"interactive"``, decorators ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``interactive_decorator``)``)``,`\
@@ -337,7 +337,7 @@ The plot transformators adds a user-provided title to a `ggplot2`
 object.
 
 \
-`plot_decorator`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`plot_decorator`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Decorate plot"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -347,7 +347,7 @@ object.
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `        `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `          ``{`\
 `            ``plot`` ``<-`` ``plot`` ``+`` ``ggplot2``::`[`ggtitle`](https://ggplot2.tidyverse.org/reference/labs.html)`(``ptitle``)`` ``+`\
 `              ``ggplot2``::`[`theme_minimal`](https://ggplot2.tidyverse.org/reference/ggtheme.html)`(``)`` ``+`\
@@ -365,14 +365,14 @@ object.
 The table transformators adds a column to a `data.frame`.
 
 \
-`table_decorator`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`table_decorator`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Decorate table"``,`\
 `  ui ``=`` ``function``(``id``)`` ``shiny``::`[`tags`](https://rstudio.github.io/htmltools/reference/builder.html)`$``p``(``"No UI needed for table decorator and could be ommited."``)``,`\
 `  server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `        `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
 `          ``table_data``[[``"Added by decorator"``]``]`` ``<-`` `[`paste0`](https://rdrr.io/r/base/paste.html)`(``"Row "``, `[`seq_len`](https://rdrr.io/r/base/seq.html)`(`[`nrow`](https://rdrr.io/r/base/nrow.html)`(``table_data``)``)``)`\
 `        ``}``)`\
 `      ``}``)`\
@@ -393,7 +393,7 @@ the transformations are then manually separated in the module functions.
 `tm_decorated_plot_table`` ``<-`` ``function``(``label`` ``=`` ``"module with two outputs"``, ``decorators`` ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``)``)`` ``{`\
 `  ``checkmate``::`[`assert_list`](https://mllg.github.io/checkmate/reference/checkList.html)`(``decorators``, ``"teal_transform_module"``, null.ok ``=`` ``TRUE``)`\
 \
-`  `[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`  `[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    label ``=`` ``label``,`\
 `    ui_args ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``decorators ``=`` ``decorators``)``,`\
 `    server_args ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``decorators ``=`` ``decorators``)``,`\
@@ -405,8 +405,8 @@ the transformations are then manually separated in the module functions.
 `        `[`selectInput`](https://rdrr.io/pkg/shiny/man/selectInput.html)`(``ns``(``"y"``)``, label ``=`` ``"Select y-axis"``, choices ``=`` ``NULL``)``,`\
 \
 `        ``# Separately inject UI for plot and table decorators`\
-`        `[`ui_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate_plot"``)``, transformators ``=`` ``decorators``$``plot``)``,`\
-`        `[`ui_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate_table"``)``, transformators ``=`` ``decorators``$``table``)``,`\
+`        `[`ui_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate_plot"``)``, transformators ``=`` ``decorators``$``plot``)``,`\
+`        `[`ui_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(``ns``(``"decorate_table"``)``, transformators ``=`` ``decorators``$``table``)``,`\
 `        `[`plotOutput`](https://rdrr.io/pkg/shiny/man/plotOutput.html)`(``ns``(``"plot"``)``)``,`\
 `        `[`tableOutput`](https://rdrr.io/pkg/shiny/man/renderTable.html)`(``ns``(``"table"``)``)``,`\
 `        `[`verbatimTextOutput`](https://rdrr.io/pkg/shiny/man/textOutput.html)`(``ns``(``"text"``)``)`\
@@ -436,7 +436,7 @@ the transformations are then manually separated in the module functions.
 `        ``# Separately create outputs within teal_data objects in separate reactive expressions`\
 `        ``plot_data`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``dataname``(``)``, ``x``(``)``, ``y``(``)``)`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `            ``{`\
 `              ``plot`` ``<-`` ``ggplot2``::`[`ggplot`](https://ggplot2.tidyverse.org/reference/ggplot.html)`(``dataname``, ``ggplot2``::`[`aes`](https://ggplot2.tidyverse.org/reference/aes.html)`(``x ``=`` ``xvar``, y ``=`` ``yvar``)``)`` ``+`\
 `                ``ggplot2``::`[`geom_point`](https://ggplot2.tidyverse.org/reference/geom_point.html)`(``)`\
@@ -448,7 +448,7 @@ the transformations are then manually separated in the module functions.
 `        ``}``)`\
 `        ``table_data`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `          `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``dataname``(``)``)`\
-`          `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
+`          `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `            ``{`\
 `              ``table_data`` ``<-`` `[`data.frame`](https://rdrr.io/r/base/data.frame.html)`(`[`lapply`](https://rdrr.io/r/base/lapply.html)`(``dataname``, ``mean``, na.rm ``=`` ``TRUE``)``)`\
 `            ``}``,`\
@@ -457,12 +457,12 @@ the transformations are then manually separated in the module functions.
 `        ``}``)`\
 \
 `        ``# Separately apply decoration to the outputs`\
-`        ``decorated_plot`` ``<-`` `[`srv_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(`\
+`        ``decorated_plot`` ``<-`` `[`srv_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(`\
 `          ``"decorate_plot"``,`\
 `          data ``=`` ``plot_data``,`\
 `          transformators ``=`` ``decorators``$``plot`\
 `        ``)`\
-`        ``decorated_table`` ``<-`` `[`srv_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(`\
+`        ``decorated_table`` ``<-`` `[`srv_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(`\
 `          ``"decorate_table"``,`\
 `          data ``=`` ``table_data``,`\
 `          transformators ``=`` ``decorators``$``table`\
@@ -472,8 +472,8 @@ the transformations are then manually separated in the module functions.
 `        ``output``$``table`` ``<-`` `[`renderTable`](https://rdrr.io/pkg/shiny/man/renderTable.html)`(``decorated_table``(``)``[[``"table_data"``]``]``)`\
 \
 `        ``output``$``text`` ``<-`` `[`renderText`](https://rdrr.io/pkg/shiny/man/renderPrint.html)`(``{`\
-`          ``plot_code`` ``<-`` ``teal.code``::`[`get_code`](https://insightsengineering.github.io/teal.code/latest-tag/reference/get_code.html)`(`[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``decorated_plot``(``)``)``)`\
-`          ``table_code`` ``<-`` ``teal.code``::`[`get_code`](https://insightsengineering.github.io/teal.code/latest-tag/reference/get_code.html)`(`[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``decorated_table``(``)``)``)`\
+`          ``plot_code`` ``<-`` ``teal.code``::`[`get_code`](https://rdrr.io/pkg/teal.code/man/get_code.html)`(`[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``decorated_plot``(``)``)``)`\
+`          ``table_code`` ``<-`` ``teal.code``::`[`get_code`](https://rdrr.io/pkg/teal.code/man/get_code.html)`(`[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``decorated_table``(``)``)``)`\
 `          `[`paste`](https://rdrr.io/r/base/paste.html)`(``"# Plot Code:"``, ``plot_code``, ``"\n\n# Table Code:"``, ``table_code``)`\
 `        ``}``)`\
 `      ``}``)`\
@@ -487,9 +487,9 @@ Note that a named list of transformations is passed to the module
 constructor.
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
-`  data ``=`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``iris ``=`` ``iris``, mtcars ``=`` ``mtcars``)``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
+`  data ``=`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``iris ``=`` ``iris``, mtcars ``=`` ``mtcars``)``,`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    ``tm_decorated_plot_table``(`\
 `      ``"plot_and_table"``,`\
 `      decorators ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(`\
@@ -520,7 +520,7 @@ transformator module. Note that the combination of
 simple `xlab(x_axis_table)`.
 
 \
-[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Static decorator"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -532,7 +532,7 @@ simple `xlab(x_axis_table)`.
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
 `        `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``)`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `          `[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `          ``{`\
 `            ``plot`` ``<-`` ``plot`` ``+`` ``ggtitle``(``"This is a better title"``)`` ``+`` ``xlab``(``x_axis_title``)`\
@@ -544,7 +544,7 @@ simple `xlab(x_axis_table)`.
 `  ``}`\
 `)`\
 \
-[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Static decorator (language)"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -552,7 +552,7 @@ simple `xlab(x_axis_table)`.
 `      `[`textInput`](https://rdrr.io/pkg/shiny/man/textInput.html)`(``ns``(``"x_axis_title"``)``, ``"X axis title"``, value ``=`` ``"x axis"``)`\
 `    ``)`\
 `  ``}``,`\
-`  server ``=`` `[`make_teal_transform_server`](https://insightsengineering.github.io/teal/reference/make_teal_transform_server.md)`(`\
+`  server ``=`` `[`make_teal_transform_server`](https://pharmaverse.github.io/teal/reference/make_teal_transform_server.md)`(`\
 `    `[`expression`](https://rdrr.io/r/base/expression.html)`(`\
 `      ``plot`` ``<-`` ``plot`` ``+`` ``ggtitle``(``"This is a better title"``)`` ``+`` ``xlab``(``x_axis_title``)`\
 `    ``)`\
@@ -562,7 +562,7 @@ simple `xlab(x_axis_table)`.
 ### Multiple Transformations
 
 Multiple decorators can be passed to
-[`srv_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)/[`ui_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md).
+[`srv_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)/[`ui_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md).
 They will be executed in sequence, errors and warnings will show up on
 the appropriate decorator. Remember that they should receive a list of
 `teal_transform_module`.
@@ -572,7 +572,7 @@ the appropriate decorator. Remember that they should receive a list of
 `ui_transform_module``(``ns``(``"decorate"``)``, ``decorators``)`\
 \
 `# in the module server function`\
-[`srv_transform_teal_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)`(`\
+[`srv_transform_teal_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)`(`\
 `  ``"decorate"``,`\
 `  data ``=`` ``data``,`\
 `  transformators ``=`` ``decorators``,`\

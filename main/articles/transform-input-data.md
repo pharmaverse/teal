@@ -3,12 +3,12 @@
 ## Introduction
 
 `teal` version `0.16` introduced a new, optional argument in
-[`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md),
+[`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md),
 `transformators`. This argument accepts a `list` of
 `teal_transform_module` objects, which are created using the
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 function.
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 takes `ui` and `server` arguments to create a `shiny` module that
 encodes data transformations.
 
@@ -28,7 +28,7 @@ teal_data](images/teal-transform-module-transformators.svg)
 
 In this vignette we will focus on using the `teal_transform_module` for
 transforming the input data using the `transformators` argument in
-[`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+[`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
 function.
 
 ## Creating a data transformation module
@@ -37,16 +37,16 @@ Let us initialize a simple `teal` app by providing `iris` and `mtcars`
 as input datasets.
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)``, ``{`\
+`data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)``, ``{`\
 `  ``iris`` ``<-`` ``iris`\
 `  ``mtcars`` ``<-`` ``mtcars`\
 `}``)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -65,22 +65,22 @@ return a reactive expression holding transformed `data`.
 
 *Note*: It is recommended to return
 [`reactive()`](https://rdrr.io/pkg/shiny/man/reactive.html) with
-[`teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
-in `server` code of a `teal_transform_module` as this is more robust for
+[`teal_data()`](https://rdrr.io/pkg/teal.data/man/teal_data.html) in
+`server` code of a `teal_transform_module` as this is more robust for
 maintaining the reactivity of Shiny. If you are planning on using
 [`eventReactive()`](https://rdrr.io/pkg/shiny/man/observeEvent.html) in
 the server, the event should include
 [`data()`](https://rdrr.io/r/utils/data.html) *(example
 `eventReactive(list(input$a, data()), {...})`)*. More in [this
-discussion](https://github.com/insightsengineering/teal/issues/1303#issuecomment-2286239832).
+discussion](https://github.com/pharmaverse/teal/issues/1303#issuecomment-2286239832).
 
 \
-`data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)``, ``{`\
+`data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)``, ``{`\
 `  ``iris`` ``<-`` ``iris`\
 `  ``mtcars`` ``<-`` ``mtcars`\
 `}``)`\
 \
-`transformator_iris`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`transformator_iris`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Custom transformator for iris"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -91,7 +91,7 @@ discussion](https://github.com/insightsengineering/teal/issues/1303#issuecomment
 `  server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `          `[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `          ``iris`` ``<-`` `[`head`](https://rdrr.io/r/utils/head.html)`(``iris``, ``num_rows``)``,`\
 `          num_rows ``=`` ``input``$``n_rows`\
@@ -101,9 +101,9 @@ discussion](https://github.com/insightsengineering/teal/issues/1303#issuecomment
 `  ``}`\
 `)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``transformators ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``transformator_iris``)``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``transformators ``=`` `[`list`](https://rdrr.io/r/base/list.html)`(``transformator_iris``)``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -121,7 +121,7 @@ you do use
 trigger event should include
 [`data()`](https://rdrr.io/r/utils/data.html) (*e.g.*
 `eventReactive(list(input$a, data()), {...})`). See [this
-discussion](https://github.com/insightsengineering/teal/issues/1303#issuecomment-2286239832)
+discussion](https://github.com/pharmaverse/teal/issues/1303#issuecomment-2286239832)
 for a detailed explanation.
 
 ### Multiple transformators
@@ -136,12 +136,12 @@ in `mtcars`. Note that this module does not have interactive UI
 elements.
 
 \
-`data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)``, ``{`\
+`data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)``, ``{`\
 `  ``iris`` ``<-`` ``iris`\
 `  ``mtcars`` ``<-`` ``mtcars`\
 `}``)`\
 \
-`transformator_iris`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`transformator_iris`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Custom transformator for iris"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -152,7 +152,7 @@ elements.
 `  server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `          `[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `          ``iris`` ``<-`` `[`head`](https://rdrr.io/r/utils/head.html)`(``iris``, ``num_rows``)``,`\
 `          num_rows ``=`` ``input``$``n_rows`\
@@ -162,7 +162,7 @@ elements.
 `  ``}`\
 `)`\
 \
-`transformator_mtcars`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`transformator_mtcars`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Custom transformator for mtcars"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -173,7 +173,7 @@ elements.
 `  server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
 `          ``mtcars``$``rownames`` ``<-`` `[`rownames`](https://rdrr.io/r/base/colnames.html)`(``mtcars``)`\
 `          `[`rownames`](https://rdrr.io/r/base/colnames.html)`(``mtcars``)`` ``<-`` ``NULL`\
 `        ``}``)`\
@@ -187,9 +187,9 @@ elements.
 `  ``transformator_mtcars`\
 `)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``transformators ``=`` ``my_transformators``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``transformators ``=`` ``my_transformators``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -203,12 +203,12 @@ dataset. In such cases, transformations will be executed in the same
 order in which the transformator modules are passed to the module.
 
 \
-`data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)``, ``{`\
+`data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)``, ``{`\
 `  ``iris`` ``<-`` ``iris`\
 `  ``mtcars`` ``<-`` ``mtcars`\
 `}``)`\
 \
-`transformator_iris_scale`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`transformator_iris_scale`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Scaling transformator for iris"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -231,7 +231,7 @@ order in which the transformator modules are passed to the module.
 `      ``}``)`\
 \
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `          `[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `          ``{`\
 `            ``iris``[``scaled_columns``]`` ``<-`` `[`scale`](https://rdrr.io/r/base/scale.html)`(``iris``[``scaled_columns``]``)`\
@@ -243,7 +243,7 @@ order in which the transformator modules are passed to the module.
 `  ``}`\
 `)`\
 \
-`transformator_iris`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`transformator_iris`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Custom transformator for iris"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -254,7 +254,7 @@ order in which the transformator modules are passed to the module.
 `  server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `          `[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `          ``iris`` ``<-`` `[`head`](https://rdrr.io/r/utils/head.html)`(``iris``, ``num_rows``)``,`\
 `          num_rows ``=`` ``input``$``n_rows`\
@@ -264,7 +264,7 @@ order in which the transformator modules are passed to the module.
 `  ``}`\
 `)`\
 \
-`transformator_mtcars`` ``<-`` `[`teal_transform_module`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)`(`\
+`transformator_mtcars`` ``<-`` `[`teal_transform_module`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)`(`\
 `  label ``=`` ``"Custom transformator for mtcars"``,`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
@@ -275,7 +275,7 @@ order in which the transformator modules are passed to the module.
 `  server ``=`` ``function``(``id``, ``data``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`        `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
+`        `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`data`](https://rdrr.io/r/utils/data.html)`(``)``, ``{`\
 `          ``mtcars``$``rownames`` ``<-`` `[`rownames`](https://rdrr.io/r/base/colnames.html)`(``mtcars``)`\
 `          `[`rownames`](https://rdrr.io/r/base/colnames.html)`(``mtcars``)`` ``<-`` ``NULL`\
 `        ``}``)`\
@@ -290,9 +290,9 @@ order in which the transformator modules are passed to the module.
 `  ``transformator_mtcars`\
 `)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``transformators ``=`` ``my_transformators``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``transformators ``=`` ``my_transformators``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\

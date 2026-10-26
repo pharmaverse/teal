@@ -22,4 +22,4 @@ modification.
 
 A complete explanation of using the `teal_data_module` can be found in
 [this `teal`
-vignette](https://insightsengineering.github.io/teal/articles/data-as-shiny-module.md)
+vignette](https://pharmaverse.github.io/teal/articles/data-as-shiny-module.md)

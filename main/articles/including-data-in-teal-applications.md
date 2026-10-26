@@ -23,10 +23,10 @@ A `teal_data` object is created by calling the `teal_data` function and
 passing data objects as `name:value` pairs.
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
 `# create teal_data`\
-`data`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``iris ``=`` ``iris``, cars ``=`` ``mtcars``)`
+`data`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``iris ``=`` ``iris``, cars ``=`` ``mtcars``)`
 
 Note that `iris` and `cars` have been added to the `datanames` property
 of `data` (see [`datanames` property](#teal_data-properties)).
@@ -35,9 +35,9 @@ This is sufficient to run a `teal` app.
 
 \
 `# build app`\
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)`\
 `)`\
 \
 `# run app`\
@@ -54,13 +54,13 @@ function.
 
 \
 `# create empty object`\
-`data_empty`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)`\
+`data_empty`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)`\
 \
 `# run code in the object`\
-`data_populated_1`` ``<-`` `[`eval_code`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``data_empty``, code ``=`` ``"iris <- iris`\
+`data_populated_1`` ``<-`` `[`eval_code`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``data_empty``, code ``=`` ``"iris <- iris`\
 `                                                  cars <- mtcars"``)`\
 `# alternative`\
-`data_populated_2`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``data_empty``, ``{`\
+`data_populated_2`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``data_empty``, ``{`\
 `  ``iris`` ``<-`` ``iris`\
 `  ``cars`` ``<-`` ``mtcars`\
 `}``)`
@@ -69,8 +69,7 @@ The key difference between `eval_code` and `within` is that the former
 accepts code as character vector or language objects (`call`s and
 `expression`s), while `within` accepts *only* inline code. For a deeper
 understanding check the low level class
-[`?qenv`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html)
-for more details.
+[`?qenv`](https://rdrr.io/pkg/teal.code/man/qenv.html) for more details.
 
 Note that in the first example `data` was created by passing data
 objects. If it can be found on the base environment it will be processed
@@ -85,7 +84,7 @@ reveals it:
 
 \
 `m`` ``<-`` `[`diag`](https://rdrr.io/r/base/diag.html)`(``5``)`\
-`data_populated_3`` ``<-`` `[`eval_code`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``data_empty``, code ``=`` ``"D5 <- m"``)`\
+`data_populated_3`` ``<-`` `[`eval_code`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``data_empty``, code ``=`` ``"D5 <- m"``)`\
 `data_populated_3`\
 `#> <qenv.error: object 'm' not found `\
 `#>  when evaluating qenv code:`\
@@ -95,10 +94,10 @@ The necessary code can be supplied to the `code` argument of the to the
 `eval_code` function .
 
 \
-`data_populated_4`` ``<-`` `[`eval_code`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``data_empty``, code ``=`` ``"D5 <- diag(5)"``)`\
+`data_populated_4`` ``<-`` `[`eval_code`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``data_empty``, code ``=`` ``"D5 <- diag(5)"``)`\
 `data_populated_4`\
 `#> ✅︎ code verified`\
-`#> ``<environment: 0x555ed9650888>`` 🔒 `\
+`#> ``<environment: 0x55a458b69890>`` 🔒 `\
 `#> Parent: <environment: package:teal> `\
 `#> ``Bindings:`\
 `#> ``- D5: [matrix]`
@@ -116,8 +115,8 @@ door to using code stored in a file.
 
 \
 `# not run`\
-`data_from_file`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)`\
-`data_from_file`` ``<-`` `[`eval_code`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``data``, `[`readLines`](https://rdrr.io/r/base/readLines.html)`(``"<path_to_file>"``)``)`
+`data_from_file`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)`\
+`data_from_file`` ``<-`` `[`eval_code`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``data``, `[`readLines`](https://rdrr.io/r/base/readLines.html)`(``"<path_to_file>"``)``)`
 
 ### Creating data in-app
 
@@ -125,7 +124,7 @@ The one departure from passing a `teal_data` object to `init` is when
 the data does not exist in the environment where the app is run, *e.g.*
 when it has to be pulled from a remote source. In those cases a
 `teal_data_module` must be used. See [this
-vignette](https://insightsengineering.github.io/teal/articles/data-as-shiny-module.md)
+vignette](https://pharmaverse.github.io/teal/articles/data-as-shiny-module.md)
 for a detailed description.
 
 \
@@ -145,11 +144,11 @@ advantage of that fact to automatically set default joining keys (see
 
 \
 `# create cdisc_data`\
-`data_cdisc`` ``<-`` `[`cdisc_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/cdisc_data.html)`(``ADSL ``=`` ``teal.data``::`[`rADSL`](https://insightsengineering.github.io/teal.data/latest-tag/reference/random_cdisc_data.html)`, ADTTE ``=`` ``teal.data``::`[`rADSL`](https://insightsengineering.github.io/teal.data/latest-tag/reference/random_cdisc_data.html)`)`\
+`data_cdisc`` ``<-`` `[`cdisc_data`](https://rdrr.io/pkg/teal.data/man/cdisc_data.html)`(``ADSL ``=`` ``teal.data``::`[`rADSL`](https://rdrr.io/pkg/teal.data/man/random_cdisc_data.html)`, ADTTE ``=`` ``teal.data``::`[`rADSL`](https://rdrr.io/pkg/teal.data/man/random_cdisc_data.html)`)`\
 \
 [`names`](https://rdrr.io/r/base/names.html)`(``data_cdisc``)`\
 `#> [1] "ADSL"  "ADTTE"`\
-[`join_keys`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_keys.html)`(``data_cdisc``)`\
+[`join_keys`](https://rdrr.io/pkg/teal.data/man/join_keys.html)`(``data_cdisc``)`\
 `#> A join_keys object containing foreign keys between 2 datasets:`\
 `#> ADSL: [STUDYID, USUBJID]`\
 `#>   <-- ADTTE: [STUDYID, USUBJID]`\
@@ -157,9 +156,9 @@ advantage of that fact to automatically set default joining keys (see
 `#>   --> ADSL: [STUDYID, USUBJID]`
 
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data_cdisc``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)`\
 `)`\
 [`shinyApp`](https://rdrr.io/pkg/shiny/man/shinyApp.html)`(``app``$``ui``, ``app``$``server``)`
 
@@ -181,11 +180,11 @@ like normal objects.
 [`library`](https://rdrr.io/r/base/library.html)`(`[`MultiAssayExperiment`](http://waldronlab.io/MultiAssayExperiment/)`)`\
 `utils``::`[`data`](https://rdrr.io/r/utils/data.html)`(``miniACC``)`\
 \
-`data_mae`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``MAE ``=`` ``miniACC``)`\
+`data_mae`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``MAE ``=`` ``miniACC``)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data_mae``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)`\
 `)`\
 [`shinyApp`](https://rdrr.io/pkg/shiny/man/shinyApp.html)`(``app``$``ui``, ``app``$``server``)`
 
@@ -221,17 +220,17 @@ function.
 `  group ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"A"``, ``"B"``)``,`\
 `  condition ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"condition1"``, ``"condition2"``)`\
 `)`\
-`keys`` ``<-`` `[`join_keys`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_keys.html)`(`\
-`  `[`join_key`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_key.html)`(``"DS1"``, keys ``=`` ``"id"``)``,`\
-`  `[`join_key`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_key.html)`(``"DS2"``, keys ``=`` ``"group"``)``,`\
-`  `[`join_key`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_key.html)`(``"DS1"``, ``"DS2"``, keys ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"group"`` ``=`` ``"group"``)``)`\
+`keys`` ``<-`` `[`join_keys`](https://rdrr.io/pkg/teal.data/man/join_keys.html)`(`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"DS1"``, keys ``=`` ``"id"``)``,`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"DS2"``, keys ``=`` ``"group"``)``,`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"DS1"``, ``"DS2"``, keys ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"group"`` ``=`` ``"group"``)``)`\
 `)`\
-`data_relational1`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``DS1 ``=`` ``ds1``, DS2 ``=`` ``ds2``, join_keys ``=`` ``keys``)`\
-`data_relational2`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``DS1 ``=`` ``ds1``, DS2 ``=`` ``ds2``)`\
-[`join_keys`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_keys.html)`(``data_relational2``)`` ``<-`` ``keys`
+`data_relational1`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``DS1 ``=`` ``ds1``, DS2 ``=`` ``ds2``, join_keys ``=`` ``keys``)`\
+`data_relational2`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``DS1 ``=`` ``ds1``, DS2 ``=`` ``ds2``)`\
+[`join_keys`](https://rdrr.io/pkg/teal.data/man/join_keys.html)`(``data_relational2``)`` ``<-`` ``keys`
 
 For a detailed explanation of join keys, see [this `teal.data`
-vignette](https://insightsengineering.github.io/teal.data/latest-tag/articles/join-keys.html).
+vignette](https://pharmaverse.github.io/teal.data/latest-tag/articles/join-keys.html).
 
 [(back to `ADaM` Data)](#adam-data)
 
@@ -247,26 +246,26 @@ objects and code are not verified by default, but can become verified by
 running the `verify` function.
 
 \
-`data_with_objects_and_code`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``iris ``=`` ``iris``, cars ``=`` ``mtcars``, code ``=`` `[`expression`](https://rdrr.io/r/base/expression.html)`(``iris`` ``<-`` ``iris``, ``cars`` ``<-`` ``mtcars``)``)`\
+`data_with_objects_and_code`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``iris ``=`` ``iris``, cars ``=`` ``mtcars``, code ``=`` `[`expression`](https://rdrr.io/r/base/expression.html)`(``iris`` ``<-`` ``iris``, ``cars`` ``<-`` ``mtcars``)``)`\
 `data_with_objects_and_code`\
 `#> ✖ code unverified`\
-`#> ``<environment: 0x555ed7a45968>`` 🔒 `\
+`#> ``<environment: 0x55a456f5c200>`` 🔒 `\
 `#> Parent: <environment: package:teal> `\
 `#> ``Bindings:`\
 `#> ``- cars: [data.frame]`\
 `#> - iris: [data.frame]`\
 \
-`data_with_objects_and_code_ver`` ``<-`` `[`verify`](https://insightsengineering.github.io/teal.data/latest-tag/reference/verify.html)`(``data_with_objects_and_code``)`\
+`data_with_objects_and_code_ver`` ``<-`` `[`verify`](https://rdrr.io/pkg/teal.data/man/verify.html)`(``data_with_objects_and_code``)`\
 `data_with_objects_and_code_ver`\
 `#> ✅︎ code verified`\
-`#> ``<environment: 0x555ed7a45968>`` 🔒 `\
+`#> ``<environment: 0x55a456f5c200>`` 🔒 `\
 `#> Parent: <environment: package:teal> `\
 `#> ``Bindings:`\
 `#> ``- cars: [data.frame]`\
 `#> - iris: [data.frame]`
 
 For a detailed explanation of verification, see [this `teal.data`
-vignette](https://insightsengineering.github.io/teal.data/latest-tag/articles/teal-data-reproducibility.html).
+vignette](https://pharmaverse.github.io/teal.data/latest-tag/articles/teal-data-reproducibility.html).
 
 [(back to Reproducible Data)](#reproducible-data)
 
@@ -284,8 +283,8 @@ example:
 - Connection objects
 
 \
-`my_data`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)`\
-`my_data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(``my_data``, ``{`\
+`my_data`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)`\
+`my_data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``my_data``, ``{`\
 `  ``.data1`` ``<-`` `[`data.frame`](https://rdrr.io/r/base/data.frame.html)`(``id ``=`` ``1``:``10``, x ``=`` ``11``:``20``)`\
 `  ``.data2`` ``<-`` `[`data.frame`](https://rdrr.io/r/base/data.frame.html)`(``id ``=`` ``1``:``10``, y ``=`` ``11``:``20``)`\
 `  ``data`` ``<-`` `[`merge`](https://rdrr.io/r/base/merge.html)`(``.data1``, ``.data2``)`\
@@ -296,7 +295,7 @@ example:
 [`names`](https://rdrr.io/r/base/names.html)`(``my_data``)`\
 `#> [1] "data"`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(``data ``=`` ``my_data``, modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)``)`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(``data ``=`` ``my_data``, modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)``)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
 `  `[`shinyApp`](https://rdrr.io/pkg/shiny/man/shinyApp.html)`(``app``$``ui``, ``app``$``server``)`\
@@ -306,4 +305,4 @@ example:
 
 For a complete guide to the `teal_data` class, please refer to the
 [`teal.data`
-package](https://insightsengineering.github.io/teal.data/latest-tag/).
+package](https://pharmaverse.github.io/teal.data/latest-tag/).

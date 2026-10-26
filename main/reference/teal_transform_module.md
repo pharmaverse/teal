@@ -31,7 +31,7 @@ teal_transform_module(
   module id and `data` is the reactive `teal_data` input. The `server`
   function must return a reactive expression containing a `teal_data`
   object. For simplified syntax, use
-  [`make_teal_transform_server()`](https://insightsengineering.github.io/teal/reference/make_teal_transform_server.md).
+  [`make_teal_transform_server()`](https://pharmaverse.github.io/teal/reference/make_teal_transform_server.md).
 
 - label:
 
@@ -43,44 +43,44 @@ teal_transform_module(
   Only filters for the specified `datanames` will be displayed in the
   filter panel. The keyword `"all"` can be used to display filters for
   all datasets. `datanames` are automatically appended to the
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   `datanames`.
 
 ## Transforming Module Inputs in `teal`
 
 Data transformations occur after data has been filtered in `teal`. The
 transformed data is then passed to the `server` of
-[`teal_module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+[`teal_module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
 and managed by `teal`'s internal processes. The primary advantage of
 `teal_transform_module` over custom modules is in its error handling,
 where all warnings and errors are managed by `teal`, allowing developers
 to focus on transformation logic.
 
 For more details, see the vignette:
-[`vignette("transform-input-data", package = "teal")`](https://insightsengineering.github.io/teal/articles/transform-input-data.md).
+[`vignette("transform-input-data", package = "teal")`](https://pharmaverse.github.io/teal/articles/transform-input-data.md).
 
 ## Customizing Module Outputs
 
 `teal_transform_module` also allows developers to modify any object
 created within
-[`teal.data::teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html).
+[`teal.data::teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html).
 This means you can use it to customize not only datasets but also
 tables, listings, and graphs. Some
-[`teal_modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+[`teal_modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
 permit developers to inject custom `shiny` modules to enhance displayed
 outputs. To manage these `decorators` within your module, see
-[`module_transform_data`](https://insightsengineering.github.io/teal/reference/module_transform_data.md).
+[`module_transform_data`](https://pharmaverse.github.io/teal/reference/module_transform_data.md).
 (For further guidance on managing decorators, refer to `ui_args` and
 `srv_args` in the vignette documentation.)
 
 See the vignette
-[`vignette("transform-module-output", package = "teal")`](https://insightsengineering.github.io/teal/articles/transform-module-output.md)
+[`vignette("transform-module-output", package = "teal")`](https://pharmaverse.github.io/teal/articles/transform-module-output.md)
 for additional examples.
 
 ## `server` as a language
 
 The `server` function in `teal_transform_module` must return a reactive
-[`teal.data::teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+[`teal.data::teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)
 object. For simple transformations without complex reactivity, the
 `server` function might look like this:s
 

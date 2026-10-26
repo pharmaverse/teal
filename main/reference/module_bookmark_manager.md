@@ -26,9 +26,9 @@ need_bookmarking(modules)
 
   (`teal_modules`) `teal_modules` object. These are the specific output
   modules which will be displayed in the `teal` application. See
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   and
-  [`module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   for more details.
 
 ## Value

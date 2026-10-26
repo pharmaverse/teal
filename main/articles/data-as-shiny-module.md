@@ -31,20 +31,19 @@ frequently updated. Such data cannot be created once and kept in the
 global environment. Using `teal_data_module` enables creating a dataset
 from scratch every time the user starts the application.
 
-*See
-[`?qenv`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html)
-for a detailed explanation of how to use the `within` method.*
+*See [`?qenv`](https://rdrr.io/pkg/teal.code/man/qenv.html) for a
+detailed explanation of how to use the `within` method.*
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
-`data_module`` ``<-`` `[`teal_data_module`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`data_module`` ``<-`` `[`teal_data_module`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `  ui ``=`` ``function``(``id``)`` ``tags``$``div``(``)``,`\
 `  server ``=`` ``function``(``id``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
-`        ``data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
-`          `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)``,`\
+`        ``data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
+`          `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)``,`\
 `          ``{`\
 `            ``dataset1`` ``<-`` ``iris`\
 `            ``dataset2`` ``<-`` ``mtcars`\
@@ -57,9 +56,9 @@ for a detailed explanation of how to use the `within` method.*
 `)`\
 \
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data_module``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -77,12 +76,12 @@ The following example illustrates how `teal_data_module` can be utilized
 to subset data based on the user inputs:
 
 \
-`data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(``)``, ``{`\
+`data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``)``, ``{`\
 `  ``dataset1`` ``<-`` ``iris`\
 `  ``dataset2`` ``<-`` ``mtcars`\
 `}``)`\
 \
-`data_module`` ``<-`` `[`teal_data_module`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`data_module`` ``<-`` `[`teal_data_module`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `  ui ``=`` ``function``(``id``)`` ``{`\
 `    ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
 `    ``tags``$``div``(`\
@@ -95,7 +94,7 @@ to subset data based on the user inputs:
 `  server ``=`` ``function``(``id``)`` ``{`\
 `    `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
 `      `[`eventReactive`](https://rdrr.io/pkg/shiny/man/observeEvent.html)`(``input``$``submit``, ``{`\
-`        ``data_modified`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`        ``data_modified`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `          ``data``,`\
 `          ``dataset1`` ``<-`` `[`subset`](https://rdrr.io/r/base/subset.html)`(``dataset1``, ``Species`` `[`%in%`](https://rdrr.io/r/base/match.html)` ``selected``)``,`\
 `          selected ``=`` ``input``$``species`\
@@ -106,9 +105,9 @@ to subset data based on the user inputs:
 `  ``}`\
 `)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data_module``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\
@@ -141,7 +140,7 @@ modifies `data_module` so that new columns are added once the data is
 retrieved.
 
 \
-`data_module_2`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`data_module_2`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `  ``data_module``,`\
 `  ``{`\
 `    ``# Create new column with Ratio of Sepal.Width and Petal.Width`\
@@ -151,9 +150,9 @@ retrieved.
 `  ``}`\
 `)`\
 \
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data_module_2``,`\
-`  modules ``=`` `[`example_module`](https://insightsengineering.github.io/teal/reference/example_module.md)`(``)`\
+`  modules ``=`` `[`example_module`](https://pharmaverse.github.io/teal/reference/example_module.md)`(``)`\
 `)`\
 \
 `if`` ``(`[`interactive`](https://rdrr.io/r/base/interactive.html)`(``)``)`` ``{`\

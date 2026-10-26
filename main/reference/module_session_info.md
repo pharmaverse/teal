@@ -2,9 +2,9 @@
 
 Module to display the user session info popup and to download a
 lockfile. Module is included when running
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md)
-but skipped when using
-[`module_teal`](https://insightsengineering.github.io/teal/reference/module_teal.md).
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md) but
+skipped when using
+[`module_teal`](https://pharmaverse.github.io/teal/reference/module_teal.md).
 Please be aware that session info contains R session information, so
 multiple module's calls will share the same information.
 

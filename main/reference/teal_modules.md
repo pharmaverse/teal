@@ -66,16 +66,16 @@ print(x, ...)
 
   - `datasets` (optional) When provided, the module will be called with
     `FilteredData` object as the value of this argument. (See
-    [`teal.slice::FilteredData`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/FilteredData.html)).
+    [`teal.slice::FilteredData`](https://rdrr.io/pkg/teal.slice/man/FilteredData.html)).
 
   - `reporter` (optional) When provided, the module will be called with
     `Reporter` object as the value of this argument. (See
-    [`teal.reporter::Reporter`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/Reporter.html)).
+    [`teal.reporter::Reporter`](https://rdrr.io/pkg/teal.reporter/man/Reporter.html)).
 
   - `filter_panel_api` (optional) When provided, the module will be
     called with `FilterPanelAPI` object as the value of this argument.
     (See
-    [`teal.slice::FilterPanelAPI`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/FilterPanelAPI.html)).
+    [`teal.slice::FilterPanelAPI`](https://rdrr.io/pkg/teal.slice/man/FilterPanelAPI.html)).
 
   - `...` (optional) When provided, `server_args` elements will be
     passed to the module named argument or to the `...`.
@@ -119,7 +119,7 @@ print(x, ...)
 
   (`list` of `teal_transform_module`) that will be applied to transform
   module's data input. To learn more check
-  [`vignette("transform-input-data", package = "teal")`](https://insightsengineering.github.io/teal/articles/transform-input-data.md).
+  [`vignette("transform-input-data", package = "teal")`](https://pharmaverse.github.io/teal/articles/transform-input-data.md).
 
 - ...:
 
@@ -174,9 +174,9 @@ passed as a named argument, otherwise it will be captured by `...`.
 
 The labels `"global_filters"` and `"Report previewer"` are reserved
 because they are used by the `mapping` argument of
-[`teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md)
+[`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md)
 and the report previewer module
-[`reporter_previewer_module()`](https://insightsengineering.github.io/teal/reference/reporter_previewer_module.md),
+[`reporter_previewer_module()`](https://pharmaverse.github.io/teal/reference/reporter_previewer_module.md),
 respectively.
 
 ## Restricting datasets used by `teal_module`:

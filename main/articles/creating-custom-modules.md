@@ -66,7 +66,7 @@ For this module, we will use:
 Here’s the code for the `histogram_module_ui` function:
 
 \
-[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://insightsengineering.github.io/teal/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal`](https://pharmaverse.github.io/teal/)`)`\
 \
 `# UI function for the custom histogram module`\
 `histogram_module_ui`` ``<-`` ``function``(``id``)`` ``{`\
@@ -118,7 +118,7 @@ The correct function definition for the server function is:
 
 If you need a refresher on the `teal_data` object, please visit the
 [teal.data package
-documentation](https://insightsengineering.github.io/teal.data/latest-tag/articles/teal-data.html).
+documentation](https://pharmaverse.github.io/teal.data/latest-tag/articles/teal-data.html).
 
 ### Understanding `teal_data` as a Reactive Object in Server Logic
 
@@ -168,7 +168,7 @@ In this updated server function, we will perform the following:
 
 1.  **Create `new_data`** as a modified version of
     [`data()`](https://rdrr.io/r/utils/data.html) using
-    [`within()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md),
+    [`within()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md),
     dynamically injecting `input$dataset` and `input$variable`.
 2.  **Render the Plot**:
     [`renderPlot()`](https://rdrr.io/pkg/shiny/man/renderPlot.html)
@@ -176,7 +176,7 @@ In this updated server function, we will perform the following:
     `teal_data` object, `new_data`.
 3.  **Return the data**: To allow for reporting capabilities we need to
     return the data. See [adding support for reporting
-    vignette](https://insightsengineering.github.io/teal/articles/adding-support-for-reporting.md)
+    vignette](https://pharmaverse.github.io/teal/articles/adding-support-for-reporting.md)
 
 Here’s the code:
 
@@ -205,7 +205,7 @@ Here’s the code:
 `      `[`req`](https://rdrr.io/pkg/shiny/man/req.html)`(``input``$``dataset``, ``input``$``variable``)`` ``# Ensure both dataset and variable are selected`\
 \
 `      ``# Create a new teal_data object with the histogram plot`\
-`      ``new_data`` ``<-`` `[`within`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)`(`\
+`      ``new_data`` ``<-`` `[`within`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(`\
 `        `[`data`](https://rdrr.io/r/utils/data.html)`(``)``,`\
 `        ``{`\
 `          ``my_plot`` ``<-`` `[`hist`](https://rdrr.io/r/graphics/hist.html)`(`\
@@ -230,7 +230,7 @@ Here’s the code:
 \
 `    ``# Reactive expression to get the generated code for the plot`\
 `    ``output``$``plot_code`` ``<-`` ``shiny``::`[`renderText`](https://rdrr.io/pkg/shiny/man/renderPrint.html)`(``{`\
-`      ``teal.code``::`[`get_code`](https://insightsengineering.github.io/teal.code/latest-tag/reference/get_code.html)`(``result``(``)``)`` ``` # Retrieve and display the code for the updated `teal_data` object ``\
+`      ``teal.code``::`[`get_code`](https://rdrr.io/pkg/teal.code/man/get_code.html)`(``result``(``)``)`` ``` # Retrieve and display the code for the updated `teal_data` object ``\
 `    ``}``)`\
 `    ``result`\
 `  ``}``)`\
@@ -239,13 +239,13 @@ Here’s the code:
 Let’s review what we’ve done so far:
 
 1.  **Dynamic Variable Injection with
-    [`within()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)**:
+    [`within()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)**:
     - `input_dataset = as.name(input$dataset)` passes the dataset name
       dynamically as `input_dataset`.
     - `input_vars = input$variable` passes the selected variable name
       directly as `input_vars`.
     - Inside
-      [`within()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md),
+      [`within()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md),
       `my_plot` uses these injected variables to dynamically generate
       the histogram plot.
 2.  **Rendering the Plot**:
@@ -261,7 +261,7 @@ Let’s review what we’ve done so far:
 ## Creating the Custom `teal` Module Function
 
 The
-[`teal::module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+[`teal::module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
 function allows you to encapsulate your UI and server logic into a
 `teal` module, making it reusable and ready to integrate into any `teal`
 application.
@@ -269,13 +269,13 @@ application.
 By setting `datanames = "all"`, you give the module access to all
 datasets specified in the `teal_data` object. Datasets which names start
 with `.` won’t be included (see [Hidden
-datasets](https://insightsengineering.github.io/teal/articles/including-data-in-teal-applications.html#hidden-datasets)
+datasets](https://pharmaverse.github.io/teal/articles/including-data-in-teal-applications.html#hidden-datasets)
 section).
 
 \
 `# Custom histogram module creation`\
 `create_histogram_module`` ``<-`` ``function``(``label`` ``=`` ``"Histogram Module"``)`` ``{`\
-`  ``teal``::`[`module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(`\
+`  ``teal``::`[`module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(`\
 `    label ``=`` ``label``,`\
 `    ui ``=`` ``histogram_module_ui``,`\
 `    server ``=`` ``histogram_module_server``,`\
@@ -287,21 +287,21 @@ section).
 
 With the custom `teal` module set up, it can now be integrated into a
 `teal` app. We’ll use
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md)
-from `teal` to specify the datasets and modules used in the app, then
-run the app to test the newly created module.
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md) from
+`teal` to specify the datasets and modules used in the app, then run the
+app to test the newly created module.
 
 \
 `` # Define datasets in `teal_data` ``\
-`data_obj`` ``<-`` `[`teal_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)`(`\
+`data_obj`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(`\
 `  iris ``=`` ``iris``,`\
 `  mtcars ``=`` ``mtcars`\
 `)`\
 \
 `# Initialize the teal app`\
-`app`` ``<-`` `[`init`](https://insightsengineering.github.io/teal/reference/init.md)`(`\
+`app`` ``<-`` `[`init`](https://pharmaverse.github.io/teal/reference/init.md)`(`\
 `  data ``=`` ``data_obj``,`\
-`  modules ``=`` `[`modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)`(``create_histogram_module``(``)``)`\
+`  modules ``=`` `[`modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)`(``create_histogram_module``(``)``)`\
 `)`\
 \
 `# Run the app`\
@@ -327,13 +327,13 @@ functionality and user experience.
 
 Enhance your custom `teal` module with reporting features! Dive into
 [this
-vignette](https://insightsengineering.github.io/teal/articles/adding-support-for-reporting.md)
+vignette](https://pharmaverse.github.io/teal/articles/adding-support-for-reporting.md)
 to see just how simple it is to add powerful reporting capabilities and
 elevate your module’s impact.
 
 ### Using standard widgets in your custom module
 
 The
-[`teal.widgets`](https://insightsengineering.github.io/teal.widgets/latest-tag/)
+[`teal.widgets`](https://pharmaverse.github.io/teal.widgets/latest-tag/)
 package provides various widgets which can be leveraged to quickly
 create standard elements in your custom `teal` module.

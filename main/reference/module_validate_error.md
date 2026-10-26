@@ -2,14 +2,14 @@
 
 This is a low level module to handle `teal_data_module` execution and
 validation.
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 inherits from
-[`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+[`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
 so it is handled by this module too.
-[`srv_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md)
+[`srv_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md)
 accepts various `data` objects and eventually they are all transformed
 to `reactive`
-[`teal.data::teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+[`teal.data::teal_data()`](https://rdrr.io/pkg/teal.data/man/teal_data.html)
 which is a standard data class in whole `teal` framework.
 
 ## Usage
@@ -54,26 +54,26 @@ srv_check_module_datanames(id, data, modules)
 ## data validation
 
 Executed
-[`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+[`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
 is validated and output is validated for consistency. Output `data` is
 invalid if:
 
-1.  [`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+1.  [`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
     is invalid if server doesn't return `reactive`. **Immediately
     crashes an app!**
 
 2.  `reactive` throws a `shiny.error` - happens when module creating
-    [`teal.data::teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+    [`teal.data::teal_data()`](https://rdrr.io/pkg/teal.data/man/teal_data.html)
     fails.
 
 3.  `reactive` returns `qenv.error` - happens when
-    [`teal.data::teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+    [`teal.data::teal_data()`](https://rdrr.io/pkg/teal.data/man/teal_data.html)
     evaluates a failing code.
 
 4.  `reactive` object doesn't return
-    [`teal.data::teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html).
+    [`teal.data::teal_data()`](https://rdrr.io/pkg/teal.data/man/teal_data.html).
 
-5.  [`teal.data::teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+5.  [`teal.data::teal_data()`](https://rdrr.io/pkg/teal.data/man/teal_data.html)
     object lacks any `datanames` specified in the `modules` argument.
 
 `teal` (observers in `srv_teal`) always waits to render an app until

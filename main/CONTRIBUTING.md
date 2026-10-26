@@ -26,22 +26,22 @@ feedback, regardless of size, content or scope.
 ## Getting started
 
 Please refer the project
-[documentation](https://insightsengineering.github.io/teal/latest-tag/index.html)
+[documentation](https://pharmaverse.github.io/teal/latest-tag/index.html)
 for a brief introduction. Please also see other
-[articles](https://insightsengineering.github.io/teal/latest-tag/articles/index.html)
+[articles](https://pharmaverse.github.io/teal/latest-tag/articles/index.html)
 within the project documentation for additional information.
 
 ## Code of Conduct
 
 A [Code of
-Conduct](https://insightsengineering.github.io/teal/CODE_OF_CONDUCT.md)
-governs this project. Participants and contributors are expected to
-follow the rules outlined therein.
+Conduct](https://pharmaverse.github.io/teal/CODE_OF_CONDUCT.md) governs
+this project. Participants and contributors are expected to follow the
+rules outlined therein.
 
 ## License
 
 All your contributions will be covered by this project’s
-[license](https://insightsengineering.github.io/teal/latest-tag/LICENSE-text.html).
+[license](https://pharmaverse.github.io/teal/latest-tag/LICENSE-text.html).
 
 ## Issues
 
@@ -181,8 +181,7 @@ Pre-commit hooks are already available in this repository’s
 
 As mentioned previously, all contributions are deeply valued and
 appreciated. While all contribution data is available as part of the
-[repository
-insights](https://github.com/insightsengineering/teal/pulse), to
+[repository insights](https://github.com/pharmaverse/teal/pulse), to
 recognize a *significant* contribution and hence add the contributor to
 the package authors list, the following rules are enforced:
 
