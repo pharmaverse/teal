@@ -85,12 +85,11 @@ Config/Needs/verdepcheck: rstudio/shiny, pharmaverse/teal.data,
     r-lib/lifecycle, daroczig/logger, r-lib/mirai, r-lib/cli,
     r-lib/nanonext, rstudio/renv, r-lib/rlang, daattali/shinyjs,
     pharmaverse/teal.code, pharmaverse/teal.logger,
-    pharmaverse/teal.reporter, pharmaverse/teal.widgets,
-    rstudio/bslib, yihui/knitr, bioc::MultiAssayExperiment, r-lib/R6,
-    rstudio/rmarkdown, tidyverse/rvest, rstudio/shinytest2,
-    rstudio/shinyvalidate, r-lib/testthat, r-lib/withr,
-    yaml=vubiostat/r-yaml, rstudio/htmltools, bioc::matrixStats,
-    insightsengineering/roxy.shinylive
+    pharmaverse/teal.reporter, pharmaverse/teal.widgets, rstudio/bslib,
+    yihui/knitr, bioc::MultiAssayExperiment, r-lib/R6, rstudio/rmarkdown,
+    tidyverse/rvest, rstudio/shinytest2, rstudio/shinyvalidate,
+    r-lib/testthat, r-lib/withr, yaml=vubiostat/r-yaml, rstudio/htmltools,
+    bioc::matrixStats, insightsengineering/roxy.shinylive
 Config/Needs/website: insightsengineering/nesttemplate
 Config/roxygen2/version: 8.1.1
 Encoding: UTF-8
