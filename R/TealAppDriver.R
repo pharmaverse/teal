@@ -28,7 +28,10 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
     #' @param app (`teal_app` or `function`) The `teal` application to be tested.
     #' This value can be 2 different things:
     #' - A `teal_app` object, which is the result of calling `teal::init()`.
-    #' - A function that returns a `teal_app` object.
+    #' - A function that returns a `teal_app` (or a `shiny.appobj`) object.
+    #' The function is executed in the background R process, so it must be self-contained:
+    #' call `library(<pkg>)` first and do not use objects defined outside of the function
+    #' (see [`shinytest2::AppDriver`] `new` method).
     #'
     #' Other values that [`shinytest2::AppDriver`] `new()` functions accepts are not yet supported.
     #' @param options (`list`) passed to `shinyApp(options)`. See [shiny::shinyApp()].
@@ -44,8 +47,8 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
     #' See [`shinytest2::AppDriver`] `new` method for more details on how to change it
     #' via options or environment variables
     #' @param teal_options (`list`) named list of R options to set inside the spawned
-    #' Shiny process (e.g. `list(teal.enable_deep_linking = TRUE)`). Applied at session
-    #' start so option-gated server logic sees them.
+    #' Shiny process (e.g. `list(teal.enable_deep_linking = TRUE)`). Applied before the app
+    #' is created, so option-gated logic in `init()` and in the server sees them.
     #' @param ... Additional arguments to be passed to `shinytest2::AppDriver$new`
     #'
     #'
@@ -74,17 +77,36 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
         extra_envvar$SHINYTEST2_LOAD_TIMEOUT <- "100000"
       }
 
+      app <- if (is.function(app)) {
+        # The function is serialized to the background process. Detach it from the calling
+        # environment so that it doesn't reference (and load) the installed package namespace
+        # before `library(<pkg>)` is called inside the function.
+        environment(app) <- globalenv()
+        wrapper <- function() NULL
+        # shinytest2 only runs the result of the function if it is a `shiny.appobj`.
+        body(wrapper) <- rlang::expr({
+          x <- (!!app)()
+          if (inherits(x, "teal_app")) {
+            x <- shiny::shinyApp(ui = x$ui, server = x$server, options = !!options)
+          }
+          x
+        })
+        environment(wrapper) <- globalenv()
+        wrapper
+      } else {
+        shiny::shinyApp(ui = app$ui, server = app$server, options = options)
+      }
+
       rlang::check_installed("withr")
       suppressWarnings(
         withr::with_envvar(
           new = extra_envvar,
           code = super$initialize(
-            if (is.function(app)) app else shiny::shinyApp(ui = app$ui, server = app$server),
+            app,
             name = "teal",
             variant = shinytest2::platform_variant(),
             timeout = timeout,
             load_timeout = load_timeout,
-            shiny_args = options,
             options = teal_options
           )
         )
