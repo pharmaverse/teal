@@ -63,6 +63,8 @@ Please click the image below to start learning:
 teal is developed by [Roche](https://roche.com), [Appsilon](https://www.appsilon.com), and the wider open-source community.  
 [Roche](https://roche.com) and [Appsilon](https://www.appsilon.com) are copyright holders of the project, which is hosted in the [pharmaverse](https://pharmaverse.org) GitHub organisation.
 
+<!-- markdownlint-enable MD007 MD030 -->
+
 ## Installation
 
 ```r
