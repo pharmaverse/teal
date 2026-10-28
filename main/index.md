@@ -89,6 +89,13 @@ the image below to start learning:
 [![A Complete Guide to Getting Started with
 teal](https://img.youtube.com/vi/N8ZamECICSI/0.jpg)](https://www.youtube.com/watch?v=N8ZamECICSI)
 
+teal is developed by [Roche](https://roche.com),
+[Appsilon](https://www.appsilon.com), and the wider open-source
+community.\
+[Roche](https://roche.com) and [Appsilon](https://www.appsilon.com) are
+copyright holders of the project, which is hosted in the
+[pharmaverse](https://pharmaverse.org) GitHub organisation.
+
 ## Installation
 
 \
@@ -162,3 +169,11 @@ For questions, discussions, and updates, use the `teal` channel in the
 
 This package is a result of a joint efforts by many developers and
 stakeholders. We would like to thank everyone who contributed so far!
+
+teal was created at [Roche](https://roche.com) and is developed together
+with [Appsilon](https://www.appsilon.com) and the wider open-source
+community. Thank you to everyone who has contributed code, reported an
+issue, improved the documentation, or built a module. To get involved,
+explore the [open issues](https://github.com/pharmaverse/teal/issues) or
+join the \#teal channel in the [pharmaverse
+Slack](https://pharmaverse.slack.com/).

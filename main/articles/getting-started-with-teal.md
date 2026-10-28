@@ -159,9 +159,9 @@ some of the available analysis modules.
 For example see:
 
 - [general analysis
-  modules](https://pharmaverse.github.io/teal.modules.general/)
+  modules](https://insightsengineering.github.io/teal.modules.general/)
 - [clinical trial reporting
-  modules](https://pharmaverse.github.io/teal.modules.clinical/)
+  modules](https://insightsengineering.github.io/teal.modules.clinical/)
 - [modules for analyzing `MultiAssayExperiment`
   objects](https://insightsengineering.github.io/teal.modules.hermes/)
 

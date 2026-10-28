@@ -36,12 +36,12 @@ Authors:
 - Aleksander Chlebowski <aleksander.chlebowski@contractors.roche.com>
   ([ORCID](https://orcid.org/0000-0001-5018-6294))
 
-- Andre Verissimo <andre.verissimo@roche.com>
+- Andre Verissimo <andre.verissimo@appsilon.com>
   ([ORCID](https://orcid.org/0000-0002-2212-339X))
 
 - Kartikeya Kirar <kartikeya.kirar@businesspartner.roche.com>
 
-- Vedha Viyash <vedha.viyash@roche.com>
+- Vedha Viyash <vedha@appsilon.com>
 
 - Marcin Kosinski <marcin.kosinski.mk1@roche.com>
 
@@ -65,6 +65,8 @@ Other contributors:
 
 - Chendi Liao \[reviewer\]
 
+- Maximilian Mordig \[contributor\]
+
 - F. Hoffmann-La Roche AG \[copyright holder, funder\]
 
-- Maximilian Mordig \[contributor\]
+- Appsilon Sp. z o.o. <teal@appsilon.com> \[copyright holder, funder\]

@@ -9,6 +9,14 @@
   to help module developers resolve the decorators applied to a specific
   output ([\#1733](https://github.com/pharmaverse/teal/issues/1733)).
 
+#### Miscellaneous
+
+- teal has moved to the pharmaverse GitHub organisation:
+  <https://github.com/pharmaverse/teal>.
+- Appsilon becomes a core contributor and joins F. Hoffmann-La Roche AG
+  as a copyright holder of teal, working alongside the wider contributor
+  community.
+
 #### Bug fixes
 
 - Prevent reporter buttons from appearing in subsequent tabs if

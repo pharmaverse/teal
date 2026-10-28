@@ -38,9 +38,11 @@
 
 - **Chendi Liao**. Reviewer.
 
+- **Maximilian Mordig**. Contributor.
+
 - **F. Hoffmann-La Roche AG**. Copyright holder, funder.
 
-- **Maximilian Mordig**. Contributor.
+- **Appsilon Sp. z o.o.**. Copyright holder, funder.
 
 ## Citation
 
