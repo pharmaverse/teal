@@ -100,17 +100,15 @@ driving a teal application for performing interactions for \code{shinytest2} tes
 This value can be 2 different things:
 \itemize{
 \item A \code{teal_app} object, which is the result of calling \code{teal::init()}.
-\item A function that returns a \code{teal_app} (or a \code{shiny.appobj}) object.
-The function is executed in the background R process, so it must be self-contained:
-call \verb{library(<pkg>)} first and do not use objects defined outside of the function
-(see \code{\link[shinytest2:AppDriver]{shinytest2::AppDriver}} \code{new} method).
+\item A function that returns a \code{teal_app} object. The function runs in a separate R process,
+so it must call \code{library(teal)} and not use objects defined outside of it.
 }
 
 Other values that \code{\link[shinytest2:AppDriver]{shinytest2::AppDriver}} \code{new()} functions accepts are not yet supported.}
       \item{\code{options}}{(\code{list}) passed to \code{shinyApp(options)}. See \code{\link[shiny:shinyApp]{shiny::shinyApp()}}.}
       \item{\code{teal_options}}{(\code{list}) named list of R options to set inside the spawned
-Shiny process (e.g. \code{list(teal.enable_deep_linking = TRUE)}). Applied before the app
-is created, so option-gated logic in \code{init()} and in the server sees them.}
+Shiny process (e.g. \code{list(teal.enable_deep_linking = TRUE)}). Applied at session
+start so option-gated server logic sees them.}
       \item{\code{timeout}}{(\code{numeric}) Default number of milliseconds for any timeout or
 timeout_ parameter in the \code{TealAppDriver} class.
 Defaults to 20s.
