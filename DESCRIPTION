@@ -10,10 +10,10 @@ Authors@R: c(
     person("Pawel", "Rucki", , "pawel.rucki@roche.com", role = "aut"),
     person("Aleksander", "Chlebowski", , "aleksander.chlebowski@contractors.roche.com", role = "aut",
            comment = c(ORCID = "0000-0001-5018-6294")),
-    person("Andre", "Verissimo", , "andre.verissimo@roche.com", role = "aut",
+    person("Andre", "Verissimo", , "andre.verissimo@appsilon.com", role = "aut",
            comment = c(ORCID = "0000-0002-2212-339X")),
     person("Kartikeya", "Kirar", , "kartikeya.kirar@businesspartner.roche.com", role = "aut"),
-    person("Vedha", "Viyash", , "vedha.viyash@roche.com", role = "aut"),
+    person("Vedha", "Viyash", , "vedha@appsilon.com", role = "aut"),
     person("Marcin", "Kosinski", , "marcin.kosinski.mk1@roche.com", role = "aut"),
     person("Adrian", "Waddell", , "adrian.waddell@gene.com", role = "aut"),
     person("Nina", "Qi", , "qi.ting@gene.com", role = "rev"),
@@ -24,8 +24,9 @@ Authors@R: c(
     person("Junlue", "Zhao", role = "aut"),
     person("Tadeusz", "Lewandowski", role = "aut"),
     person("Chendi", "Liao", role = "rev"),
+    person("Maximilian", "Mordig", role = "ctb"),
     person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
-    person("Maximilian", "Mordig", role = "ctb")
+    person("Appsilon Sp. z o.o.", email = "teal@appsilon.com", role = c("cph", "fnd"))
   )
 Description: A 'shiny' based interactive exploration framework for
     analyzing clinical trials data. 'teal' currently provides a dynamic
@@ -84,12 +85,11 @@ Config/Needs/verdepcheck: rstudio/shiny, pharmaverse/teal.data,
     r-lib/lifecycle, daroczig/logger, r-lib/mirai, r-lib/cli,
     r-lib/nanonext, rstudio/renv, r-lib/rlang, daattali/shinyjs,
     pharmaverse/teal.code, pharmaverse/teal.logger,
-    pharmaverse/teal.reporter, pharmaverse/teal.widgets,
-    rstudio/bslib, yihui/knitr, bioc::MultiAssayExperiment, r-lib/R6,
-    rstudio/rmarkdown, tidyverse/rvest, rstudio/shinytest2,
-    rstudio/shinyvalidate, r-lib/testthat, r-lib/withr,
-    yaml=vubiostat/r-yaml, rstudio/htmltools, bioc::matrixStats,
-    insightsengineering/roxy.shinylive
+    pharmaverse/teal.reporter, pharmaverse/teal.widgets, rstudio/bslib,
+    yihui/knitr, bioc::MultiAssayExperiment, r-lib/R6, rstudio/rmarkdown,
+    tidyverse/rvest, rstudio/shinytest2, rstudio/shinyvalidate,
+    r-lib/testthat, r-lib/withr, yaml=vubiostat/r-yaml, rstudio/htmltools,
+    bioc::matrixStats, insightsengineering/roxy.shinylive
 Config/Needs/website: insightsengineering/nesttemplate
 Config/roxygen2/version: 8.1.1
 Encoding: UTF-8
