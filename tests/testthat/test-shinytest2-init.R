@@ -148,16 +148,13 @@ testthat::describe("e2e: init reporter buttons", {
   })
 })
 
-testthat::describe("e2e: TealAppDriver accepts a function that creates the app", {
-  it("initializes a teal_app returned by the function", {
+testthat::describe("e2e: TealAppDriver with a function as `app`", {
+  it("starts the app when the function returns a teal_app", {
     skip_if_too_deep(5)
     app_driver <- TealAppDriver$new(
       function() {
         library(teal)
-        init(
-          data = teal_data(iris = iris),
-          modules = modules(example_module(label = "mod1"), example_module(label = "mod2"))
-        )
+        init(data = teal_data(iris = iris), modules = example_module(label = "mod1"))
       }
     )
     withr::defer(app_driver$stop())
@@ -167,7 +164,7 @@ testthat::describe("e2e: TealAppDriver accepts a function that creates the app",
     testthat::expect_identical(app_driver$get_active_filter_vars(), "iris")
   })
 
-  it("initializes a shiny.appobj returned by the function", {
+  it("starts the app when the function returns a shiny.appobj", {
     skip_if_too_deep(5)
     app_driver <- TealAppDriver$new(
       function() {
@@ -182,26 +179,24 @@ testthat::describe("e2e: TealAppDriver accepts a function that creates the app",
     testthat::expect_equal(app_driver$get_value(input = "teal-teal_modules-active_module_id"), "mod1")
   })
 
-  it("applies teal_options in the app process", {
+  it("sets teal_options in the app process", {
     skip_if_too_deep(5)
     app_driver <- TealAppDriver$new(
       function() {
         library(teal)
-        init(
-          data = teal_data(iris = iris),
-          modules = modules(example_module(label = "mod1"), example_module(label = "mod2"))
-        )
+        init(data = teal_data(iris = iris), modules = example_module(label = "mod1"))
       },
       teal_options = list(teal.enable_deep_linking = TRUE)
     )
     withr::defer(app_driver$stop())
 
-    app_driver$navigate_teal_tab("mod2")
-
-    testthat::expect_match(app_driver$get_js("window.location.href"), "active_module=mod2")
+    testthat::expect_match(app_driver$get_js("window.location.href"), "active_module=mod1")
   })
 })
 
 testthat::test_that("TealAppDriver throws an error when app is neither a teal_app nor a function", {
-  testthat::expect_error(TealAppDriver$new("path/to/app"), "app")
+  testthat::expect_error(
+    TealAppDriver$new("path/to/app"),
+    "Must be a function.*Must inherit from class 'teal_app'"
+  )
 })

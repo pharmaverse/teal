@@ -76,18 +76,20 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
       }
 
       app <- if (is.function(app)) {
+        # Avoid serializing the teal namespace, so the background process loads the dev package.
         environment(app) <- globalenv()
-        wrapper <- function() NULL
-        # shinytest2 only runs the result of the function if it is a `shiny.appobj`.
-        body(wrapper) <- rlang::expr({
-          x <- (!!app)()
-          if (inherits(x, "teal_app")) {
-            x <- shiny::shinyApp(ui = x$ui, server = x$server, options = !!options)
-          }
-          x
-        })
-        environment(wrapper) <- globalenv()
-        wrapper
+        # shinytest2 only runs the function's result if it is a `shiny.appobj`;
+        # `init()` returns a `teal_app`, so convert it in the background process.
+        local(
+          function() {
+            x <- app_fun()
+            if (inherits(x, "teal_app")) {
+              x <- shiny::shinyApp(ui = x$ui, server = x$server, options = shiny_options)
+            }
+            x
+          },
+          envir = list2env(list(app_fun = app, shiny_options = options), parent = globalenv())
+        )
       } else {
         shiny::shinyApp(ui = app$ui, server = app$server, options = options)
       }
