@@ -97,7 +97,7 @@ The necessary code can be supplied to the `code` argument of the to the
 `data_populated_4`` ``<-`` `[`eval_code`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)`(``data_empty``, code ``=`` ``"D5 <- diag(5)"``)`\
 `data_populated_4`\
 `#> ✅︎ code verified`\
-`#> ``<environment: 0x55c569939068>`` 🔒 `\
+`#> ``<environment: 0x560fe9749328>`` 🔒 `\
 `#> Parent: <environment: package:teal> `\
 `#> ``Bindings:`\
 `#> ``- D5: [matrix]`
@@ -249,7 +249,7 @@ running the `verify` function.
 `data_with_objects_and_code`` ``<-`` `[`teal_data`](https://rdrr.io/pkg/teal.data/man/teal_data.html)`(``iris ``=`` ``iris``, cars ``=`` ``mtcars``, code ``=`` `[`expression`](https://rdrr.io/r/base/expression.html)`(``iris`` ``<-`` ``iris``, ``cars`` ``<-`` ``mtcars``)``)`\
 `data_with_objects_and_code`\
 `#> ✖ code unverified`\
-`#> ``<environment: 0x55c567d25a70>`` 🔒 `\
+`#> ``<environment: 0x560fe7b2ae68>`` 🔒 `\
 `#> Parent: <environment: package:teal> `\
 `#> ``Bindings:`\
 `#> ``- cars: [data.frame]`\
@@ -258,7 +258,7 @@ running the `verify` function.
 `data_with_objects_and_code_ver`` ``<-`` `[`verify`](https://rdrr.io/pkg/teal.data/man/verify.html)`(``data_with_objects_and_code``)`\
 `data_with_objects_and_code_ver`\
 `#> ✅︎ code verified`\
-`#> ``<environment: 0x55c567d25a70>`` 🔒 `\
+`#> ``<environment: 0x560fe7b2ae68>`` 🔒 `\
 `#> Parent: <environment: package:teal> `\
 `#> ``Bindings:`\
 `#> ``- cars: [data.frame]`\

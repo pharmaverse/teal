@@ -121,7 +121,20 @@ Initialize a `TealAppDriver` object for testing a `teal` application.
 
 - `app`:
 
-  (`teal_app`)
+  (`teal_app` or `function`) The `teal` application to be tested. This
+  value can be 2 different things:
+
+  - A `teal_app` object, which is the result of calling
+    [`teal::init()`](https://pharmaverse.github.io/teal/reference/init.md).
+
+  - A function that returns a `teal_app` object. The function runs in a
+    separate R process, so it must call
+    [`library(teal)`](https://pharmaverse.github.io/teal/) and not use
+    objects defined outside of it.
+
+  Other values that
+  [`shinytest2::AppDriver`](https://rstudio.github.io/shinytest2/reference/AppDriver.html)
+  `new()` functions accepts are not yet supported.
 
 - `options`:
 
@@ -189,7 +202,7 @@ environment variable is set to `true` (case of value is ignored).
 
 Append parent
 [`shinytest2::AppDriver`](https://rstudio.github.io/shinytest2/reference/AppDriver.html)
-`click` method with a call to `waif_for_idle()` method.
+`click` method with a call to `wait_for_idle()` method.
 
 #### Usage
 

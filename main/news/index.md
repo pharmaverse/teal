@@ -8,6 +8,8 @@
   [`select_decorators()`](https://pharmaverse.github.io/teal/reference/select_decorators.md)
   to help module developers resolve the decorators applied to a specific
   output ([\#1733](https://github.com/pharmaverse/teal/issues/1733)).
+- Add support for function argument in `TealAppDriver$new(app)`
+  ([\#1753](https://github.com/pharmaverse/teal/issues/1753)).
 
 #### Miscellaneous
 
