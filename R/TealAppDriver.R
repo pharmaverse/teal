@@ -25,7 +25,13 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
     #' @description
     #' Initialize a `TealAppDriver` object for testing a `teal` application.
     #'
-    #' @param app (`teal_app`)
+    #' @param app (`teal_app` or `function`) The `teal` application to be tested.
+    #' This value can be 2 different things:
+    #' - A `teal_app` object, which is the result of calling `teal::init()`.
+    #' - A function that returns a `teal_app` object. The function runs in a separate R process,
+    #' so it must call `library(teal)` and not use objects defined outside of it.
+    #'
+    #' Other values that [`shinytest2::AppDriver`] `new()` functions accepts are not yet supported.
     #' @param options (`list`) passed to `shinyApp(options)`. See [shiny::shinyApp()].
     #' @param timeout (`numeric`) Default number of milliseconds for any timeout or
     #' timeout_ parameter in the `TealAppDriver` class.
@@ -51,7 +57,12 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
                           timeout = rlang::missing_arg(),
                           load_timeout = rlang::missing_arg(),
                           ...) {
-      checkmate::assert_class(app, "teal_app")
+      checkmate::assert(
+        combine = "or",
+        .var.name = "app",
+        checkmate::check_function(app),
+        checkmate::check_class(app, "teal_app")
+      )
       checkmate::assert_list(teal_options, names = "named")
       # Default timeout is hardcoded to 4s in shinytest2:::resolve_timeout
       # New default is set with environment variables if not already set by user
@@ -61,16 +72,26 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
         extra_envvar$SHINYTEST2_TIMEOUT <- "20000"
       }
       if (Sys.getenv("SHINYTEST2_LOAD_TIMEOUT") == "") {
-        extra_envvar$SHINYTEST2_TIMEOUT <- "100000"
+        extra_envvar$SHINYTEST2_LOAD_TIMEOUT <- "100000"
       }
 
-      if (length(teal_options)) {
-        orig_server <- app$server
-        opts <- teal_options
-        app$server <- function(input, output, session) {
-          do.call(base::options, opts)
-          orig_server(input, output, session)
-        }
+      app <- if (is.function(app)) {
+        # Avoid serializing the teal namespace, so the background process loads the dev package.
+        environment(app) <- globalenv()
+        # shinytest2 only runs the function's result if it is a `shiny.appobj`;
+        # `init()` returns a `teal_app`, so convert it in the background process.
+        local(
+          function() {
+            x <- app_fun()
+            if (inherits(x, "teal_app")) {
+              x <- shiny::shinyApp(ui = x$ui, server = x$server, options = shiny_options)
+            }
+            x
+          },
+          envir = list2env(list(app_fun = app, shiny_options = options), parent = globalenv())
+        )
+      } else {
+        shiny::shinyApp(ui = app$ui, server = app$server, options = options)
       }
 
       rlang::check_installed("withr")
@@ -78,11 +99,12 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
         withr::with_envvar(
           new = extra_envvar,
           code = super$initialize(
-            shiny::shinyApp(ui = app$ui, server = app$server, options = options),
+            app,
             name = "teal",
             variant = shinytest2::platform_variant(),
             timeout = timeout,
-            load_timeout = load_timeout
+            load_timeout = load_timeout,
+            options = teal_options
           )
         )
       )
@@ -128,7 +150,7 @@ TealAppDriver <- R6::R6Class( # nolint: object_name.
       super$stop(...)
     },
     #' @description
-    #' Append parent [`shinytest2::AppDriver`] `click` method with a call to `waif_for_idle()` method.
+    #' Append parent [`shinytest2::AppDriver`] `click` method with a call to `wait_for_idle()` method.
     #' @param ... arguments passed to parent [`shinytest2::AppDriver`] `click()` method.
     click = function(...) {
       super$click(...)

@@ -147,3 +147,56 @@ testthat::describe("e2e: init reporter buttons", {
     testthat::expect_length(app_driver$get_text(".report_add_wrapper .teal-reporter.action-button"), 0)
   })
 })
+
+testthat::describe("e2e: TealAppDriver with a function as `app`", {
+  it("starts the app when the function returns a teal_app", {
+    skip_if_too_deep(5)
+    app_driver <- TealAppDriver$new(
+      function() {
+        library(teal)
+        init(data = teal_data(iris = iris), modules = example_module(label = "mod1"))
+      }
+    )
+    withr::defer(app_driver$stop())
+
+    app_driver$expect_no_shiny_error()
+    testthat::expect_equal(app_driver$get_value(input = "teal-teal_modules-active_module_id"), "mod1")
+    testthat::expect_identical(app_driver$get_active_filter_vars(), "iris")
+  })
+
+  it("starts the app when the function returns a shiny.appobj", {
+    skip_if_too_deep(5)
+    app_driver <- TealAppDriver$new(
+      function() {
+        library(teal)
+        app <- init(data = teal_data(iris = iris), modules = example_module(label = "mod1"))
+        shiny::shinyApp(ui = app$ui, server = app$server)
+      }
+    )
+    withr::defer(app_driver$stop())
+
+    app_driver$expect_no_shiny_error()
+    testthat::expect_equal(app_driver$get_value(input = "teal-teal_modules-active_module_id"), "mod1")
+  })
+
+  it("sets teal_options in the app process", {
+    skip_if_too_deep(5)
+    app_driver <- TealAppDriver$new(
+      function() {
+        library(teal)
+        init(data = teal_data(iris = iris), modules = example_module(label = "mod1"))
+      },
+      teal_options = list(teal.enable_deep_linking = TRUE)
+    )
+    withr::defer(app_driver$stop())
+
+    testthat::expect_match(app_driver$get_js("window.location.href"), "active_module=mod1")
+  })
+})
+
+testthat::test_that("TealAppDriver throws an error when app is neither a teal_app nor a function", {
+  testthat::expect_error(
+    TealAppDriver$new("path/to/app"),
+    "Must be a function.*Must inherit from class 'teal_app'"
+  )
+})
