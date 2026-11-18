@@ -4,18 +4,18 @@
 
 A `shiny` developer can embed a `teal` application into their own
 `shiny` app by using `shiny` module components of `teal`:
-[`ui_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md)
+[`ui_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md)
 and
-[`srv_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md).
+[`srv_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md).
 This approach differs from using
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md)
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md)
 and offers greater flexibility. While
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md)
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md)
 includes a session info footer automatically, when using `teal` as a
 `shiny` module you can optionally add it manually with
-[`ui_session_info()`](https://insightsengineering.github.io/teal/reference/module_session_info.md)
+[`ui_session_info()`](https://pharmaverse.github.io/teal/reference/module_session_info.md)
 and
-[`srv_session_info()`](https://insightsengineering.github.io/teal/reference/module_session_info.md).
+[`srv_session_info()`](https://pharmaverse.github.io/teal/reference/module_session_info.md).
 Using `teal` as a `shiny` module offers several advantages:
 
 - Embedding one or more `teal` applications within a larger `shiny` app
@@ -27,7 +27,7 @@ Using `teal` as a `shiny` module offers several advantages:
 The following example demonstrates embedding `teal` as a `shiny` module
 within a larger `shiny` application. Users can select dataset names
 which are passed to the embedded `teal` component. On the server side,
-[`srv_teal()`](https://insightsengineering.github.io/teal/reference/module_teal.md)
+[`srv_teal()`](https://pharmaverse.github.io/teal/reference/module_teal.md)
 is called with a reactive `teal_data` object passed from the parent
 app’s server.
 

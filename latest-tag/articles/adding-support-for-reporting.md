@@ -216,7 +216,7 @@ current state of the module. The report can be seen after clicking
 The user can modify the text of a card or add new text with the button
 `+ Add text block` present at the bottom of the card. Text can also be
 added inside the module by appending a
-[`teal_card()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html)
+[`teal_card()`](https://pharmaverse.github.io/teal.reporter/latest-tag/reference/teal_card.html)
 to the card of the report.
 
 As the module writer, you can also add any other content to the report
@@ -226,14 +226,14 @@ you’d like: titles, text.
 
 `teal.reporter` supports the addition of tables, charts, and more. For
 more information, explore the API of
-[`teal_report()`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_report.html)
+[`teal_report()`](https://pharmaverse.github.io/teal.reporter/latest-tag/reference/teal_report.html)
 to learn about the supported content types.
 
 ## Removing support for displaying reproducible code
 
 If your module supports a report but you want to disable the button that
 allows to display the module’s reproducible code (“Show R code”), use
-[`disable_src()`](https://insightsengineering.github.io/teal/reference/disable_src.md):
+[`disable_src()`](https://pharmaverse.github.io/teal/reference/disable_src.md):
 
 ``` r
 
@@ -248,7 +248,7 @@ if (interactive()) {
 ```
 
 You can use
-[`disable_src()`](https://insightsengineering.github.io/teal/reference/disable_src.md)
+[`disable_src()`](https://pharmaverse.github.io/teal/reference/disable_src.md)
 on multiple modules at the same time and nested modules too. For example
 on:
 
@@ -276,7 +276,7 @@ app <- init(
 
 If a module has the reporter functionality the teal app developer can
 disable it with
-[`disable_report()`](https://insightsengineering.github.io/teal/reference/disable_report.md).
+[`disable_report()`](https://pharmaverse.github.io/teal/reference/disable_report.md).
 
 ``` r
 
@@ -291,7 +291,7 @@ if (interactive()) {
 ```
 
 To remove reporting from the whole application, set `reporter = NULL` in
-[`init()`](https://insightsengineering.github.io/teal/reference/init.md).
+[`init()`](https://pharmaverse.github.io/teal/reference/init.md).
 This will completely disable all the reporter related buttons on the
 application:
 

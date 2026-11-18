@@ -52,7 +52,7 @@ following fields:
   `FilteredData$get_available_teal_slices()`.
 
 During a session only new filters are added to `all_slices` unless
-[`module_snapshot_manager`](https://insightsengineering.github.io/teal/reference/module_snapshot_manager.md)
+[`module_snapshot_manager`](https://pharmaverse.github.io/teal/reference/module_snapshot_manager.md)
 is used to restore previous state. Filters from `all_slices` can be
 activated or deactivated in a module which is linked (both ways) by
 `attr(, "mapping")` so that:

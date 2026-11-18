@@ -9,7 +9,7 @@ validate their methods, confirm their findings, and contribute to the
 advancement of the field.
 
 The `teal.code` package provides the [`qenv`
-class](https://insightsengineering.github.io/teal.code/latest-tag/articles/qenv.html)
+class](https://pharmaverse.github.io/teal.code/latest-tag/articles/qenv.html)
 that facilitates code reproducibility. Code is passed to a `qenv`
 object, where is evaluated in a specific environment. `qenv` also stores
 the code so that it can be retrieved on request.
@@ -32,7 +32,7 @@ the results of their analyses.
 ![](input_data_files/figure-html/teal_data_dot_diagram-1.png)
 
 Learn more about the use of `teal_data` in the [`teal.data` package
-vignettes](https://insightsengineering.github.io/teal.data/latest-tag/articles).
+vignettes](https://pharmaverse.github.io/teal.data/latest-tag/articles).
 
 ## `Show R Code` and `Reporter`
 
@@ -59,7 +59,7 @@ Reporter
 
 To learn more about the `Reporter` feature, please visit the
 [`teal.reporter`
-documentation](https://insightsengineering.github.io/teal.reporter/latest-tag/index.html).
+documentation](https://pharmaverse.github.io/teal.reporter/latest-tag/index.html).
 
 Overall, `qenv` from `teal.code` and its child class, `teal_data`, are
 powerful tools for ensuring code reproducibility and promoting

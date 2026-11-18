@@ -100,9 +100,9 @@ srv_teal_module(
 
   (`teal_modules`) `teal_modules` object. These are the specific output
   modules which will be displayed in the `teal` application. See
-  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   and
-  [`module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+  [`module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   for more details.
 
 - data:
@@ -119,7 +119,7 @@ srv_teal_module(
 - slices_global:
 
   (`reactiveVal` returning `modules_teal_slices`) see
-  [`module_filter_manager`](https://insightsengineering.github.io/teal/reference/module_filter_manager.md)
+  [`module_filter_manager`](https://pharmaverse.github.io/teal/reference/module_filter_manager.md)
 
 - reporter:
 
@@ -134,7 +134,7 @@ srv_teal_module(
   - `"ok"` when `teal_data` is returned from the data loading.
 
   - `"teal_data_module failed"` when
-    [`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+    [`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
     didn't return `teal_data`. Disables tab buttons.
 
   - `"external failed"` when a `reactive` passed to `srv_teal(data)`

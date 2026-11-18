@@ -1,7 +1,7 @@
-# Internal module handling list of [`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+# Internal module handling list of [`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 
 This module calls
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 sequentially by passing output from one step to the next. Modules have
 error/warning handling feature and highlight containers when something
 goes wrong.

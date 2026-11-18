@@ -7,7 +7,7 @@ included on the right side. Based on the selections made in the filter
 panel, filter expressions are executed before passing data to `teal`
 modules. The technical details of the filter panel are extensively
 described in [`teal.slice`
-documentation](https://insightsengineering.github.io/teal.slice/latest-tag/).
+documentation](https://pharmaverse.github.io/teal.slice/latest-tag/).
 
 By default, `init` initializes the filter panel without any active
 filters but allows the user to add filters on any column. To start a
@@ -40,7 +40,7 @@ if (interactive()) {
 ### Filter panel respective to `teal_module`
 
 Each `teal_module` (see
-[`?module`](https://insightsengineering.github.io/teal/reference/teal_modules.md))
+[`?module`](https://pharmaverse.github.io/teal/reference/teal_modules.md))
 object contains the `datanames` attribute that determines which data
 sets are to be sent to that module. The filter panel will display only
 those data sets and hide the rest when this module is active.
@@ -93,7 +93,7 @@ that module at startup. `teal_slice`s listed the element called
 
 For a detailed explanation about the filter states, see [this
 `teal.slice`
-vignette](https://insightsengineering.github.io/teal.slice/latest-tag/articles/filter-panel-for-developers.html).
+vignette](https://pharmaverse.github.io/teal.slice/latest-tag/articles/filter-panel-for-developers.html).
 
 ``` r
 

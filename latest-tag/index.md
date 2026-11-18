@@ -10,11 +10,11 @@ Downloads](http://cranlogs.r-pkg.org/badges/last-month/teal?color=green)](https:
 Downloads](http://cranlogs.r-pkg.org/badges/last-week/teal?color=green)](https://cran.r-project.org/package=teal)
 
 [![Check
-🛠](https://github.com/insightsengineering/teal/actions/workflows/check.yaml/badge.svg)](https://insightsengineering.github.io/teal/main/unit-test-report/)
+🛠](https://github.com/pharmaverse/teal/actions/workflows/check.yaml/badge.svg)](https://pharmaverse.github.io/teal/main/unit-test-report/)
 [![Docs
-📚](https://github.com/insightsengineering/teal/actions/workflows/docs.yaml/badge.svg)](https://insightsengineering.github.io/teal/)
+📚](https://github.com/pharmaverse/teal/actions/workflows/docs.yaml/badge.svg)](https://pharmaverse.github.io/teal/)
 [![Code Coverage
-📔](https://raw.githubusercontent.com/insightsengineering/teal/_xml_coverage_reports/data/main/badge.svg)](https://insightsengineering.github.io/teal/main/coverage-report/)
+📔](https://raw.githubusercontent.com/insightsengineering/teal/_xml_coverage_reports/data/main/badge.svg)](https://pharmaverse.github.io/teal/main/coverage-report/)
 
 ![GitHub
 forks](https://img.shields.io/github/forks/insightsengineering/teal?style=social)![GitHub
@@ -36,9 +36,9 @@ Status: Active – The project has reached a stable, usable state and is
 being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Current
-Version](https://img.shields.io/github/r-package/v/insightsengineering/teal/main?color=purple&label=package%20version)](https://github.com/insightsengineering/teal/tree/main)
+Version](https://img.shields.io/github/r-package/v/insightsengineering/teal/main?color=purple&label=package%20version)](https://github.com/pharmaverse/teal/tree/main)
 [![Open
-Issues](https://img.shields.io/github/issues-raw/insightsengineering/teal?color=red&label=open%20issues)](https://github.com/insightsengineering/teal/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+Issues](https://img.shields.io/github/issues-raw/insightsengineering/teal?color=red&label=open%20issues)](https://github.com/pharmaverse/teal/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 
 `teal` is a `shiny`-based interactive exploration framework for
 analyzing data. `teal` applications require app developers to specify:
@@ -67,19 +67,19 @@ analyzing data. `teal` applications require app developers to specify:
 A lot of the functionality of the `teal` framework derives from the
 following packages:
 
-- [`teal.logger`](https://insightsengineering.github.io/teal.logger/latest-tag/):
+- [`teal.logger`](https://pharmaverse.github.io/teal.logger/latest-tag/):
   standardizes logging within `teal` framework.
-- [`teal.code`](https://insightsengineering.github.io/teal.code/latest-tag/):
+- [`teal.code`](https://pharmaverse.github.io/teal.code/latest-tag/):
   handles reproducibility of outputs.
-- [`teal.data`](https://insightsengineering.github.io/teal.data/latest-tag/):
+- [`teal.data`](https://pharmaverse.github.io/teal.data/latest-tag/):
   creating and loading the data needed for `teal` applications.
-- [`teal.widgets`](https://insightsengineering.github.io/teal.widgets/latest-tag/):
+- [`teal.widgets`](https://pharmaverse.github.io/teal.widgets/latest-tag/):
   `shiny` components used within `teal`.
-- [`teal.slice`](https://insightsengineering.github.io/teal.slice/latest-tag/):
+- [`teal.slice`](https://pharmaverse.github.io/teal.slice/latest-tag/):
   provides a filtering panel to allow filtering of data.
-- [`teal.reporter`](https://insightsengineering.github.io/teal.reporter/latest-tag/):
+- [`teal.reporter`](https://pharmaverse.github.io/teal.reporter/latest-tag/):
   allows `teal` applications to generate reports.
-- [`teal.transform`](https://insightsengineering.github.io/teal.transform/latest-tag/):
+- [`teal.transform`](https://pharmaverse.github.io/teal.transform/latest-tag/):
   allows the creation of reproducible transform and merge module for
   teal applications.
 
@@ -151,11 +151,11 @@ and [TLG Catalog](https://insightsengineering.github.io/tlg-catalog/) to
 see examples of `teal` apps.
 
 Please start with the [“Technical Blueprint”
-article](https://insightsengineering.github.io/teal/latest-tag/articles/blueprint/index.html),
+article](https://pharmaverse.github.io/teal/latest-tag/articles/blueprint/index.html),
 [“Getting Started”
-article](https://insightsengineering.github.io/teal/latest-tag/articles/getting-started-with-teal.html),
+article](https://pharmaverse.github.io/teal/latest-tag/articles/getting-started-with-teal.html),
 and then other [package
-vignettes](https://insightsengineering.github.io/teal/latest-tag/articles/index.html)
+vignettes](https://pharmaverse.github.io/teal/latest-tag/articles/index.html)
 for more detailed guide.
 
 ## Getting help

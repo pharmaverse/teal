@@ -75,7 +75,7 @@ The key difference between `eval_code` and `within` is that the former
 accepts code as character vector or language objects (`call`s and
 `expression`s), while `within` accepts *only* inline code. For a deeper
 understanding check the low level class
-[`?qenv`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html)
+[`?qenv`](https://pharmaverse.github.io/teal.code/latest-tag/reference/qenv.html)
 for more details.
 
 Note that in the first example `data` was created by passing data
@@ -137,7 +137,7 @@ The one departure from passing a `teal_data` object to `init` is when
 the data does not exist in the environment where the app is run, *e.g.*
 when it has to be pulled from a remote source. In those cases a
 `teal_data_module` must be used. See [this
-vignette](https://insightsengineering.github.io/teal/articles/data-as-shiny-module.md)
+vignette](https://pharmaverse.github.io/teal/articles/data-as-shiny-module.md)
 for a detailed description.
 
 \
@@ -251,7 +251,7 @@ join_keys(data_relational2) <- keys
 ```
 
 For a detailed explanation of join keys, see [this `teal.data`
-vignette](https://insightsengineering.github.io/teal.data/latest-tag/articles/join-keys.html).
+vignette](https://pharmaverse.github.io/teal.data/latest-tag/articles/join-keys.html).
 
 [(back to `ADaM` Data)](#adam-data)
 
@@ -288,7 +288,7 @@ data_with_objects_and_code_ver
 ```
 
 For a detailed explanation of verification, see [this `teal.data`
-vignette](https://insightsengineering.github.io/teal.data/latest-tag/articles/teal-data-reproducibility.html).
+vignette](https://pharmaverse.github.io/teal.data/latest-tag/articles/teal-data-reproducibility.html).
 
 [(back to Reproducible Data)](#reproducible-data)
 
@@ -330,4 +330,4 @@ if (interactive()) {
 
 For a complete guide to the `teal_data` class, please refer to the
 [`teal.data`
-package](https://insightsengineering.github.io/teal.data/latest-tag/).
+package](https://pharmaverse.github.io/teal.data/latest-tag/).

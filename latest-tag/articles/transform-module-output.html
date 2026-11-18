@@ -115,7 +115,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -133,7 +133,7 @@
 CoreDev</h4>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/teal/blob/v1.2.1/vignettes/transform-module-output.Rmd" class="external-link"><code>vignettes/transform-module-output.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/teal/blob/v1.2.1/vignettes/transform-module-output.Rmd" class="external-link"><code>vignettes/transform-module-output.Rmd</code></a></small>
       <div class="d-none name"><code>transform-module-output.Rmd</code></div>
     </div>
 
@@ -234,7 +234,7 @@ function can be added. Here, the x-axis title is obtained from a
 <code>textInput</code> widget, giving the user some flexibility. Note
 how the input values are passed to the <code><a href="../reference/teal_data_module.html">within()</a></code> function
 using its <code>...</code> argument. See
-<code><a href="https://insightsengineering.github.io/teal.code/latest-tag/reference/within.qenv.html">?teal.code::within.qenv</a></code> for more examples.</p>
+<code><a href="https://pharmaverse.github.io/teal.code/latest-tag/reference/within.qenv.html">?teal.code::within.qenv</a></code> for more examples.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">interactive_decorator</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/teal_transform_module.html">teal_transform_module</a></span><span class="op">(</span></span>
 <span>  label <span class="op">=</span> <span class="st">"Interactive decorator"</span>,</span>
@@ -444,7 +444,7 @@ and it displays the reproducible code used to obtain the plot.</p>
 <span>        <span class="co">## in an interactive session it will send the plot to a graphics device.</span></span>
 <span>        <span class="va">reproducible_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/reactive.html" class="external-link">reactive</a></span><span class="op">(</span><span class="op">{</span></span>
 <span>          <span class="fu"><a href="../reference/teal_data_module.html">within</a></span><span class="op">(</span><span class="fu">data_with_plot_decorated</span><span class="op">(</span><span class="op">)</span>, expr <span class="op">=</span> <span class="va">plot</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>            <span class="fu">teal.code</span><span class="fu">::</span><span class="fu"><a href="https://insightsengineering.github.io/teal.code/latest-tag/reference/get_code.html">get_code</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>            <span class="fu">teal.code</span><span class="fu">::</span><span class="fu"><a href="https://pharmaverse.github.io/teal.code/latest-tag/reference/get_code.html">get_code</a></span><span class="op">(</span><span class="op">)</span></span>
 <span>        <span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span>        <span class="va">output</span><span class="op">$</span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPlot.html" class="external-link">renderPlot</a></span><span class="op">(</span><span class="fu">plot_r</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
@@ -461,7 +461,7 @@ and it displays the reproducible code used to obtain the plot.</p>
 transformator.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">app</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/init.html">init</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="fu"><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>iris <span class="op">=</span> <span class="va">iris</span>, mtcars <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span>
+<span>  data <span class="op">=</span> <span class="fu"><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>iris <span class="op">=</span> <span class="va">iris</span>, mtcars <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span>
 <span>  modules <span class="op">=</span> <span class="fu"><a href="../reference/teal_modules.html">modules</a></span><span class="op">(</span></span>
 <span>    <span class="fu">tm_decorated_plot</span><span class="op">(</span><span class="st">"undecorated"</span><span class="op">)</span>,</span>
 <span>    <span class="fu">tm_decorated_plot</span><span class="op">(</span><span class="st">"static"</span>, decorators <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">static_decorator</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -621,8 +621,8 @@ functions.</p>
 <span>        <span class="va">output</span><span class="op">$</span><span class="va">table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderTable.html" class="external-link">renderTable</a></span><span class="op">(</span><span class="fu">decorated_table</span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">"table_data"</span><span class="op">]</span><span class="op">]</span><span class="op">)</span></span>
 <span></span>
 <span>        <span class="va">output</span><span class="op">$</span><span class="va">text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html" class="external-link">renderText</a></span><span class="op">(</span><span class="op">{</span></span>
-<span>          <span class="va">plot_code</span> <span class="op">&lt;-</span> <span class="fu">teal.code</span><span class="fu">::</span><span class="fu"><a href="https://insightsengineering.github.io/teal.code/latest-tag/reference/get_code.html">get_code</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html" class="external-link">req</a></span><span class="op">(</span><span class="fu">decorated_plot</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span>          <span class="va">table_code</span> <span class="op">&lt;-</span> <span class="fu">teal.code</span><span class="fu">::</span><span class="fu"><a href="https://insightsengineering.github.io/teal.code/latest-tag/reference/get_code.html">get_code</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html" class="external-link">req</a></span><span class="op">(</span><span class="fu">decorated_table</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>          <span class="va">plot_code</span> <span class="op">&lt;-</span> <span class="fu">teal.code</span><span class="fu">::</span><span class="fu"><a href="https://pharmaverse.github.io/teal.code/latest-tag/reference/get_code.html">get_code</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html" class="external-link">req</a></span><span class="op">(</span><span class="fu">decorated_plot</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>          <span class="va">table_code</span> <span class="op">&lt;-</span> <span class="fu">teal.code</span><span class="fu">::</span><span class="fu"><a href="https://pharmaverse.github.io/teal.code/latest-tag/reference/get_code.html">get_code</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/req.html" class="external-link">req</a></span><span class="op">(</span><span class="fu">decorated_table</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span>          <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="st">"# Plot Code:"</span>, <span class="va">plot_code</span>, <span class="st">"\n\n# Table Code:"</span>, <span class="va">table_code</span><span class="op">)</span></span>
 <span>        <span class="op">}</span><span class="op">)</span></span>
 <span>      <span class="op">}</span><span class="op">)</span></span>
@@ -637,7 +637,7 @@ functions.</p>
 constructor.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">app</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/init.html">init</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="fu"><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>iris <span class="op">=</span> <span class="va">iris</span>, mtcars <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span>
+<span>  data <span class="op">=</span> <span class="fu"><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>iris <span class="op">=</span> <span class="va">iris</span>, mtcars <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span>
 <span>  modules <span class="op">=</span> <span class="fu"><a href="../reference/teal_modules.html">modules</a></span><span class="op">(</span></span>
 <span>    <span class="fu">tm_decorated_plot_table</span><span class="op">(</span></span>
 <span>      <span class="st">"plot_and_table"</span>,</span>

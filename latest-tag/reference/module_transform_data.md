@@ -2,7 +2,7 @@
 
 Shiny module pair (`srv_transform_teal_data` / `ui_transform_teal_data`)
 that runs a sequence of
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 decorators against a reactive `teal_data` object. Decorators are applied
 one after another via `Reduce`, so each one receives the output of the
 previous as its `data` argument. Failed transformators are tracked and
@@ -76,7 +76,7 @@ empty.
 
 ## See also
 
-[`assert_decorators()`](https://insightsengineering.github.io/teal/reference/check_decorators.md)
+[`assert_decorators()`](https://pharmaverse.github.io/teal/reference/check_decorators.md)
 
 ## Examples
 

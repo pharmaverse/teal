@@ -32,7 +32,7 @@ global environment. Using `teal_data_module` enables creating a dataset
 from scratch every time the user starts the application.
 
 *See
-[`?qenv`](https://insightsengineering.github.io/teal.code/latest-tag/reference/qenv.html)
+[`?qenv`](https://pharmaverse.github.io/teal.code/latest-tag/reference/qenv.html)
 for a detailed explanation of how to use the `within` method.*
 
 ``` r

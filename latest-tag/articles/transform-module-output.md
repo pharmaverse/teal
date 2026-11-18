@@ -7,7 +7,7 @@ created by the module developer and look a certain way. It is hard to
 design an output that will satisfy every possible user, so the form of
 the output should be considered a default value that can be customized.
 In [Transform Input
-Data](https://insightsengineering.github.io/teal/articles/transform-input-data.md)
+Data](https://pharmaverse.github.io/teal/articles/transform-input-data.md)
 we described how `teal_module`’s input data can be modified using
 `teal_transform_module`. Here we present how to utilize
 `teal_transform_module` to modify an output created by a `teal_module`,
@@ -19,7 +19,7 @@ rewriting the original module code.
 ## How to Transform outputs?
 
 Custom transformations for the output objects can be created with
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 and thus they are `shiny` modules. They are passed to `teal_module`
 constructors as arguments (see below). Their server logic will be used
 to modify objects such as plots or tables that exist in the server
@@ -87,9 +87,9 @@ If the transformation requires a user input, a `ui` function can be
 added. Here, the x-axis title is obtained from a `textInput` widget,
 giving the user some flexibility. Note how the input values are passed
 to the
-[`within()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
+[`within()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
 function using its `...` argument. See
-[`?teal.code::within.qenv`](https://insightsengineering.github.io/teal.code/latest-tag/reference/within.qenv.html)
+[`?teal.code::within.qenv`](https://pharmaverse.github.io/teal.code/latest-tag/reference/within.qenv.html)
 for more examples.
 
 ``` r
@@ -173,7 +173,7 @@ Transformations are applied to a `teal` module as follows:
 1.  A list of transformations is passed to the module constructor
     function (*e.g.* `tm_my_module`).
 2.  The module constructor calls the module generator function
-    ([`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md))
+    ([`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md))
     and passes the transformations to the `ui_args` and `server_args`
     arguments.
 3.  The module functions, UI and server, take a list of transformations
@@ -584,7 +584,7 @@ teal_transform_module(
 ### Multiple Transformations
 
 Multiple decorators can be passed to
-[`srv_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)/[`ui_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md).
+[`srv_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)/[`ui_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md).
 They will be executed in sequence, errors and warnings will show up on
 the appropriate decorator. Remember that they should receive a list of
 `teal_transform_module`.

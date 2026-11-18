@@ -34,8 +34,8 @@ A `teal_module` or `teal_modules` object with a wrapped server.
 
 ## See also
 
-[`disable_src()`](https://insightsengineering.github.io/teal/reference/disable_src.md),
-[`disable_report()`](https://insightsengineering.github.io/teal/reference/disable_report.md)
+[`disable_src()`](https://pharmaverse.github.io/teal/reference/disable_src.md),
+[`disable_report()`](https://pharmaverse.github.io/teal/reference/disable_report.md)
 
 ## Examples
 

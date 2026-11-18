@@ -3,12 +3,12 @@
 ## Introduction
 
 `teal` version `0.16` introduced a new, optional argument in
-[`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md),
+[`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md),
 `transformators`. This argument accepts a `list` of
 `teal_transform_module` objects, which are created using the
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 function.
-[`teal_transform_module()`](https://insightsengineering.github.io/teal/reference/teal_transform_module.md)
+[`teal_transform_module()`](https://pharmaverse.github.io/teal/reference/teal_transform_module.md)
 takes `ui` and `server` arguments to create a `shiny` module that
 encodes data transformations.
 
@@ -28,7 +28,7 @@ teal_data](images/teal-transform-module-transformators.svg)
 
 In this vignette we will focus on using the `teal_transform_module` for
 transforming the input data using the `transformators` argument in
-[`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
+[`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
 function.
 
 ## Creating a data transformation module
@@ -67,14 +67,14 @@ return a reactive expression holding transformed `data`.
 
 *Note*: It is recommended to return
 [`reactive()`](https://rdrr.io/pkg/shiny/man/reactive.html) with
-[`teal_data()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html)
+[`teal_data()`](https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html)
 in `server` code of a `teal_transform_module` as this is more robust for
 maintaining the reactivity of Shiny. If you are planning on using
 [`eventReactive()`](https://rdrr.io/pkg/shiny/man/observeEvent.html) in
 the server, the event should include
 [`data()`](https://rdrr.io/r/utils/data.html) *(example
 `eventReactive(list(input$a, data()), {...})`)*. More in [this
-discussion](https://github.com/insightsengineering/teal/issues/1303#issuecomment-2286239832).
+discussion](https://github.com/pharmaverse/teal/issues/1303#issuecomment-2286239832).
 
 ``` r
 
@@ -125,7 +125,7 @@ you do use
 trigger event should include
 [`data()`](https://rdrr.io/r/utils/data.html) (*e.g.*
 `eventReactive(list(input$a, data()), {...})`). See [this
-discussion](https://github.com/insightsengineering/teal/issues/1303#issuecomment-2286239832)
+discussion](https://github.com/pharmaverse/teal/issues/1303#issuecomment-2286239832)
 for a detailed explanation.
 
 ### Multiple transformators

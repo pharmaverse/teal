@@ -83,7 +83,7 @@ converted to a list of lists - a snapshot. The snapshot contains the
 been restored), which may not reflect the current one, so
 `mapping_matrix` is transformed to obtain the current mapping, i.e. a
 list that, when passed to the `mapping` argument of
-[`teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md),
+[`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md),
 would result in the current mapping. This is substituted as the
 snapshot's `mapping` attribute and the snapshot is added to the snapshot
 list.
@@ -96,7 +96,7 @@ current content of `slices_global`.
 
 To save a snapshot, the snapshot is retrieved and reassembled just like
 for restoring, and then saved to file with
-[`slices_store()`](https://insightsengineering.github.io/teal/reference/slices_store.md).
+[`slices_store()`](https://pharmaverse.github.io/teal/reference/slices_store.md).
 
 When a snapshot is uploaded, it will first be added to storage just like
 a newly created one, and then used to restore app state much like a

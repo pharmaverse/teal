@@ -44,4 +44,4 @@ printed in `UTC` timezone as well.
 
 ## See also
 
-[`teal_slices()`](https://insightsengineering.github.io/teal/reference/teal_slices.md)
+[`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md)

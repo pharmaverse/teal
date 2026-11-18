@@ -22,7 +22,7 @@ functionality.
 
 ## See also
 
-[`disable_src()`](https://insightsengineering.github.io/teal/reference/disable_src.md)
+[`disable_src()`](https://pharmaverse.github.io/teal/reference/disable_src.md)
 
 ## Examples in Shinylive
 
