@@ -476,16 +476,22 @@ srv_teal_module <- function(id,
     #   filter_manager_module_srv needs to be called before filter_panel_srv
     #   Because available_teal_slices is used in FilteredData$srv_available_slices (via srv_filter_panel)
     #   and if it is not set, then it won't be available in the srv_filter_panel
-    srv_module_filter_manager(modules$label, module_fd = datasets, slices_global = slices_global)
+    if (!isTRUE(attr(slices_global, "disable_filtering", exact = TRUE))){
+      srv_module_filter_manager(modules$label, module_fd = datasets, slices_global = slices_global)
+    }
 
     .call_once_when(is_active(), {
-      filtered_teal_data <- srv_filter_data(
-        "filter_panel",
-        datasets = datasets,
-        active_datanames = active_datanames,
-        data = data,
-        is_active = is_active
-      )
+      filtered_teal_data <- if (isTRUE(attr(slices_global, "disable_filtering", exact = TRUE))) {
+        data
+      } else {
+        srv_filter_data(
+          "filter_panel",
+          datasets = datasets,
+          active_datanames = active_datanames,
+          data = data,
+          is_active = is_active
+        )
+      }
       is_transform_failed <- reactiveValues()
       transformed_teal_data <- .srv_transform_teal_data(
         "data_transform",

@@ -203,6 +203,10 @@ srv_teal <- function(id, data, modules, filter = teal_slices(), reporter = teal.
     data_validated <- .trigger_on_success(data_handled)
     data_signatured <- reactive({
       req(inherits(data_validated(), "teal_data"))
+      if (isTRUE(attr(filter, "disable_filtering", exact = TRUE))) {
+        return(.add_signature_to_data(data_validated()))
+      }
+
       is_filter_ok <- check_filter_datanames(filter, names(data_validated()))
       if (!isTRUE(is_filter_ok)) {
         showNotification(
@@ -334,6 +338,9 @@ srv_teal <- function(id, data, modules, filter = teal_slices(), reporter = teal.
     }
     module_labels <- unlist(modules_slot(modules, "label"), use.names = FALSE)
     slices_global <- methods::new(".slicesGlobal", filter, module_labels)
+    if (isTRUE(attr(filter, "disable_filtering", exact = TRUE))) {
+      attr(slices_global, "disable_filtering") <- TRUE # Manual disabling of filtering
+    }
 
     modules_output <- srv_teal_module(
       "teal_modules",

@@ -122,8 +122,18 @@ init <- function(data,
   }
 
   ## `filter`
-  checkmate::assert_class(filter, "teal_slices")
+  checkmate::assert(
+    .var.name = "filter",
+    checkmate::check_class(filter, "teal_slices"),
+    checkmate::check_string(filter, fixed = "off")
+  )
 
+  filter_off <- if (identical(filter, "off")) {
+    filter <- teal_slices()
+    TRUE
+  } else {
+    FALSE
+  }
   # log
   teal.logger::log_system_info()
 
@@ -132,6 +142,7 @@ init <- function(data,
 
   ## `filter` - convert teal.slice::teal_slices to teal::teal_slices
   filter <- as.teal_slices(as.list(filter))
+  if (filter_off) attr(filter, "disable_filtering") <- TRUE
 
   # argument checking (interdependent)
   ## `filter` - `modules`
