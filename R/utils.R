@@ -107,7 +107,8 @@ teal_data_to_filtered_data <- function(x, datanames = names(x)) {
 #'   description = "Summary of the iris dataset.",
 #'   with_filter = TRUE,
 #'   filter_panel_api = teal.slice::FilterPanelAPI$new(filtered_data)
-#' )}
+#' )
+#' }
 #'
 #' @export
 report_card_template <- function(title, label, description = NULL, with_filter, filter_panel_api) {
