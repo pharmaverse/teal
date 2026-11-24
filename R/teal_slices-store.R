@@ -1,29 +1,28 @@
-#' Store and restore `teal_slices` object
-#'
-#' Functions that write a `teal_slices` object to a file in the `JSON` format,
-#' and also restore the object from disk.
-#'
-#' Date and date time objects are stored in the following formats:
-#'
-#' - `Date` class is converted to the `"ISO8601"` standard (`YYYY-MM-DD`).
-#' - `POSIX*t` classes are converted to character by using
-#' `format.POSIX*t(usetz = TRUE, tz = "UTC")` (`YYYY-MM-DD HH:MM:SS UTC`, where
-#' `UTC` is the `Coordinated Universal Time` timezone short-code).
-#'
-#' This format is assumed during `slices_restore`. All `POSIX*t` objects in
-#' `selected` or `choices` fields of `teal_slice` objects are always printed in
-#' `UTC` timezone as well.
-#'
-#' @param tss (`teal_slices`) object to be stored.
-#' @param file (`character(1)`) file path where `teal_slices` object will be
-#' saved and restored. The file extension should be `".json"`.
-#'
-#' @return `slices_store` returns `NULL`, invisibly.
-#'
-#' @seealso [teal_slices()]
-#'
-#' @noRd
-#'
+# Store and restore `teal_slices` object
+#
+# Functions that write a `teal_slices` object to a file in the `JSON` format,
+# and also restore the object from disk.
+#
+# Date and date time objects are stored in the following formats:
+#
+# - `Date` class is converted to the `"ISO8601"` standard (`YYYY-MM-DD`).
+# - `POSIX*t` classes are converted to character by using
+# `format.POSIX*t(usetz = TRUE, tz = "UTC")` (`YYYY-MM-DD HH:MM:SS UTC`, where
+# `UTC` is the `Coordinated Universal Time` timezone short-code).
+#
+# This format is assumed during `slices_restore`. All `POSIX*t` objects in
+# `selected` or `choices` fields of `teal_slice` objects are always printed in
+# `UTC` timezone as well.
+#
+# @param tss (`teal_slices`) object to be stored.
+# @param file (`character(1)`) file path where `teal_slices` object will be
+# saved and restored. The file extension should be `".json"`.
+#
+# @return `slices_store` returns `NULL`, invisibly.
+#
+# @seealso [teal_slices()]
+#
+# @noRd
 slices_store <- function(tss, file) {
   checkmate::assert_class(tss, "teal_slices")
   checkmate::assert_path_for_output(file, overwrite = TRUE, extension = "json")
@@ -31,8 +30,8 @@ slices_store <- function(tss, file) {
   cat(format(tss, trim_lines = FALSE), "\n", file = file)
 }
 
-#' @rdname slices_store
-#' @return `slices_restore` returns a `teal_slices` object restored from the file.
+# @rdname slices_store
+# @return `slices_restore` returns a `teal_slices` object restored from the file.
 slices_restore <- function(file) {
   checkmate::assert_file_exists(file, access = "r", extension = "json")
 

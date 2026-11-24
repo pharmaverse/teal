@@ -35,7 +35,7 @@
 #' @return
 #' A `teal_slices` object.
 #'
-#' @seealso [`teal.slice::teal_slices`], [`teal.slice::teal_slice`], [slices_store()]
+#' @seealso [`teal.slice::teal_slices`], [`teal.slice::teal_slice`]
 #'
 #' @examplesShinylive
 #' library(teal)

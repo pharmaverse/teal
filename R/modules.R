@@ -391,18 +391,16 @@ format_tree_leaves <- function(labels, prefix) {
   }
   output
 }
-
-#' Render decorator entries as tree nodes
-#'
-#' Renders global decorator labels and object-specific decorator groups
-#' as sibling entries under a common prefix. Reuses [format_tree_leaves()]
-#' for rendering children within object groups.
-#'
-#' @param decorators_info (`list`) with `global` (character vector) and `objects` (named list) components,
-#'   as returned by [format_decorators_tree()]
-#' @param prefix (`character(1)`) Prefix for each line
-#' @returns (`character(1)`) Formatted string with tree connectors
-#' @noRd
+# Render decorator entries as tree nodes
+#
+# Renders global decorator labels and object-specific decorator groups
+# as sibling entries under a common prefix. Reuses [format_tree_leaves()]
+# for rendering children within object groups.
+#
+# @param decorators_info (`list`) with `global` (character vector) and `objects` (named list) components,
+#   as returned by [format_decorators_tree()]
+# @param prefix (`character(1)`) Prefix for each line
+# @returns (`character(1)`) Formatted string with tree connectors
 format_decorator_entries <- function(decorators_info, prefix) {
   all_entries <- list()
   for (lbl in decorators_info$global) {

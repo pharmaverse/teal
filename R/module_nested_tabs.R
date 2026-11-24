@@ -35,7 +35,7 @@
 #' @param data (`reactive` returning `teal_data`)
 #'
 #' @param slices_global (`reactiveVal` returning `modules_teal_slices`)
-#'   see [`module_filter_manager`]
+#'   see "Slices global" section below.
 #'
 #' @param datasets (`reactive` returning `FilteredData` or `NULL`)
 #'  When `datasets` is passed from the parent module (`srv_teal`) then `dataset` is a singleton
@@ -54,6 +54,20 @@
 #' @param active_module_id (`reactive` returning `character(1)`)
 #'   `id` of the currently active module. This helps to determine which module can listen to reactive events.
 #'
+#' @section Slices global:
+#' The key role in maintaining the module-specific filter states is played by the `.slicesGlobal`
+#' object. It is a reference class that holds the following fields:
+#' - `all_slices` (`reactiveVal`) - reactive value containing all filters registered in an app.
+#' - `module_slices_api` (`reactiveValues`) - reactive field containing references to each modules'
+#' `FilteredData` object methods. At this moment it is used only in `srv_filter_manager` to display
+#' the filter states in a table combining information from `all_slices` and from
+#' `FilteredData$get_available_teal_slices()`.
+#'
+#' During a session only new filters are added to `all_slices` unless they are restored to previous state.
+#' Filters from `all_slices` can be activated or deactivated in a
+#' module which is linked (both ways) so that:
+#' - If module's filter is added or removed this information is passed to mappings and updated.
+#' - When mapping changes, filters are set or removed from modules.
 #' @return
 #' Output of currently active module.
 #' - `srv_teal_module.teal_module` returns `reactiveVal` containing output of the called module.

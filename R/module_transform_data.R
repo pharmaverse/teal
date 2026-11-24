@@ -9,7 +9,6 @@
 #' until the failure is resolved.
 #' An optional `expr` argument allows additional code to be evaluated on the final decorated output.
 #'
-#' @inheritParams module_validate_error
 #' @inheritParams teal_modules
 #' @param transformators (`list` of `teal_transform_module`) decorator modules to apply sequentially
 #'   to `data`. Each transformator receives the output of the previous one as input.
@@ -57,6 +56,7 @@
 #'   )
 #' }
 #' @name module_transform_data
+#' @rdname module_transform_data
 NULL
 
 #' @rdname module_transform_data
