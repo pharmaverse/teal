@@ -42,6 +42,24 @@
 #'
 #' @return `ui_teal` returns a `shiny.tag.list` with the `teal` application UI.
 #' `srv_teal` returns a The output of the module server.
+#' @examplesShinylive
+#' library(teal)
+#' interactive <- function() TRUE
+#' {{ next_example }}
+#' @examples
+#' app_modules <- modules(example_module())
+#' app_data <- teal_data(IRIS = iris)
+#'
+#' app <- shiny::shinyApp(
+#'   ui = function(request) ui_teal("teal", modules = app_modules),
+#'   server = function(input, output, session) {
+#'     srv_teal("teal", data = app_data, modules = app_modules)
+#'   }
+#' )
+#'
+#' if (interactive()) {
+#'   shiny::runApp(app)
+#' }
 NULL
 
 #' @rdname module_teal

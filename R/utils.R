@@ -84,6 +84,8 @@ teal_data_to_filtered_data <- function(x, datanames = names(x)) {
 
 #' Template function for `TealReportCard` creation and customization
 #'
+#' @description `r lifecycle::badge("deprecated")`
+#'
 #' This function generates a report card with a title,
 #' an optional description, and the option to append the filter state list.
 #'
@@ -95,6 +97,17 @@ teal_data_to_filtered_data <- function(x, datanames = names(x)) {
 #' of the filter state in the report
 #'
 #' @return (`TealReportCard`) populated with a title, description and filter state.
+#' @seealso See [teal_card()] and the vignette about the teal report `vignette('teal-report-class', 'teal.reporter')`
+#' @examples
+#' filtered_data <- teal.slice::init_filtered_data(list(iris = list(dataset = iris)))
+#' \dontrun{
+#' card <- report_card_template(
+#'   title = "Iris",
+#'   label = "",
+#'   description = "Summary of the iris dataset.",
+#'   with_filter = TRUE,
+#'   filter_panel_api = teal.slice::FilterPanelAPI$new(filtered_data)
+#' )}
 #'
 #' @export
 report_card_template <- function(title, label, description = NULL, with_filter, filter_panel_api) {
@@ -309,6 +322,8 @@ validate_app_title_tag <- function(shiny_tag) {
 
 #' Build app title with favicon
 #'
+#' @description `r lifecycle::badge("deprecated")`
+#'
 #' A helper function to create the browser title along with a logo.
 #'
 #' @param title (`character`) The browser title for the `teal` app.
@@ -316,6 +331,11 @@ validate_app_title_tag <- function(shiny_tag) {
 #' The image/icon path can be remote or the static path accessible by `shiny`, like the `www/`
 #'
 #' @return A `shiny.tag` containing the element that adds the title and logo to the `shiny` app.
+#' @seealso [modify_title()]
+#' @examples
+#' suppressWarnings(
+#'   title_tag <- build_app_title(title = "My app")
+#' )
 #' @export
 build_app_title <- function(
   title = "teal app",

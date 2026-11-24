@@ -13,10 +13,14 @@
 #' @inheritParams teal_modules
 #' @param server_args (named `list`) Arguments will overwrite the default `teal.reporter` options
 #' described in the description.
-#'
+#' @seealso The functionality on [teal.reporter] and the [article "Adding Support for Reporting to Custom Modules"](https://pharmaverse.github.io/teal/latest-tag/articles/adding-support-for-reporting.html)
 #' @return
 #' `teal_module` (extended with `teal_module_previewer` class) containing the `teal.reporter` previewer functionality.
-#'
+#' @examples
+#' suppressWarnings(
+#'   previewer <- reporter_previewer_module(label = "Report Previewer")
+#' )
+#' previewer
 #' @export
 reporter_previewer_module <- function(label = "Report Previewer", server_args = list()) {
   checkmate::assert_string(label)
