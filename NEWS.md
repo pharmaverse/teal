@@ -7,6 +7,7 @@
 
 ### Miscellaneous
 
+- Added missing `@return` and `@examples` to documentation pages and hid internal helpers from the reference with `@noRd` (#1743).
 - teal has moved to the pharmaverse GitHub organisation: https://github.com/pharmaverse/teal.
 - Appsilon becomes a core contributor and joins F. Hoffmann-La Roche AG as a copyright holder of teal, working alongside the wider contributor community.
 
