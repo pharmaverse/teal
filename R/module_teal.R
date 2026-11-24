@@ -40,7 +40,8 @@
 #'   will be displayed in the `teal` application. See [modules()] and [module()] for
 #'   more details.
 #'
-#' @return `NULL` invisibly
+#' @return `ui_teal` returns a `shiny.tag.list` with the `teal` application UI.
+#' `srv_teal` returns a The output of the module server.
 NULL
 
 #' @rdname module_teal

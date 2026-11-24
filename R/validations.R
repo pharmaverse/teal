@@ -8,6 +8,7 @@
 #' @param allow_inf (`logical(1)`) Flag specifying whether to allow infinite values. Defaults to `TRUE`.
 #' @param msg (`character(1)`) Additional message to display alongside the default message.
 #' @family validations
+#' @return `NULL` if `x` meets the requirements; otherwise a `shiny` validation error is raised.
 #' @export
 #'
 #' @examplesShinylive
@@ -80,6 +81,7 @@ validate_has_data <- function(x,
 #' @param x (`data.frame`)
 #' @param key (`character`) Vector of ID variables from `x` that identify unique records.
 #' @family validations
+#' @return `NULL` if each combination of `key` is unique; otherwise a `shiny` validation error is raised.
 #' @export
 #'
 #' @examplesShinylive
@@ -122,6 +124,7 @@ validate_one_row_per_id <- function(x, key = c("USUBJID", "STUDYID")) {
 #' @param choices Vector to test against.
 #' @param msg (`character(1)`) Error message to display if some elements of `x` are not elements of `choices`.
 #'
+#' @return `NULL` if all `x` values are in `choices`; otherwise a `shiny` validation error is raised.
 #' @export
 #' @family validations
 #'
@@ -162,6 +165,7 @@ validate_in <- function(x, choices, msg) {
 #' @param x vector
 #' @param msg message to display
 #' @family validations
+#' @return `NULL` if `x` has at least one element; otherwise a `shiny` validation error is raised.
 #' @export
 #'
 #' @examplesShinylive
@@ -212,6 +216,7 @@ validate_has_elements <- function(x, msg) {
 #' @param y vector
 #' @param msg (`character(1)`) message to display if `x` and `y` intersect
 #' @family validations
+#' @return `NULL` if `x` and `y` have no common elements; otherwise a `shiny` validation error is raised.
 #' @export
 #'
 #' @examplesShinylive
@@ -268,6 +273,7 @@ validate_no_intersection <- function(x, y, msg) {
 #' @param varname (`character(1)`) name of variable to check for in `data`
 #' @param msg (`character(1)`) message to display if `data` does not include `varname`
 #' @family validations
+#' @return `NULL` if `data` contains all `varname`; otherwise a `shiny` validation error is raised.
 #' @export
 #'
 #' @examplesShinylive
@@ -328,6 +334,7 @@ validate_has_variable <- function(data, varname, msg) {
 #' @param var_name name of variable being validated for use in
 #'   validation message
 #' @family validations
+#' @return `NULL` if the number of levels of `x` is within the limits; otherwise a `shiny` validation error is raised.
 #' @export
 #'
 #' @examplesShinylive
