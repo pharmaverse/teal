@@ -10,6 +10,7 @@
 #' An optional `expr` argument allows additional code to be evaluated on the final decorated output.
 #'
 #' @inheritParams teal_modules
+#' @inheritParams module_teal
 #' @param transformators (`list` of `teal_transform_module`) decorator modules to apply sequentially
 #'   to `data`. Each transformator receives the output of the previous one as input.
 #' @return `reactive` `teal_data`

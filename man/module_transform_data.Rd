@@ -18,6 +18,11 @@ srv_transform_teal_data(
 ui_transform_teal_data(id, transformators, class = "well", ...)
 }
 \arguments{
+\item{id}{(\code{character(1)}) \code{shiny} module instance id.}
+
+\item{data}{(\code{teal_data}, \code{teal_data_module}, or \code{reactive} returning \code{teal_data})
+The data which application will depend on.}
+
 \item{transformators}{(\code{list} of \code{teal_transform_module}) decorator modules to apply sequentially
 to \code{data}. Each transformator receives the output of the previous one as input.}
 
