@@ -36,5 +36,6 @@ suppressWarnings(
 previewer
 }
 \seealso{
-The functionality on \link[teal.reporter:teal.reporter]{teal.reporter} and the \href{https://pharmaverse.github.io/teal/latest-tag/articles/adding-support-for-reporting.html}{article "Adding Support for Reporting to Custom Modules"}
+The functionality on \link[teal.reporter:teal.reporter]{teal.reporter} and the
+\href{https://pharmaverse.github.io/teal/latest-tag/articles/adding-support-for-reporting.html}{article "Adding Support for Reporting to Custom Modules"}
 }

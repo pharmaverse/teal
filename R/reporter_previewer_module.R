@@ -13,7 +13,7 @@
 #' @inheritParams teal_modules
 #' @param server_args (named `list`) Arguments will overwrite the default `teal.reporter` options
 #' described in the description.
-#' @seealso The functionality on [teal.reporter] and the [article "Adding Support for Reporting to Custom Modules"](https://pharmaverse.github.io/teal/latest-tag/articles/adding-support-for-reporting.html)
+#' @seealso The functionality on [teal.reporter] and the [article "Adding Support for Reporting to Custom Modules"](https://pharmaverse.github.io/teal/latest-tag/articles/adding-support-for-reporting.html) # nolint line_length_linter.
 #' @return
 #' `teal_module` (extended with `teal_module_previewer` class) containing the `teal.reporter` previewer functionality.
 #' @examples

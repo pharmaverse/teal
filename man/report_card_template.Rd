@@ -42,7 +42,8 @@ card <- report_card_template(
   description = "Summary of the iris dataset.",
   with_filter = TRUE,
   filter_panel_api = teal.slice::FilterPanelAPI$new(filtered_data)
-)}
+)
+}
 
 }
 \seealso{
