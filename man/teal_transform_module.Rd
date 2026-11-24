@@ -27,6 +27,9 @@ Specifies the names of datasets relevant to the module. Only filters for the spe
 in the filter panel. The keyword \code{"all"} can be used to display filters for all datasets. \code{datanames} are
 automatically appended to the \code{\link[=modules]{modules()}} \code{datanames}.}
 }
+\value{
+A \code{teal_transform_module} object, which is a \code{teal_data_module}.
+}
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 

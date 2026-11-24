@@ -13,6 +13,9 @@ validate_no_intersection(x, y, msg)
 
 \item{msg}{(\code{character(1)}) message to display if \code{x} and \code{y} intersect}
 }
+\value{
+\code{NULL} if \code{x} and \code{y} have no common elements; otherwise a \code{shiny} validation error is raised.
+}
 \description{
 This function is a wrapper for \code{shiny::validate}.
 }

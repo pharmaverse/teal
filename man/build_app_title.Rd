@@ -20,5 +20,15 @@ The image/icon path can be remote or the static path accessible by \code{shiny},
 A \code{shiny.tag} containing the element that adds the title and logo to the \code{shiny} app.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 A helper function to create the browser title along with a logo.
+}
+\examples{
+suppressWarnings(
+  title_tag <- build_app_title(title = "My app")
+)
+}
+\seealso{
+\code{\link[=modify_title]{modify_title()}}
 }

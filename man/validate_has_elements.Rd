@@ -11,6 +11,9 @@ validate_has_elements(x, msg)
 
 \item{msg}{message to display}
 }
+\value{
+\code{NULL} if \code{x} has at least one element; otherwise a \code{shiny} validation error is raised.
+}
 \description{
 This function is a wrapper for \code{shiny::validate}.
 }

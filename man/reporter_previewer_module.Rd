@@ -29,3 +29,12 @@ buttons will be displayed in the drop-down.
 \item \code{teal.reporter.global_knitr}: passed to \code{\link[teal.reporter:download_report_button_srv]{teal.reporter::download_report_button_srv()}}
 }
 }
+\examples{
+suppressWarnings(
+  previewer <- reporter_previewer_module(label = "Report Previewer")
+)
+previewer
+}
+\seealso{
+The functionality on \link[teal.reporter:teal.reporter]{teal.reporter} and the \href{https://pharmaverse.github.io/teal/latest-tag/articles/adding-support-for-reporting.html}{article "Adding Support for Reporting to Custom Modules"}
+}

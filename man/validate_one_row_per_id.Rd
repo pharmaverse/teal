@@ -11,6 +11,9 @@ validate_one_row_per_id(x, key = c("USUBJID", "STUDYID"))
 
 \item{key}{(\code{character}) Vector of ID variables from \code{x} that identify unique records.}
 }
+\value{
+\code{NULL} if each combination of \code{key} is unique; otherwise a \code{shiny} validation error is raised.
+}
 \description{
 This function is a wrapper for \code{shiny::validate}.
 }

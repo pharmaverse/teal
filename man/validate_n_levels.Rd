@@ -17,6 +17,9 @@ are treated as levels.}
 \item{var_name}{name of variable being validated for use in
 validation message}
 }
+\value{
+\code{NULL} if the number of levels of \code{x} is within the limits; otherwise a \code{shiny} validation error is raised.
+}
 \description{
 If the number of levels of \code{x} is less than \code{min_levels}
 or greater than \code{max_levels} the validation will fail.

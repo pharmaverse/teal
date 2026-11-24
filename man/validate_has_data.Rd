@@ -23,6 +23,9 @@ validate_has_data(
 
 \item{msg}{(\code{character(1)}) Additional message to display alongside the default message.}
 }
+\value{
+\code{NULL} if \code{x} meets the requirements; otherwise a \code{shiny} validation error is raised.
+}
 \description{
 This function is a wrapper for \code{shiny::validate}.
 }
