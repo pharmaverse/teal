@@ -22,7 +22,7 @@
 #'
 #' @seealso [teal_slices()]
 #'
-#' @keywords internal
+#' @noRd
 #'
 slices_store <- function(tss, file) {
   checkmate::assert_class(tss, "teal_slices")
@@ -33,7 +33,6 @@ slices_store <- function(tss, file) {
 
 #' @rdname slices_store
 #' @return `slices_restore` returns a `teal_slices` object restored from the file.
-#' @keywords internal
 slices_restore <- function(file) {
   checkmate::assert_file_exists(file, access = "r", extension = "json")
 

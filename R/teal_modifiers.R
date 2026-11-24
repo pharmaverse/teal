@@ -182,7 +182,7 @@ add_landing_modal <- function(
 #' @param custom_server (`function(input, output, session)` or `function(id, ...)`)
 #'    The custom server function or server module to set.
 #' @param module_id (`character(1)`) The ID of the module when a module server function is passed.
-#' @keywords internal
+#' @noRd
 teal_extend_server <- function(x, custom_server, module_id = character(0)) {
   checkmate::assert_class(x, "teal_app")
   checkmate::assert_function(custom_server, args = c("input", "output", "session"))

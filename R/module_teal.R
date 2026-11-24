@@ -357,7 +357,7 @@ srv_teal <- function(id, data, modules, filter = teal_slices(), reporter = teal.
 #' Adds signature protection to the `datanames` in the data
 #' @param data (`teal_data`)
 #' @return `teal_data` with additional code that has signature of the `datanames`
-#' @keywords internal
+#' @noRd
 .add_signature_to_data <- function(data) {
   hashes <- .get_hashes_code(data)
   data_teal_report <- as(data, "teal_report")
@@ -394,7 +394,7 @@ srv_teal <- function(id, data, modules, filter = teal_slices(), reporter = teal.
 #' @param datanames (`character`) names of `datasets`
 #'
 #' @return A character vector with the code lines.
-#' @keywords internal
+#' @noRd
 #'
 .get_hashes_code <- function(data, datanames = names(data)) {
   vapply(

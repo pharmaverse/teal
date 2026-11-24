@@ -63,7 +63,7 @@ reporter_previewer_module <- function(label = "Report Previewer", server_args = 
 #' deprecation.
 #' @param args (`list`)
 #'
-#' @keywords internal
+#' @noRd
 .get_reporter_options <- function(args) {
   opts <- list()
   if (length(args$previewer_buttons)) {

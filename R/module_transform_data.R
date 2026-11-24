@@ -150,12 +150,13 @@ ui_transform_teal_data <- function(id, transformators, class = "well", ...) {
 #' This module calls [teal_transform_module()] sequentially by passing output from one step to the next.
 #' Modules have error/warning handling feature and highlight containers when something goes wrong.
 #' @name module_transform_teal_data_impl
+#' @noRd
 NULL
 
 #' @rdname module_transform_teal_data_impl
 #' @inheritParams srv_transform_teal_data
 #' @return `shiny.tag`
-#' @keywords internal
+#' @noRd
 .ui_transform_teal_data <- function(id, transformators, class = "well") {
   checkmate::assert_string(id)
   if (length(transformators) == 0L) {
@@ -205,7 +206,7 @@ NULL
 #' @rdname module_transform_teal_data_impl
 #' @inheritParams ui_transform_teal_data
 #' @return `reactive` `teal_data` object
-#' @keywords internal
+#' @noRd
 .srv_transform_teal_data <- function(id, data, transformators, modules = NULL, is_transform_failed = reactiveValues()) {
   checkmate::assert_string(id)
   assert_reactive(data)

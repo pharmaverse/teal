@@ -2,7 +2,7 @@
 #'
 #' @inherit checkmate::check_class params return
 #'
-#' @keywords internal
+#' @noRd
 check_reactive <- function(x, null.ok = FALSE) { # nolint: object_name_linter.
   if (!isTRUE(checkmate::test_class(x, classes = "reactive", null.ok = null.ok))) {
     cl <- class(x)
@@ -15,10 +15,12 @@ check_reactive <- function(x, null.ok = FALSE) { # nolint: object_name_linter.
   TRUE
 }
 #' @rdname check_reactive
+#' @noRd
 test_reactive <- function(x, null.ok = FALSE) { # nolint: object_name_linter.
   isTRUE(check_reactive(x, null.ok = null.ok))
 }
 #' @rdname check_reactive
+#' @noRd
 assert_reactive <- checkmate::makeAssertionFunction(check_reactive)
 
 #' Capture error and decorate error message.
@@ -29,7 +31,7 @@ assert_reactive <- checkmate::makeAssertionFunction(check_reactive)
 #'
 #' @return `x` if no error, otherwise throws error with decorated message
 #'
-#' @keywords internal
+#' @noRd
 decorate_err_msg <- function(x, pre = character(0), post = character(0)) {
   tryCatch(
     x,

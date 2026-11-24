@@ -1,5 +1,5 @@
 #' The default favicon for the teal app.
-#' @keywords internal
+#' @noRd
 .teal_favicon <- "https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/PNG/teal.png"
 
 #' Get client timezone
@@ -12,7 +12,7 @@
 #'
 #' @return `NULL`, invisibly.
 #'
-#' @keywords internal
+#' @noRd
 #'
 get_client_timezone <- function(ns) {
   script <- sprintf(
@@ -70,7 +70,7 @@ get_teal_bs_theme <- function() {
 #' @param x (`teal_data`) object
 #' @param datanames (`character`) vector of data set names to include; must be subset of `names(x)`
 #' @return A `FilteredData` object.
-#' @keywords internal
+#' @noRd
 teal_data_to_filtered_data <- function(x, datanames = names(x)) {
   checkmate::assert_class(x, "teal_data")
   checkmate::assert_character(datanames, min.chars = 1L, any.missing = FALSE)
@@ -126,7 +126,7 @@ report_card_template <- function(title, label, description = NULL, with_filter, 
 #' @param datanames (`character`) names of datasets available in the `data` object
 #'
 #' @return `TRUE` if validation passes, otherwise `character(1)` or `shiny.tag.list`
-#' @keywords internal
+#' @noRd
 check_modules_datanames <- function(modules, datanames) {
   out <- check_modules_datanames_html(modules, datanames)
   if (inherits(out, "shiny.tag.list")) {
@@ -139,6 +139,7 @@ check_modules_datanames <- function(modules, datanames) {
 }
 
 #' @rdname check_modules_datanames
+#' @noRd
 check_reserved_datanames <- function(datanames) {
   reserved_datanames <- datanames[datanames %in% c("all", ".raw_data")]
   if (length(reserved_datanames) == 0L) {
@@ -157,6 +158,7 @@ check_reserved_datanames <- function(datanames) {
 }
 
 #' @rdname check_modules_datanames
+#' @noRd
 check_modules_datanames_html <- function(modules, datanames) {
   check_datanames <- check_modules_datanames_recursive(modules, datanames)
   show_module_info <- inherits(modules, "teal_modules") # used in two contexts - module and app
@@ -258,7 +260,7 @@ to_html_code_list <- function(x) {
 #' @param datanames (`character`) names of datasets available in the `data` object
 #'
 #' @return A `character(1)` containing error message or TRUE if validation passes.
-#' @keywords internal
+#' @noRd
 check_filter_datanames <- function(filters, datanames) {
   checkmate::assert_class(filters, "teal_slices")
   checkmate::assert_character(datanames)
@@ -290,7 +292,7 @@ check_filter_datanames <- function(filters, datanames) {
 #'
 #' Checks if the input of the title from `teal::init` will create a valid title and favicon tag.
 #' @param shiny_tag (`shiny.tag`) Object to validate for a valid title.
-#' @keywords internal
+#' @noRd
 validate_app_title_tag <- function(shiny_tag) {
   checkmate::assert_class(shiny_tag, "shiny.tag")
   checkmate::assert_true(shiny_tag$name == "head")
@@ -349,7 +351,7 @@ build_app_title <- function(
 #'
 #' @return A single character string.
 #'
-#' @keywords internal
+#' @noRd
 create_app_id <- function(data, modules) {
   checkmate::assert_multi_class(data, c("teal_data", "teal_data_module"))
   checkmate::assert_class(modules, "teal_modules")
@@ -387,7 +389,7 @@ defunction <- function(x) {
 #'
 #' @return (`character`) vector of unique labels
 #'
-#' @keywords internal
+#' @noRd
 get_unique_labels <- function(labels) {
   make.unique(gsub("[^[:alnum:]]", "_", tolower(labels)), sep = "_")
 }
@@ -458,7 +460,7 @@ build_datanames_error_message <- function(label = NULL,
 #' Combine `data.frame` objects which have different columns
 #'
 #' @param ... (`data.frame`)
-#' @keywords internal
+#' @noRd
 .smart_rbind <- function(...) {
   dots <- list(...)
   checkmate::assert_list(dots, "data.frame", .var.name = "...")
@@ -481,7 +483,7 @@ build_datanames_error_message <- function(label = NULL,
 #' is added to the singular form.
 #'
 #' @return A `character` that correctly represents the size of the `x` argument.
-#' @keywords internal
+#' @noRd
 pluralize <- function(x, singular, plural = NULL) {
   checkmate::assert_string(singular)
   checkmate::assert_string(plural, null.ok = TRUE)

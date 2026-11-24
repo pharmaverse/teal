@@ -16,17 +16,19 @@
 #'
 #' @name module_data_summary
 #' @rdname module_data_summary
-#' @keywords internal
+#' @noRd
 #' @return `NULL`.
 NULL
 
 #' @rdname module_data_summary
+#' @noRd
 ui_data_summary <- function(id) {
   ns <- NS(id)
   tableOutput(ns("table"))
 }
 
 #' @rdname module_data_summary
+#' @noRd
 srv_data_summary <- function(id, data) {
   assert_reactive(data)
   moduleServer(
@@ -114,6 +116,7 @@ srv_data_summary <- function(id, data) {
 }
 
 #' @rdname module_data_summary
+#' @noRd
 get_filter_overview_wrapper <- function(teal_data) {
   # Sort datanames in topological order
   datanames <- names(teal_data())
@@ -153,6 +156,7 @@ get_filter_overview_wrapper <- function(teal_data) {
 #' @param initial_data (`object`) initial object.
 #' @param dataname (`character(1)`)
 #' @param subject_keys (`character`) names of the columns which determine a single unique subjects
+#' @noRd
 get_filter_overview <- function(current_data, initial_data, dataname, subject_keys) {
   if (inherits(current_data, c("data.frame", "DataFrame", "array", "Matrix", "SummarizedExperiment"))) {
     get_filter_overview_array(current_data, initial_data, dataname, subject_keys)
@@ -164,6 +168,7 @@ get_filter_overview <- function(current_data, initial_data, dataname, subject_ke
 }
 
 #' @rdname module_data_summary
+#' @noRd
 get_filter_overview_array <- function(current_data,
                                       initial_data,
                                       dataname,
@@ -195,6 +200,7 @@ get_filter_overview_array <- function(current_data,
 }
 
 #' @rdname module_data_summary
+#' @noRd
 get_filter_overview_MultiAssayExperiment <- function(current_data, # nolint: object_length, object_name.
                                                      initial_data,
                                                      dataname) {

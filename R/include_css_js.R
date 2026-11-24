@@ -7,7 +7,7 @@
 #' @param pattern (`character`) pattern of files to be included
 #'
 #' @return HTML code that includes `CSS` files.
-#' @keywords internal
+#' @noRd
 include_css_files <- function(pattern = "*") {
   css_files <- list.files(
     system.file("css", package = "teal", mustWork = TRUE),
@@ -29,7 +29,7 @@ include_css_files <- function(pattern = "*") {
 #'
 #' Simply add `include_teal_css_js()` as one of the UI elements.
 #' @return A `shiny.tag.list`.
-#' @keywords internal
+#' @noRd
 include_teal_css_js <- function() {
   tagList(
     shinyjs::useShinyjs(),

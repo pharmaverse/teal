@@ -28,18 +28,16 @@
 #'
 #' @rdname module_validate_error
 #' @name module_validate_error
-#' @keywords internal
+#' @noRd
 NULL
 
 #' @rdname module_validate_error
-#' @keywords internal
 ui_validate_error <- function(id) {
   ns <- NS(id)
   uiOutput(ns("message"))
 }
 
 #' @rdname module_validate_error
-#' @keywords internal
 srv_validate_error <- function(id, data, validate_shiny_silent_error) {
   checkmate::assert_string(id)
   checkmate::assert_flag(validate_shiny_silent_error)
@@ -78,14 +76,12 @@ srv_validate_error <- function(id, data, validate_shiny_silent_error) {
 }
 
 #' @rdname module_validate_error
-#' @keywords internal
 ui_check_class_teal_data <- function(id) {
   ns <- NS(id)
   uiOutput(ns("message"))
 }
 
 #' @rdname module_validate_error
-#' @keywords internal
 srv_check_class_teal_data <- function(id, data) {
   checkmate::assert_string(id)
   moduleServer(id, function(input, output, session) {
@@ -101,14 +97,12 @@ srv_check_class_teal_data <- function(id, data) {
 }
 
 #' @rdname module_validate_error
-#' @keywords internal
 ui_check_module_datanames <- function(id) {
   ns <- NS(id)
   uiOutput(NS(id, "message"))
 }
 
 #' @rdname module_validate_error
-#' @keywords internal
 srv_check_module_datanames <- function(id, data, modules) {
   checkmate::assert_string(id)
   moduleServer(id, function(input, output, session) {

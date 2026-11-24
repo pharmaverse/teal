@@ -59,11 +59,12 @@
 #' - `srv_teal_module.teal_module` returns `reactiveVal` containing output of the called module.
 #' - `srv_teal_module.teal_modules` returns output of modules in a list following the hierarchy of `modules`
 #'
-#' @keywords internal
+#' @noRd
 NULL
 
 
 #' @rdname module_teal_module
+#' @noRd
 ui_teal_module <- function(id, modules) {
   ns <- NS(id)
   active_module_id <- restoreInput(
@@ -99,6 +100,7 @@ ui_teal_module <- function(id, modules) {
 }
 
 #' @rdname module_teal_module
+#' @noRd
 srv_teal_module <- function(id,
                             data,
                             modules,
@@ -169,11 +171,13 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .teal_navbar_append <- function(navbar, child) {
   tagAppendChild(tag = navbar, child = child, .cssSelector = ".teal-navbar")
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .teal_navbar_insert_ui <- function(ui, where = "afterBegin", session = getDefaultReactiveDomain()) {
   insertUI(
     selector = ".teal-navbar",
@@ -184,6 +188,7 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .teal_navbar_menu <- function(..., id = NULL, label = NULL, class = NULL, icon = NULL) {
   tags$div(
     class = "dropdown nav-item-custom",
@@ -200,6 +205,7 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .ui_teal_module <- function(id, modules, active_module_id) {
   checkmate::assert_multi_class(modules, c("teal_modules", "teal_module", "shiny.tag"))
   UseMethod(".ui_teal_module", modules)
@@ -207,12 +213,14 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .ui_teal_module.default <- function(id, modules, active_module_id) {
   stop("Modules class not supported: ", paste(class(modules), collapse = " "))
 }
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .ui_teal_module.teal_modules <- function(id, modules, active_module_id) {
   items <- mapply(
     FUN = .ui_teal_module,
@@ -233,6 +241,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .ui_teal_module.teal_module <- function(id, modules, active_module_id) {
   ns <- NS(id)
   args <- c(list(id = ns("module")), modules$ui_args)
@@ -378,6 +387,7 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .srv_teal_module <- function(id,
                              data,
                              modules,
@@ -398,6 +408,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .srv_teal_module.default <- function(id,
                                      data,
                                      modules,
@@ -411,6 +422,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .srv_teal_module.teal_modules <- function(id,
                                           data,
                                           modules,
@@ -445,6 +457,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .srv_teal_module.teal_module <- function(id,
                                          data,
                                          modules,
@@ -614,7 +627,7 @@ srv_teal_module <- function(id,
 #'
 #' @return An observer.
 #'
-#' @keywords internal
+#' @noRd
 .call_once_when <- function(eventExpr, # nolint: object_name.
                             handlerExpr, # nolint: object_name.
                             event.env = parent.frame(), # nolint: object_name.

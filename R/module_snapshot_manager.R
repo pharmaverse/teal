@@ -88,10 +88,11 @@
 #' @rdname module_snapshot_manager
 #'
 #' @author Aleksander Chlebowski
-#' @keywords internal
+#' @noRd
 NULL
 
 #' @rdname module_snapshot_manager
+#' @noRd
 ui_snapshot_manager_panel <- function(id) {
   if (!isTRUE(getOption("teal.snapshot_manager.enable", TRUE))) {
     return(NULL)
@@ -105,6 +106,7 @@ ui_snapshot_manager_panel <- function(id) {
 }
 
 #' @rdname module_snapshot_manager
+#' @noRd
 srv_snapshot_manager_panel <- function(id, slices_global) {
   if (!isTRUE(getOption("teal.snapshot_manager.enable", TRUE))) {
     return(NULL)
@@ -130,6 +132,7 @@ srv_snapshot_manager_panel <- function(id, slices_global) {
 }
 
 #' @rdname module_snapshot_manager
+#' @noRd
 ui_snapshot_manager <- function(id) {
   ns <- NS(id)
   tags$div(
@@ -159,6 +162,7 @@ ui_snapshot_manager <- function(id) {
 }
 
 #' @rdname module_snapshot_manager
+#' @noRd
 srv_snapshot_manager <- function(id, slices_global) {
   checkmate::assert_character(id)
 
