@@ -24,6 +24,9 @@ If the favicon is \code{NULL} the \code{teal} logo will be used as the favicon.}
 
 \item{element}{Replacement UI element (shiny tag or HTML)}
 }
+\value{
+The \code{teal_app} object \code{x} with the requested UI element replaced.
+}
 \description{
 Replace UI Elements in \code{teal} UI objects
 }
@@ -56,7 +59,6 @@ if (interactive()) {
   shinyApp(app$ui, app$server)
 }
 }
-\keyword{internal}
 \section{Examples in Shinylive}{
 \describe{
   \item{example-1}{

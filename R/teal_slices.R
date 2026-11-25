@@ -35,7 +35,7 @@
 #' @return
 #' A `teal_slices` object.
 #'
-#' @seealso [`teal.slice::teal_slices`], [`teal.slice::teal_slice`], [slices_store()]
+#' @seealso [`teal.slice::teal_slices`], [`teal.slice::teal_slice`]
 #'
 #' @examplesShinylive
 #' library(teal)
@@ -131,7 +131,7 @@ teal_slices <- function(...,
 #' `shiny` session starts.
 #' @param filter (`teal_slices`)
 #' @return `teal_slices`
-#' @keywords internal
+#' @noRd
 deep_copy_filter <- function(filter) {
   checkmate::assert_class(filter, "teal_slices")
   shiny::isolate({
@@ -148,7 +148,7 @@ deep_copy_filter <- function(filter) {
 #'
 #' Useful when we require function from other namespace where this function
 #' calls other functions from `teal` namespace (see `as.teal_slices`, `c.teal_slices`).
-#' @keywords internal
+#' @noRd
 .copy_to_teal <- function(fun) {
   environment(fun) <- getNamespace("teal")
   fun

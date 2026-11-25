@@ -13,6 +13,9 @@ validate_has_variable(data, varname, msg)
 
 \item{msg}{(\code{character(1)}) message to display if \code{data} does not include \code{varname}}
 }
+\value{
+\code{NULL} if \code{data} contains all \code{varname}; otherwise a \code{shiny} validation error is raised.
+}
 \description{
 This function is a wrapper for \code{shiny::validate}.
 }

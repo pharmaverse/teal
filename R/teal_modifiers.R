@@ -6,19 +6,16 @@
 #' @param favicon (`character`) The path for the icon for the title.
 #' The image/icon path can be remote or the static path accessible by `shiny`, like the `www/`.
 #' If the favicon is `NULL` the `teal` logo will be used as the favicon.
+#' @return The `teal_app` object `x` with the requested UI element replaced.
 #' @name teal_modifiers
 #' @rdname teal_modifiers
-#'
-#' @keywords internal
-#'
 NULL
 
 
 #' @rdname teal_modifiers
-#' @keywords internal
-#' @noRd
 #' @param x `teal_app` object created using the `init` function.
 #' @param selector (`character(1)`) CSS selector to find elements to replace
+#' @noRd
 teal_replace_ui <- function(x, selector, element) {
   checkmate::assert_class(x, "teal_app")
   new_x <- x
@@ -126,6 +123,7 @@ modify_footer <- function(x, element = tags$p()) {
 #' @inheritParams shiny::modalDialog
 #' @param content (`character(1)`, `shiny.tag` or `shiny.tag.list`) with the content of the popup.
 #' @param ... Additional arguments to [shiny::modalDialog()].
+#' @return The `teal_app` object `x` with the landing popup added to its server.
 #' @export
 #'
 #' @examplesShinylive
@@ -182,7 +180,7 @@ add_landing_modal <- function(
 #' @param custom_server (`function(input, output, session)` or `function(id, ...)`)
 #'    The custom server function or server module to set.
 #' @param module_id (`character(1)`) The ID of the module when a module server function is passed.
-#' @keywords internal
+#' @noRd
 teal_extend_server <- function(x, custom_server, module_id = character(0)) {
   checkmate::assert_class(x, "teal_app")
   checkmate::assert_function(custom_server, args = c("input", "output", "session"))

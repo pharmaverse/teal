@@ -35,7 +35,7 @@
 #' @param data (`reactive` returning `teal_data`)
 #'
 #' @param slices_global (`reactiveVal` returning `modules_teal_slices`)
-#'   see [`module_filter_manager`]
+#'   see "Slices global" section below.
 #'
 #' @param datasets (`reactive` returning `FilteredData` or `NULL`)
 #'  When `datasets` is passed from the parent module (`srv_teal`) then `dataset` is a singleton
@@ -54,16 +54,31 @@
 #' @param active_module_id (`reactive` returning `character(1)`)
 #'   `id` of the currently active module. This helps to determine which module can listen to reactive events.
 #'
+#' @section Slices global:
+#' The key role in maintaining the module-specific filter states is played by the `.slicesGlobal`
+#' object. It is a reference class that holds the following fields:
+#' - `all_slices` (`reactiveVal`) - reactive value containing all filters registered in an app.
+#' - `module_slices_api` (`reactiveValues`) - reactive field containing references to each modules'
+#' `FilteredData` object methods. At this moment it is used only in `srv_filter_manager` to display
+#' the filter states in a table combining information from `all_slices` and from
+#' `FilteredData$get_available_teal_slices()`.
+#'
+#' During a session only new filters are added to `all_slices` unless they are restored to previous state.
+#' Filters from `all_slices` can be activated or deactivated in a
+#' module which is linked (both ways) so that:
+#' - If module's filter is added or removed this information is passed to mappings and updated.
+#' - When mapping changes, filters are set or removed from modules.
 #' @return
 #' Output of currently active module.
 #' - `srv_teal_module.teal_module` returns `reactiveVal` containing output of the called module.
 #' - `srv_teal_module.teal_modules` returns output of modules in a list following the hierarchy of `modules`
 #'
-#' @keywords internal
+#' @noRd
 NULL
 
 
 #' @rdname module_teal_module
+#' @noRd
 ui_teal_module <- function(id, modules) {
   ns <- NS(id)
   active_module_id <- restoreInput(
@@ -99,6 +114,7 @@ ui_teal_module <- function(id, modules) {
 }
 
 #' @rdname module_teal_module
+#' @noRd
 srv_teal_module <- function(id,
                             data,
                             modules,
@@ -169,11 +185,13 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .teal_navbar_append <- function(navbar, child) {
   tagAppendChild(tag = navbar, child = child, .cssSelector = ".teal-navbar")
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .teal_navbar_insert_ui <- function(ui, where = "afterBegin", session = getDefaultReactiveDomain()) {
   insertUI(
     selector = ".teal-navbar",
@@ -184,6 +202,7 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .teal_navbar_menu <- function(..., id = NULL, label = NULL, class = NULL, icon = NULL) {
   tags$div(
     class = "dropdown nav-item-custom",
@@ -200,6 +219,7 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .ui_teal_module <- function(id, modules, active_module_id) {
   checkmate::assert_multi_class(modules, c("teal_modules", "teal_module", "shiny.tag"))
   UseMethod(".ui_teal_module", modules)
@@ -207,12 +227,14 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .ui_teal_module.default <- function(id, modules, active_module_id) {
   stop("Modules class not supported: ", paste(class(modules), collapse = " "))
 }
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .ui_teal_module.teal_modules <- function(id, modules, active_module_id) {
   items <- mapply(
     FUN = .ui_teal_module,
@@ -233,6 +255,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .ui_teal_module.teal_module <- function(id, modules, active_module_id) {
   ns <- NS(id)
   args <- c(list(id = ns("module")), modules$ui_args)
@@ -378,6 +401,7 @@ srv_teal_module <- function(id,
 }
 
 #' @rdname module_teal_module
+#' @noRd
 .srv_teal_module <- function(id,
                              data,
                              modules,
@@ -398,6 +422,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .srv_teal_module.default <- function(id,
                                      data,
                                      modules,
@@ -411,6 +436,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .srv_teal_module.teal_modules <- function(id,
                                           data,
                                           modules,
@@ -445,6 +471,7 @@ srv_teal_module <- function(id,
 
 #' @rdname module_teal_module
 #' @export
+#' @noRd
 .srv_teal_module.teal_module <- function(id,
                                          data,
                                          modules,
@@ -614,7 +641,7 @@ srv_teal_module <- function(id,
 #'
 #' @return An observer.
 #'
-#' @keywords internal
+#' @noRd
 .call_once_when <- function(eventExpr, # nolint: object_name.
                             handlerExpr, # nolint: object_name.
                             event.env = parent.frame(), # nolint: object_name.

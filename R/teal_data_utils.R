@@ -12,11 +12,12 @@
 #' @param code (`character`) code to append to the object's code slot.
 #' @param objects (`list`) objects to append to object's environment.
 #' @return modified `teal_data`
-#' @keywords internal
+#' @noRd
 #' @name teal_data_utilities
 NULL
 
 #' @rdname teal_data_utilities
+#' @noRd
 .append_evaluated_code <- function(data, code, filter_states) {
   checkmate::assert_class(data, "teal_data")
   checkmate::assert_class(filter_states, "teal_slices", null.ok = TRUE)
@@ -38,6 +39,7 @@ NULL
 }
 
 #' @rdname teal_data_utilities
+#' @noRd
 .append_modified_data <- function(data, objects) {
   checkmate::assert_class(data, "teal_data")
   checkmate::assert_class(objects, "list")
@@ -48,6 +50,7 @@ NULL
 }
 
 #' @rdname teal_data_utilities
+#' @noRd
 .collapse_subsequent_chunks <- function(card) {
   checkmate::assert_class(card, "teal_card")
   init_template <- teal.reporter::teal_card()

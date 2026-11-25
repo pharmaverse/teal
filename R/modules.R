@@ -324,7 +324,7 @@ modules <- function(..., label = character(0)) {
 #'
 #' @param dec Decorator object or list of decorators
 #' @return Character vector of decorator labels, or `character(0L)` if none found
-#' @keywords internal
+#' @noRd
 extract_decorator_labels <- function(dec) {
   if (inherits(dec, "teal_transform_module")) {
     label <- attr(dec, "label")
@@ -347,7 +347,7 @@ extract_decorator_labels <- function(dec) {
 #'
 #' @param decorators List of decorators (can be mixed: global and named lists)
 #' @return List with 'global' (character vector) and 'objects' (named list) components
-#' @keywords internal
+#' @noRd
 format_decorators_tree <- function(decorators) {
   if (length(decorators) == 0) {
     return(list(global = character(0L), objects = list()))
@@ -381,7 +381,7 @@ format_decorators_tree <- function(decorators) {
 #' @param labels (`character`) Labels to render as leaf nodes
 #' @param prefix (`character(1)`) Prefix for each line (indentation and pipe characters)
 #' @return (`character(1)`) Formatted string with tree connectors
-#' @keywords internal
+#' @noRd
 format_tree_leaves <- function(labels, prefix) {
   output <- ""
   for (i in seq_along(labels)) {
@@ -391,18 +391,16 @@ format_tree_leaves <- function(labels, prefix) {
   }
   output
 }
-
-#' Render decorator entries as tree nodes
-#'
-#' Renders global decorator labels and object-specific decorator groups
-#' as sibling entries under a common prefix. Reuses [format_tree_leaves()]
-#' for rendering children within object groups.
-#'
-#' @param decorators_info (`list`) with `global` (character vector) and `objects` (named list) components,
-#'   as returned by [format_decorators_tree()]
-#' @param prefix (`character(1)`) Prefix for each line
-#' @return (`character(1)`) Formatted string with tree connectors
-#' @keywords internal
+# Render decorator entries as tree nodes
+#
+# Renders global decorator labels and object-specific decorator groups
+# as sibling entries under a common prefix. Reuses [format_tree_leaves()]
+# for rendering children within object groups.
+#
+# @param decorators_info (`list`) with `global` (character vector) and `objects` (named list) components,
+#   as returned by [format_decorators_tree()]
+# @param prefix (`character(1)`) Prefix for each line
+# @returns (`character(1)`) Formatted string with tree connectors
 format_decorator_entries <- function(decorators_info, prefix) {
   all_entries <- list()
   for (lbl in decorators_info$global) {
@@ -767,7 +765,7 @@ print.teal_modules <- function(x, ...) {
 ## subset or modify modules ----
 
 #' Append a `teal_module` to `children` of a `teal_modules` object
-#' @keywords internal
+#' @noRd
 #' @param modules (`teal_modules`)
 #' @param module (`teal_module`) object to be appended onto the children of `modules`
 #' @return A `teal_modules` object with `module` appended.
@@ -786,7 +784,7 @@ append_module <- function(modules, module) {
 #'
 #' @param modules (`teal_modules`)
 #' @param class The class name of `teal_module` to be extracted or dropped.
-#' @keywords internal
+#' @noRd
 #' @return
 #' - For `extract_module`, a `teal_module` of class `class` or `teal_modules` containing modules of class `class`.
 #' - For `drop_module`, the opposite, which is all `teal_modules` of  class other than `class`.
@@ -801,7 +799,7 @@ extract_module <- function(modules, class) {
   }
 }
 
-#' @keywords internal
+#' @noRd
 #' @return `teal_modules`
 #' @rdname module_management
 drop_module <- function(modules, class) {
@@ -825,7 +823,7 @@ drop_module <- function(modules, class) {
 #' @param arg (`character(1)`) names of the arguments to be checked against formals of `teal` modules.
 #' @return `logical` whether the object makes use of `arg`.
 #' @rdname is_arg_used
-#' @keywords internal
+#' @noRd
 is_arg_used <- function(modules, arg) {
   checkmate::assert_string(arg)
   if (inherits(modules, "teal_modules")) {
@@ -845,7 +843,7 @@ is_arg_used <- function(modules, arg) {
 #' @param slot (`character(1)`)
 #' @return A `list` containing the `slot` of the modules.
 #' If the modules are nested, the function returns a nested `list` of values.
-#' @keywords internal
+#' @noRd
 modules_slot <- function(modules, slot) {
   checkmate::assert_string(slot)
   if (inherits(modules, "teal_modules")) {
@@ -860,7 +858,7 @@ modules_slot <- function(modules, slot) {
 #' @param modules (`teal_modules` or `teal_module`) object
 #' @return named list of the same structure as `modules` with `TRUE` or `FALSE` values indicating
 #' whether the module is bookmarkable.
-#' @keywords internal
+#' @noRd
 modules_bookmarkable <- function(modules) {
   checkmate::assert_multi_class(modules, c("teal_modules", "teal_module"))
   if (inherits(modules, "teal_modules")) {

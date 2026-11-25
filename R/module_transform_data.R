@@ -9,8 +9,8 @@
 #' until the failure is resolved.
 #' An optional `expr` argument allows additional code to be evaluated on the final decorated output.
 #'
-#' @inheritParams module_validate_error
 #' @inheritParams teal_modules
+#' @inheritParams module_teal
 #' @param transformators (`list` of `teal_transform_module`) decorator modules to apply sequentially
 #'   to `data`. Each transformator receives the output of the previous one as input.
 #' @return `reactive` `teal_data`
@@ -57,6 +57,7 @@
 #'   )
 #' }
 #' @name module_transform_data
+#' @rdname module_transform_data
 NULL
 
 #' @rdname module_transform_data
@@ -150,12 +151,13 @@ ui_transform_teal_data <- function(id, transformators, class = "well", ...) {
 #' This module calls [teal_transform_module()] sequentially by passing output from one step to the next.
 #' Modules have error/warning handling feature and highlight containers when something goes wrong.
 #' @name module_transform_teal_data_impl
+#' @noRd
 NULL
 
 #' @rdname module_transform_teal_data_impl
 #' @inheritParams srv_transform_teal_data
 #' @return `shiny.tag`
-#' @keywords internal
+#' @noRd
 .ui_transform_teal_data <- function(id, transformators, class = "well") {
   checkmate::assert_string(id)
   if (length(transformators) == 0L) {
@@ -205,7 +207,7 @@ NULL
 #' @rdname module_transform_teal_data_impl
 #' @inheritParams ui_transform_teal_data
 #' @return `reactive` `teal_data` object
-#' @keywords internal
+#' @noRd
 .srv_transform_teal_data <- function(id, data, transformators, modules = NULL, is_transform_failed = reactiveValues()) {
   checkmate::assert_string(id)
   assert_reactive(data)

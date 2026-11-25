@@ -38,11 +38,12 @@
 #' @name module_bookmark_manager
 #' @rdname module_bookmark_manager
 #'
-#' @keywords internal
+#' @noRd
 #'
 NULL
 
 #' @rdname module_bookmark_manager
+#' @noRd
 ui_bookmark_panel <- function(id, modules) {
   ns <- NS(id)
 
@@ -60,6 +61,7 @@ ui_bookmark_panel <- function(id, modules) {
 }
 
 #' @rdname module_bookmark_manager
+#' @noRd
 srv_bookmark_panel <- function(id, modules) {
   checkmate::assert_character(id)
   checkmate::assert_class(modules, "teal_modules")
@@ -145,6 +147,7 @@ srv_bookmark_panel <- function(id, modules) {
 
 
 #' @rdname module_bookmark_manager
+#' @noRd
 get_bookmarking_option <- function() {
   bookmark_option <- getShinyOption("bookmarkStore")
   if (is.null(bookmark_option) && identical(getOption("shiny.bookmarkStore"), "server")) {
@@ -154,6 +157,7 @@ get_bookmarking_option <- function() {
 }
 
 #' @rdname module_bookmark_manager
+#' @noRd
 need_bookmarking <- function(modules) {
   unlist(rapply2(
     modules_bookmarkable(modules),
@@ -186,7 +190,7 @@ need_bookmarking <- function(modules) {
 #' the variable specified by `value` from the `values` environment.
 #' Otherwise `default`.
 #'
-#' @keywords internal
+#' @noRd
 #'
 restoreValue <- function(value, default) { # nolint: object_name.
   checkmate::assert_character(value)

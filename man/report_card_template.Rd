@@ -28,6 +28,24 @@ of the filter state in the report}
 (\code{TealReportCard}) populated with a title, description and filter state.
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}}
+
 This function generates a report card with a title,
 an optional description, and the option to append the filter state list.
+}
+\examples{
+filtered_data <- teal.slice::init_filtered_data(list(iris = list(dataset = iris)))
+\dontrun{
+card <- report_card_template(
+  title = "Iris",
+  label = "",
+  description = "Summary of the iris dataset.",
+  with_filter = TRUE,
+  filter_panel_api = teal.slice::FilterPanelAPI$new(filtered_data)
+)
+}
+
+}
+\seealso{
+See \code{\link[teal.reporter:teal_card]{teal_card()}} and the vignette about the teal report \code{vignette('teal-report-class', 'teal.reporter')}
 }

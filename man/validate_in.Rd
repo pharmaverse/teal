@@ -13,6 +13,9 @@ validate_in(x, choices, msg)
 
 \item{msg}{(\code{character(1)}) Error message to display if some elements of \code{x} are not elements of \code{choices}.}
 }
+\value{
+\code{NULL} if all \code{x} values are in \code{choices}; otherwise a \code{shiny} validation error is raised.
+}
 \description{
 This function is a wrapper for \code{shiny::validate}.
 }

@@ -25,10 +25,11 @@
 #' @name module_teal_lockfile
 #' @rdname module_teal_lockfile
 #'
-#' @keywords internal
+#' @noRd
 NULL
 
 #' @rdname module_teal_lockfile
+#' @noRd
 ui_teal_lockfile <- function(id) {
   ns <- NS(id)
   shiny::tagList(
@@ -38,6 +39,7 @@ ui_teal_lockfile <- function(id) {
 }
 
 #' @rdname module_teal_lockfile
+#' @noRd
 srv_teal_lockfile <- function(id) {
   moduleServer(id, function(input, output, session) {
     logger::log_debug("Initialize srv_teal_lockfile.")
@@ -134,6 +136,7 @@ srv_teal_lockfile <- function(id) {
 
 utils::globalVariables(c("opts", "sysenv", "libpaths", "wd", "lockfilepath", "run")) # needed for mirai call
 #' @rdname module_teal_lockfile
+#' @noRd
 .teal_lockfile_process_invoke <- function(lockfile_path) {
   mirai_obj <- NULL
   process <- shiny::ExtendedTask$new(function() {
@@ -173,6 +176,7 @@ utils::globalVariables(c("opts", "sysenv", "libpaths", "wd", "lockfilepath", "ru
 }
 
 #' @rdname module_teal_lockfile
+#' @noRd
 .renv_snapshot <- function(lockfile_path) {
   out <- utils::capture.output(
     res <- renv::snapshot(
@@ -187,11 +191,13 @@ utils::globalVariables(c("opts", "sysenv", "libpaths", "wd", "lockfilepath", "ru
 }
 
 #' @rdname module_teal_lockfile
+#' @noRd
 .is_lockfile_deps_installed <- function() {
   requireNamespace("mirai", quietly = TRUE) && requireNamespace("renv", quietly = TRUE)
 }
 
 #' @rdname module_teal_lockfile
+#' @noRd
 .is_disabled_lockfile_scenario <- function() {
   identical(Sys.getenv("CALLR_IS_RUNNING"), "true") || # inside callr process
     identical(Sys.getenv("TESTTHAT"), "true") || # inside devtools::test

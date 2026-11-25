@@ -13,16 +13,18 @@
 #' @inheritParams module_teal_module
 #' @param active_datanames (`reactive` returning `character`) this module's data names
 #' @name module_filter_data
-#' @keywords internal
+#' @noRd
 NULL
 
 #' @rdname module_filter_data
+#' @noRd
 ui_filter_data <- function(id) {
   ns <- shiny::NS(id)
   uiOutput(ns("panel"))
 }
 
 #' @rdname module_filter_data
+#' @noRd
 srv_filter_data <- function(id, datasets, active_datanames, data, is_active) {
   assert_reactive(datasets)
   moduleServer(id, function(input, output, session) {
@@ -50,6 +52,7 @@ srv_filter_data <- function(id, datasets, active_datanames, data, is_active) {
 }
 
 #' @rdname module_filter_data
+#' @noRd
 .make_filtered_teal_data <- function(modules, data, datasets = NULL, datanames) {
   data <- eval_code(
     data,
@@ -68,6 +71,7 @@ srv_filter_data <- function(id, datasets, active_datanames, data, is_active) {
 }
 
 #' @rdname module_filter_data
+#' @noRd
 .observe_active_filter_changed <- function(datasets, is_active, active_datanames, data) {
   previous_signature <- reactiveVal(NULL)
   filter_changed <- reactive({
@@ -101,6 +105,7 @@ srv_filter_data <- function(id, datasets, active_datanames, data, is_active) {
 }
 
 #' @rdname module_filter_data
+#' @noRd
 .get_filter_expr <- function(datasets, datanames) {
   if (length(datanames)) {
     teal.slice::get_filter_expr(datasets = datasets, datanames = datanames)

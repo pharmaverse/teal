@@ -23,6 +23,9 @@ add_landing_modal(
 
 \item{...}{Additional arguments to \code{\link[shiny:modalDialog]{shiny::modalDialog()}}.}
 }
+\value{
+The \code{teal_app} object \code{x} with the landing popup added to its server.
+}
 \description{
 Adds a landing popup to the \code{teal} app. This popup will be shown when the app starts.
 The dialog must be closed by the app user to proceed to the main application.

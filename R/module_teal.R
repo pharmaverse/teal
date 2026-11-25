@@ -40,7 +40,26 @@
 #'   will be displayed in the `teal` application. See [modules()] and [module()] for
 #'   more details.
 #'
-#' @return `NULL` invisibly
+#' @return `ui_teal` returns a `shiny.tag.list` with the `teal` application UI.
+#' `srv_teal` returns a The output of the module server.
+#' @examplesShinylive
+#' library(teal)
+#' interactive <- function() TRUE
+#' {{ next_example }}
+#' @examples
+#' app_modules <- modules(example_module())
+#' app_data <- teal_data(IRIS = iris)
+#'
+#' app <- shiny::shinyApp(
+#'   ui = function(request) ui_teal("teal", modules = app_modules),
+#'   server = function(input, output, session) {
+#'     srv_teal("teal", data = app_data, modules = app_modules)
+#'   }
+#' )
+#'
+#' if (interactive()) {
+#'   shiny::runApp(app)
+#' }
 NULL
 
 #' @rdname module_teal
@@ -357,7 +376,7 @@ srv_teal <- function(id, data, modules, filter = teal_slices(), reporter = teal.
 #' Adds signature protection to the `datanames` in the data
 #' @param data (`teal_data`)
 #' @return `teal_data` with additional code that has signature of the `datanames`
-#' @keywords internal
+#' @noRd
 .add_signature_to_data <- function(data) {
   hashes <- .get_hashes_code(data)
   data_teal_report <- as(data, "teal_report")
@@ -394,7 +413,7 @@ srv_teal <- function(id, data, modules, filter = teal_slices(), reporter = teal.
 #' @param datanames (`character`) names of `datasets`
 #'
 #' @return A character vector with the code lines.
-#' @keywords internal
+#' @noRd
 #'
 .get_hashes_code <- function(data, datanames = names(data)) {
   vapply(

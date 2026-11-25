@@ -113,7 +113,7 @@ if (interactive()) {
 
 }
 \seealso{
-\code{\link[teal.slice:teal_slices]{teal.slice::teal_slices}}, \code{\link[teal.slice:teal_slice]{teal.slice::teal_slice}}, \code{\link[=slices_store]{slices_store()}}
+\code{\link[teal.slice:teal_slices]{teal.slice::teal_slices}}, \code{\link[teal.slice:teal_slice]{teal.slice::teal_slice}}
 }
 \keyword{internal}
 \section{Examples in Shinylive}{

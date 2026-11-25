@@ -33,7 +33,8 @@ specifies the initial filter using \code{\link[=teal_slices]{teal_slices()}}.}
 \item{reporter}{(\code{Reporter}) object used to store report contents. Set to \code{NULL} to globally disable reporting.}
 }
 \value{
-\code{NULL} invisibly
+\code{ui_teal} returns a \code{shiny.tag.list} with the \code{teal} application UI.
+\code{srv_teal} returns a The output of the module server.
 }
 \description{
 Module to create a \code{teal} app as a Shiny Module.
@@ -66,3 +67,28 @@ If any module returns a failing object, the app will halt the evaluation and dis
 App user should always have a chance to fix the improper input and continue without restarting the session.
 }
 }
+\examples{
+app_modules <- modules(example_module())
+app_data <- teal_data(IRIS = iris)
+
+app <- shiny::shinyApp(
+  ui = function(request) ui_teal("teal", modules = app_modules),
+  server = function(input, output, session) {
+    srv_teal("teal", data = app_data, modules = app_modules)
+  }
+)
+
+if (interactive()) {
+  shiny::runApp(app)
+}
+}
+\section{Examples in Shinylive}{
+\describe{
+  \item{example-1}{
+    \href{https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKcqagSgB0ItMnGYFStAG5wABAB4AtNIBmAVwhjaJdj2kAVLAFUAogIFpUAfRhEAJiupwAznMXW7Dx+zgAPWKgdWtvZw2vzQ6BY2UKRQLtJc1JHRUOwAklipAMrSALzStIy0jmFm6HGOABZCrIiIldUAgujsAtLSKrS5ymoaWoxwAI4qTqQ6HRYJLWAJfHjSbsHOeeaB7k48uK3SjiJSjF2q6uJaQqgqpLjSROdnF9tOjpoQOiBbbY6MEhNw3FMzc1EYl0VoCoJcFh5gREIestgBfAQlQRKaTsITkUTiKShaSvCDvKoQGqIRhqJqodjmMJwsBwgC6QA}{Open in Shinylive}
+    \if{html}{\out{<iframe class="iframe_shinylive" src="https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKcqagSgB0ItMnGYFStAG5wABAB4AtNIBmAVwhjaJdj2kAVLAFUAogIFpUAfRhEAJiupwAznMXW7Dx+zgAPWKgdWtvZw2vzQ6BY2UKRQLtJc1JHRUOwAklipAMrSALzStIy0jmFm6HGOABZCrIiIldUAgujsAtLSKrS5ymoaWoxwAI4qTqQ6HRYJLWAJfHjSbsHOeeaB7k48uK3SjiJSjF2q6uJaQqgqpLjSROdnF9tOjpoQOiBbbY6MEhNw3FMzc1EYl0VoCoJcFh5gREIestgBfAQlQRKaTsITkUTiKShaSvCDvKoQGqIRhqJqodjmMJwsBwgC6QA" style="height: 800px; width: 100vw; max-width: 1400px; border: 1px solid rgba(0,0,0,0.175); border-radius: .375rem; position: absolute; left: 50\%; margin-top: 30px; transform: translateX(-50\%); z-index: 1"></iframe>}}
+    \if{html}{\out{<a style='height: 800px; display: block;'></a>}}
+  }
+}
+}
+

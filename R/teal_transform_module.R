@@ -59,7 +59,7 @@
 #' Specifies the names of datasets relevant to the module. Only filters for the specified `datanames` will be displayed
 #' in the filter panel. The keyword `"all"` can be used to display filters for all datasets. `datanames` are
 #' automatically appended to the [`modules()`] `datanames`.
-#'
+#' @returns A `teal_transform_module` object, which is a `teal_data_module`.
 #' @examplesShinylive
 #' library(teal)
 #' interactive <- function() TRUE
@@ -224,7 +224,7 @@ make_teal_transform_server <- function(expr) {
 #'
 #' @param modules `teal_modules` or `teal_module`
 #' @return A list of `teal_transform_module` nested in the same way as input `modules`.
-#' @keywords internal
+#' @noRd
 extract_transformators <- function(modules) {
   if (inherits(modules, "teal_module")) {
     modules$transformators
