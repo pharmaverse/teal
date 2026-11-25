@@ -29,6 +29,11 @@ validate_n_levels(x, min_levels = 1, max_levels = 12, var_name)
 
   name of variable being validated for use in validation message
 
+## Value
+
+`NULL` if the number of levels of `x` is within the limits; otherwise a
+`shiny` validation error is raised.
+
 ## See also
 
 Other validations:

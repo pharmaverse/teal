@@ -166,7 +166,7 @@ Values:
 Default: `"auto"`.
 
 To read more about lockfile usage creation check
-[`?teal::module_teal_lockfile`](https://pharmaverse.github.io/teal/reference/module_teal_lockfile.md).
+`?teal::module_teal_lockfile`.
 
 #### `teal.sidebar.position` (`character`)
 
@@ -261,10 +261,7 @@ Default: `FALSE`.
 
 This option controls whether the Snapshot Manager panel (the camera icon
 in the tabset bar) is rendered in a `teal` app. When set to `FALSE`,
-both
-[`ui_snapshot_manager_panel()`](https://pharmaverse.github.io/teal/reference/module_snapshot_manager.md)
-and
-[`srv_snapshot_manager_panel()`](https://pharmaverse.github.io/teal/reference/module_snapshot_manager.md)
+both `ui_snapshot_manager_panel()` and `srv_snapshot_manager_panel()`
 return `NULL`, so the panel is not displayed and no snapshot logic is
 attached.
 

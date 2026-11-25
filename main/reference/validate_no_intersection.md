@@ -23,6 +23,11 @@ validate_no_intersection(x, y, msg)
 
   (`character(1)`) message to display if `x` and `y` intersect
 
+## Value
+
+`NULL` if `x` and `y` have no common elements; otherwise a `shiny`
+validation error is raised.
+
 ## See also
 
 Other validations:

@@ -19,6 +19,11 @@ validate_has_elements(x, msg)
 
   message to display
 
+## Value
+
+`NULL` if `x` has at least one element; otherwise a `shiny` validation
+error is raised.
+
 ## See also
 
 Other validations:

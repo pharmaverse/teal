@@ -24,6 +24,11 @@ validate_in(x, choices, msg)
   (`character(1)`) Error message to display if some elements of `x` are
   not elements of `choices`.
 
+## Value
+
+`NULL` if all `x` values are in `choices`; otherwise a `shiny`
+validation error is raised.
+
 ## See also
 
 Other validations:

@@ -48,7 +48,8 @@ srv_teal(
 
 ## Value
 
-`NULL` invisibly
+`ui_teal` returns a `shiny.tag.list` with the `teal` application UI.
+`srv_teal` returns a The output of the module server.
 
 ## Details
 
@@ -87,3 +88,28 @@ introduced in any custom `shiny` module provided by app developer (e.g.
 If any module returns a failing object, the app will halt the evaluation
 and display a warning message. App user should always have a chance to
 fix the improper input and continue without restarting the session.
+
+## Examples in Shinylive
+
+- example-1:
+
+  [Open in
+  Shinylive](https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKcqagSgB0ItMnGYFStAG5wABAB4AtNIBmAVwhjaJdj2kAVLAFUAogIFpUAfRhEAJiupwAznMXW7Dx+zgAPWKgdWtvZw2vzQ6BY2UKRQLtJc1JHRUOwAklipAMrSALzStIy0jmFm6HGOABZCrIiIldUAgujsAtLSKrS5ymoaWoxwAI4qTqQ6HRYJLWAJfHjSbsHOeeaB7k48uK3SjiJSjF2q6uJaQqgqpLjSROdnF9tOjpoQOiBbbY6MEhNw3FMzc1EYl0VoCoJcFh5gREIestgBfAQlQRKaTsITkUTiKShaSvCDvKoQGqIRhqJqodjmMJwsBwgC6QA)
+
+## Examples
+
+``` r
+app_modules <- modules(example_module())
+app_data <- teal_data(IRIS = iris)
+
+app <- shiny::shinyApp(
+  ui = function(request) ui_teal("teal", modules = app_modules),
+  server = function(input, output, session) {
+    srv_teal("teal", data = app_data, modules = app_modules)
+  }
+)
+
+if (interactive()) {
+  shiny::runApp(app)
+}
+```

@@ -41,3 +41,25 @@ reporter_previewer_module(label = "Report Previewer", server_args = list())
 
 `teal_module` (extended with `teal_module_previewer` class) containing
 the `teal.reporter` previewer functionality.
+
+## See also
+
+The functionality on
+[teal.reporter](https://rdrr.io/pkg/teal.reporter/man/teal.reporter-package.html)
+and the [article "Adding Support for Reporting to Custom
+Modules"](https://pharmaverse.github.io/teal/latest-tag/articles/adding-support-for-reporting.html)
+
+## Examples
+
+``` r
+suppressWarnings(
+  previewer <- reporter_previewer_module(label = "Report Previewer")
+)
+#> Initializing reporter_previewer_module
+previewer
+#> |- Report Previewer
+#> |  |- Datasets: 
+#> |  L- Properties:
+#> |     |- Bookmarkable: TRUE
+#> |     L- Reportable: TRUE
+```

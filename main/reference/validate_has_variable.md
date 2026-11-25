@@ -24,6 +24,11 @@ validate_has_variable(data, varname, msg)
   (`character(1)`) message to display if `data` does not include
   `varname`
 
+## Value
+
+`NULL` if `data` contains all `varname`; otherwise a `shiny` validation
+error is raised.
+
 ## See also
 
 Other validations:

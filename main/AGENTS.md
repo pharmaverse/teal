@@ -90,7 +90,7 @@ applies to all packages within the teal framework.
 
 Follow the standard R package structure with teal-specific conventions:
 
-```
+```text
 package_name/
 ├── .github           # CI/CD workflows
 ├── R/                # R source code

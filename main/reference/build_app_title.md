@@ -1,5 +1,7 @@
 # Build app title with favicon
 
+**\[deprecated\]**
+
 A helper function to create the browser title along with a logo.
 
 ## Usage
@@ -28,3 +30,15 @@ build_app_title(
 
 A `shiny.tag` containing the element that adds the title and logo to the
 `shiny` app.
+
+## See also
+
+[`modify_title()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
+
+## Examples
+
+``` r
+suppressWarnings(
+  title_tag <- build_app_title(title = "My app")
+)
+```

@@ -116,8 +116,7 @@ app applies filters. See argument descriptions for details.
 ## See also
 
 [`teal.slice::teal_slices`](https://rdrr.io/pkg/teal.slice/man/teal_slices.html),
-[`teal.slice::teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html),
-[`slices_store()`](https://pharmaverse.github.io/teal/reference/slices_store.md)
+[`teal.slice::teal_slice`](https://rdrr.io/pkg/teal.slice/man/teal_slice.html)
 
 ## Examples in Shinylive
 

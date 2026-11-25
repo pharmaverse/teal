@@ -83,6 +83,7 @@ Inherited methods
 - [`shinytest2::AppDriver$get_html()`](https://rstudio.github.io/shinytest2/reference/AppDriver.html#method-get_html)
 - [`shinytest2::AppDriver$get_js()`](https://rstudio.github.io/shinytest2/reference/AppDriver.html#method-get_js)
 - [`shinytest2::AppDriver$get_logs()`](https://rstudio.github.io/shinytest2/reference/AppDriver.html#method-get_logs)
+- [`shinytest2::AppDriver$get_process()`](https://rstudio.github.io/shinytest2/reference/AppDriver.html#method-get_process)
 - [`shinytest2::AppDriver$get_screenshot()`](https://rstudio.github.io/shinytest2/reference/AppDriver.html#method-get_screenshot)
 - [`shinytest2::AppDriver$get_text()`](https://rstudio.github.io/shinytest2/reference/AppDriver.html#method-get_text)
 - [`shinytest2::AppDriver$get_url()`](https://rstudio.github.io/shinytest2/reference/AppDriver.html#method-get_url)

@@ -20,6 +20,11 @@ validate_one_row_per_id(x, key = c("USUBJID", "STUDYID"))
   (`character`) Vector of ID variables from `x` that identify unique
   records.
 
+## Value
+
+`NULL` if each combination of `key` is unique; otherwise a `shiny`
+validation error is raised.
+
 ## See also
 
 Other validations:

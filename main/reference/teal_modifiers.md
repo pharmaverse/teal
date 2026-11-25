@@ -33,6 +33,10 @@ modify_footer(x, element = tags$p())
 
   Replacement UI element (shiny tag or HTML)
 
+## Value
+
+The `teal_app` object `x` with the requested UI element replaced.
+
 ## Examples in Shinylive
 
 - example-1:

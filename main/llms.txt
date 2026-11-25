@@ -262,7 +262,7 @@ Helper functions for `teal`
   [`assert_decorators()`](https://pharmaverse.github.io/teal/reference/check_decorators.md)
   : Check decorators list
 - [`build_app_title()`](https://pharmaverse.github.io/teal/reference/build_app_title.md)
-  : Build app title with favicon
+  **\[deprecated\]** : Build app title with favicon
 - [`select_decorators()`](https://pharmaverse.github.io/teal/reference/select_decorators.md)
   : Subset decorators based on the scope
 
@@ -288,7 +288,7 @@ A simple `teal` module
   `TealReportCard`
 
 - [`report_card_template()`](https://pharmaverse.github.io/teal/reference/report_card_template.md)
-  :
+  **\[deprecated\]** :
 
   Template function for `TealReportCard` creation and customization
 

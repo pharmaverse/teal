@@ -40,6 +40,11 @@ validate_has_data(
   (`character(1)`) Additional message to display alongside the default
   message.
 
+## Value
+
+`NULL` if `x` meets the requirements; otherwise a `shiny` validation
+error is raised.
+
 ## See also
 
 Other validations:

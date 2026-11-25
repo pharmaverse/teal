@@ -46,6 +46,10 @@ teal_transform_module(
   [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
   `datanames`.
 
+## Value
+
+A `teal_transform_module` object, which is a `teal_data_module`.
+
 ## Transforming Module Inputs in `teal`
 
 Data transformations occur after data has been filtered in `teal`. The

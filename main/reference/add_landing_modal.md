@@ -40,6 +40,10 @@ add_landing_modal(
   Additional arguments to
   [`shiny::modalDialog()`](https://rdrr.io/pkg/shiny/man/modalDialog.html).
 
+## Value
+
+The `teal_app` object `x` with the landing popup added to its server.
+
 ## Examples in Shinylive
 
 - example-1:
