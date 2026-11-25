@@ -20,7 +20,7 @@ teal.data::teal_data() which is a standard data class in whole teal framework.">
 teal_transform_module() inherits from teal_data_module() so it is handled by this module too.
 srv_teal() accepts various data objects and eventually they are all transformed to reactive
 teal.data::teal_data() which is a standard data class in whole teal framework.">
-<meta property="og:image" content="https://pharmaverse.github.io/teal/logo.svg">
+<meta property="og:image" content="https://insightsengineering.github.io/teal/logo.svg">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -124,7 +124,7 @@ teal.data::teal_data() which is a standard data class in whole teal framework.">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -135,7 +135,7 @@ teal.data::teal_data() which is a standard data class in whole teal framework.">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.svg" class="logo" alt=""><h1>Execute and validate <code>teal_data_module</code>
 </h1>
-      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/teal/blob/v1.2.1/R/module_validate_error.R" class="external-link"><code>R/module_validate_error.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/teal/blob/v1.2.1/R/module_validate_error.R" class="external-link"><code>R/module_validate_error.R</code></a></small>
       <div class="d-none name"><code>module_validate_error.Rd</code></div>
     </div>
 
@@ -143,7 +143,7 @@ teal.data::teal_data() which is a standard data class in whole teal framework.">
     <p>This is a low level module to handle <code>teal_data_module</code> execution and validation.
 <code><a href="teal_transform_module.html">teal_transform_module()</a></code> inherits from <code><a href="teal_data_module.html">teal_data_module()</a></code> so it is handled by this module too.
 <code><a href="module_teal.html">srv_teal()</a></code> accepts various <code>data</code> objects and eventually they are all transformed to <code>reactive</code>
-<code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> which is a standard data class in whole <code>teal</code> framework.</p>
+<code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> which is a standard data class in whole <code>teal</code> framework.</p>
     </div>
 
     <div class="section level2">
@@ -205,10 +205,10 @@ The data which application will depend on.</p></dd>
 Output <code>data</code> is invalid if:</p>
 <ol>
 <li><p><code><a href="teal_data_module.html">teal_data_module()</a></code> is invalid if server doesn't return <code>reactive</code>. <strong>Immediately crashes an app!</strong></p></li>
-<li><p><code>reactive</code> throws a <code>shiny.error</code> - happens when module creating <code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> fails.</p></li>
-<li><p><code>reactive</code> returns <code>qenv.error</code> - happens when <code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> evaluates a failing code.</p></li>
-<li><p><code>reactive</code> object doesn't return <code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code>.</p></li>
-<li><p><code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> object lacks any <code>datanames</code> specified in the <code>modules</code> argument.</p></li>
+<li><p><code>reactive</code> throws a <code>shiny.error</code> - happens when module creating <code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> fails.</p></li>
+<li><p><code>reactive</code> returns <code>qenv.error</code> - happens when <code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> evaluates a failing code.</p></li>
+<li><p><code>reactive</code> object doesn't return <code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code>.</p></li>
+<li><p><code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal.data::teal_data()</a></code> object lacks any <code>datanames</code> specified in the <code>modules</code> argument.</p></li>
 </ol>
 <p><code>teal</code> (observers in <code>srv_teal</code>) always waits to render an app until <code>reactive</code> <code>teal_data</code> is
 returned. If error 2-4 occurs, relevant error message is displayed to the app user. Once the issue is

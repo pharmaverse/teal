@@ -18,7 +18,7 @@ Primarily used to modify the output object of module.">
 <meta property="og:description" content="
 Exported to be able to use methods not to be used directly by module-developers or app-users.
 Primarily used to modify the output object of module.">
-<meta property="og:image" content="https://pharmaverse.github.io/teal/logo.svg">
+<meta property="og:image" content="https://insightsengineering.github.io/teal/logo.svg">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -122,7 +122,7 @@ Primarily used to modify the output object of module.">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -132,7 +132,7 @@ Primarily used to modify the output object of module.">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.svg" class="logo" alt=""><h1>Executes modifications to the result of a module</h1>
-      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/teal/blob/v1.2.1/R/after.R" class="external-link"><code>R/after.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/teal/blob/v1.2.1/R/after.R" class="external-link"><code>R/after.R</code></a></small>
       <div class="d-none name"><code>after.Rd</code></div>
     </div>
 
@@ -192,11 +192,11 @@ Must return data</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     Reporter</span>
 <span class="r-in"><span><span class="va">hide_code</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span>, <span class="va">data</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://pharmaverse.github.io/teal.reporter/latest-tag/reference/teal_card.html">teal_card</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/funprog.html" class="external-link">Filter</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">inherits</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"code_chunk"</span><span class="op">)</span>, <span class="fu"><a href="https://pharmaverse.github.io/teal.reporter/latest-tag/reference/teal_card.html">teal_card</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html">teal_card</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/funprog.html" class="external-link">Filter</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/class.html" class="external-link">inherits</a></span><span class="op">(</span><span class="va">x</span>, <span class="st">"code_chunk"</span><span class="op">)</span>, <span class="fu"><a href="https://insightsengineering.github.io/teal.reporter/latest-tag/reference/teal_card.html">teal_card</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="va">data</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span><span class="va">app</span> <span class="op">&lt;-</span> <span class="fu"><a href="init.html">init</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  data <span class="op">=</span> <span class="fu"><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>IRIS <span class="op">=</span> <span class="va">iris</span>, MTCARS <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  data <span class="op">=</span> <span class="fu"><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>IRIS <span class="op">=</span> <span class="va">iris</span>, MTCARS <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  modules <span class="op">=</span> <span class="fu"><a href="example_module.html">example_module</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span></span>
 <span class="r-in"><span>    <span class="fu">after</span><span class="op">(</span>server <span class="op">=</span> <span class="va">hide_code</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>

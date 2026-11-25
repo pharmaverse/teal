@@ -115,7 +115,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -133,7 +133,7 @@
 CoreDev</h4>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/teal/blob/v1.2.1/vignettes/getting-started-with-teal.Rmd" class="external-link"><code>vignettes/getting-started-with-teal.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/teal/blob/v1.2.1/vignettes/getting-started-with-teal.Rmd" class="external-link"><code>vignettes/getting-started-with-teal.Rmd</code></a></small>
       <div class="d-none name"><code>getting-started-with-teal.Rmd</code></div>
     </div>
 
@@ -169,21 +169,21 @@ modules which can be added into any <code>teal</code> applications.</p>
 <p>This simple <code>teal</code> application takes the <code>iris</code>
 and <code>mtcars</code> datasets and displays their contents:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://pharmaverse.github.io/teal/">teal</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://insightsengineering.github.io/teal/">teal</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">app</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/init.html">init</a></span><span class="op">(</span></span>
-<span>  data <span class="op">=</span> <span class="fu"><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>IRIS <span class="op">=</span> <span class="va">iris</span>, MTCARS <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span>
+<span>  data <span class="op">=</span> <span class="fu"><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>IRIS <span class="op">=</span> <span class="va">iris</span>, MTCARS <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span>
 <span>  modules <span class="op">=</span> <span class="fu"><a href="../reference/teal_modules.html">modules</a></span><span class="op">(</span></span>
 <span>    <span class="fu"><a href="../reference/example_module.html">example_module</a></span><span class="op">(</span><span class="st">"Module 1"</span><span class="op">)</span>,</span>
 <span>    <span class="fu"><a href="../reference/example_module.html">example_module</a></span><span class="op">(</span><span class="st">"Module 2"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  filter <span class="op">=</span> <span class="fu"><a href="../reference/teal_slices.html">teal_slices</a></span><span class="op">(</span></span>
-<span>    <span class="fu"><a href="https://pharmaverse.github.io/teal.slice/latest-tag/reference/teal_slice.html">teal_slice</a></span><span class="op">(</span>dataname <span class="op">=</span> <span class="st">"IRIS"</span>, varname <span class="op">=</span> <span class="st">"Species"</span>, selected <span class="op">=</span> <span class="st">"setosa"</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://insightsengineering.github.io/teal.slice/latest-tag/reference/teal_slice.html">teal_slice</a></span><span class="op">(</span>dataname <span class="op">=</span> <span class="st">"IRIS"</span>, varname <span class="op">=</span> <span class="st">"Species"</span>, selected <span class="op">=</span> <span class="st">"setosa"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/teal_modifiers.html">modify_title</a></span><span class="op">(</span><span class="st">"My first teal application"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/teal_modifiers.html">modify_header</a></span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">h3</a></span><span class="op">(</span><span class="st">"My first teal application"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="../reference/teal_modifiers.html">modify_footer</a></span><span class="op">(</span><span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">a</a></span><span class="op">(</span><span class="st">"Powered by teal"</span>, href <span class="op">=</span> <span class="st">"https://pharmaverse.github.io/teal/latest-tag/"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="../reference/teal_modifiers.html">modify_footer</a></span><span class="op">(</span><span class="va">tags</span><span class="op">$</span><span class="fu">div</span><span class="op">(</span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">a</a></span><span class="op">(</span><span class="st">"Powered by teal"</span>, href <span class="op">=</span> <span class="st">"https://insightsengineering.github.io/teal/latest-tag/"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/shinyApp.html" class="external-link">shinyApp</a></span><span class="op">(</span><span class="va">app</span><span class="op">$</span><span class="va">ui</span>, <span class="va">app</span><span class="op">$</span><span class="va">server</span><span class="op">)</span></span>
@@ -272,7 +272,7 @@ that specifies how to obtain the desired datasets and put them into a
 application the <code>cdisc_data</code> function is used instead. Custom
 <code>SDTM</code> standards can be handled with <code>teal_data</code>
 and <code>join_keys</code>.</p>
-<p>For further details, we recommend exploring the <a href="https://pharmaverse.github.io/teal.data/"><code>teal.data</code></a>
+<p>For further details, we recommend exploring the <a href="https://insightsengineering.github.io/teal.data/"><code>teal.data</code></a>
 package documentation.</p>
 </div>
 <div class="section level3">
@@ -298,7 +298,7 @@ details see <a href="filter-panel.html">Filter Panel vignette</a>.</p>
 <h3 id="reporting">Reporting<a class="anchor" aria-label="anchor" href="#reporting"></a>
 </h3>
 <p>If any of the <code>modules</code> in your <code>teal</code>
-application support reporting (see <a href="https://pharmaverse.github.io/teal.reporter/"><code>teal.reporter</code></a>
+application support reporting (see <a href="https://insightsengineering.github.io/teal.reporter/"><code>teal.reporter</code></a>
 for more details), users of your application can add the outputs of the
 modules to a report. This report can then be downloaded and a special
 <em>Report Previewer</em> module will be added to your application as an
@@ -350,10 +350,10 @@ packages which are of most interest when defining
 <code>teal</code>applications are:</p>
 <ul>
 <li>
-<a href="https://pharmaverse.github.io/teal.data/"><code>teal.data</code></a>:
+<a href="https://insightsengineering.github.io/teal.data/"><code>teal.data</code></a>:
 defining data for <code>teal</code> application.</li>
 <li>
-<a href="https://pharmaverse.github.io/teal.slice/"><code>teal.slice</code></a>:
+<a href="https://insightsengineering.github.io/teal.slice/"><code>teal.slice</code></a>:
 defining data filtering before passing into <code>teal</code>
 modules.</li>
 </ul>

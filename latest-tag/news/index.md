@@ -6,11 +6,11 @@
 
 - Fixed reporter not resetting after the shiny session ends, which
   resulted in report cards being persistent across the same application
-  ([\#1723](https://github.com/pharmaverse/teal/issues/1723)).
+  ([\#1723](https://github.com/insightsengineering/teal/issues/1723)).
 - Fixed teal apps failing to render when installed as a pre-built binary
   due to build-time `bslib` scss paths frozen in the default `bs_theme`
   object. The default theme is now built lazily at runtime
-  ([\#1722](https://github.com/pharmaverse/teal/issues/1722)).
+  ([\#1722](https://github.com/insightsengineering/teal/issues/1722)).
 
 ## teal 1.2.0
 
@@ -19,19 +19,19 @@ CRAN release: 2026-06-30
 #### Enhancements
 
 - Improved print method for `teal_module` object
-  ([\#1685](https://github.com/pharmaverse/teal/issues/1685)).
+  ([\#1685](https://github.com/insightsengineering/teal/issues/1685)).
 - Added opt-in URL-based module navigation, controlled by
   `options(teal.enable_deep_linking = TRUE)` (default: `FALSE`). When
   enabled, the active module is reflected in the URL as
   `?active_module=<module path>`, and navigating to such a URL or using
   the browser’s back/forward buttons switches to the corresponding tab
-  ([\#1699](https://github.com/pharmaverse/teal/issues/1699)).
+  ([\#1699](https://github.com/insightsengineering/teal/issues/1699)).
 - Exported new utility functions to support module decorators:
-  [`srv_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md),
-  [`ui_transform_teal_data()`](https://pharmaverse.github.io/teal/reference/module_transform_data.md)
+  [`srv_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md),
+  [`ui_transform_teal_data()`](https://insightsengineering.github.io/teal/reference/module_transform_data.md)
   and
-  [`check_decorators()`](https://pharmaverse.github.io/teal/reference/check_decorators.md)
-  ([\#1697](https://github.com/pharmaverse/teal/issues/1697)).
+  [`check_decorators()`](https://insightsengineering.github.io/teal/reference/check_decorators.md)
+  ([\#1697](https://github.com/insightsengineering/teal/issues/1697)).
 - Added `teal.snapshot_manager.enable` option (default: `TRUE`) to
   control whether the Snapshot Manager panel is rendered. Setting it to
   `FALSE` hides the panel and skips its server logic.
@@ -55,7 +55,7 @@ CRAN release: 2025-11-17
 
 - `init` and `srv_teal` have new `reporter` parameter, that allows to
   pre-define
-  [`teal.reporter::Reporter`](https://pharmaverse.github.io/teal.reporter/latest-tag/reference/Reporter.html)
+  [`teal.reporter::Reporter`](https://insightsengineering.github.io/teal.reporter/latest-tag/reference/Reporter.html)
   object to be used for storing the content of the report. You can also
   globally disable reporting by setting `reporter = NULL` (and
   `disable = TRUE` in `ui_teal` for cases when `ui_teal` is used as
@@ -68,7 +68,7 @@ CRAN release: 2025-08-20
 #### Breaking changes
 
 - The
-  [`reporter_previewer_module()`](https://pharmaverse.github.io/teal/reference/reporter_previewer_module.md)
+  [`reporter_previewer_module()`](https://insightsengineering.github.io/teal/reference/reporter_previewer_module.md)
   is deprecated and will be removed in the future release. The custom
   `server_args` values can be set using
   [`options()`](https://rdrr.io/r/base/options.html):
@@ -96,7 +96,7 @@ CRAN release: 2025-08-20
     contains other global report options like download/load/reset the
     Report.
   - Teal Data Module: The UI created by the
-    [`teal_data_module()`](https://pharmaverse.github.io/teal/reference/teal_data_module.md)
+    [`teal_data_module()`](https://insightsengineering.github.io/teal/reference/teal_data_module.md)
     is now placed inside a modal that can only be closed when it returns
     `teal_data`.
 
@@ -109,22 +109,22 @@ CRAN release: 2025-02-23
 - Possible to call `ui_teal` and `srv_teal` directly in any application
   by delivering `data` argument as a `reactive` returning `teal_data`
   object
-  ([\#669](https://github.com/pharmaverse/teal/issues/669)).
+  ([\#669](https://github.com/insightsengineering/teal/issues/669)).
 - Since introduction of `ui_teal` and `srv_teal` functions, the `id`
   argument in `init` is being deprecated
-  ([\#1438](https://github.com/pharmaverse/teal/issues/1438)).
+  ([\#1438](https://github.com/insightsengineering/teal/issues/1438)).
 - Introduce `ui_session_info` and `srv_session_info` shiny module to
   create the user session info and teal app lockfile download button.
 - Introduced `teal_transform_module` to provide a way to interactively
   modify data delivered to `teal_module`’s `server` and to decorate
   module outputs, along with a vignette to demonstrate its usage
-  ([\#1228](https://github.com/pharmaverse/teal/issues/1228),
-  [\#1384](https://github.com/pharmaverse/teal/issues/1384)).
+  ([\#1228](https://github.com/insightsengineering/teal/issues/1228),
+  [\#1384](https://github.com/insightsengineering/teal/issues/1384)).
 - Introduced a new argument `once = FALSE` in `teal_data_module` to
   possibly reload data during a run time.
 - Possibility to download lockfile to restore app session for
   reproducibility
-  ([\#479](https://github.com/pharmaverse/teal/issues/479)).
+  ([\#479](https://github.com/insightsengineering/teal/issues/479)).
 - Datasets which name starts with `.` are ignored when `module`’s
   `datanames` is set as `"all"`.
 - Added warning when reserved `datanames`, such as `all` and `.raw_data`
@@ -133,22 +133,22 @@ CRAN release: 2025-02-23
 #### Breaking changes
 
 - Setting
-  [`datanames()`](https://pharmaverse.github.io/teal.data/latest-tag/reference/datanames.html)
+  [`datanames()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/datanames.html)
   on `data` passed to teal application no longer has effect. In order to
   change `teal_module`’s `datanames` one should modify
   `module$datanames`.
 - `landing_popup_module()` is deprecated. Please use
-  [`add_landing_modal()`](https://pharmaverse.github.io/teal/reference/add_landing_modal.md)
+  [`add_landing_modal()`](https://insightsengineering.github.io/teal/reference/add_landing_modal.md)
   function to add a landing popup for your teal application.
 - `teal` no longer re-export `%>%`. Please load
   [`library(magrittr)`](https://magrittr.tidyverse.org) instead or use
   `|>` from `base`.
 - `build_app_title` will be removed in the future release. Please use
   the
-  [`modify_title()`](https://pharmaverse.github.io/teal/reference/teal_modifiers.md)
+  [`modify_title()`](https://insightsengineering.github.io/teal/reference/teal_modifiers.md)
   function to change the title for your teal application.
 - The `title`, `header`, and `footer` arguments of the
-  [`init()`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`init()`](https://insightsengineering.github.io/teal/reference/init.md)
   function are deprecated. Please use the `modify_title`,
   `modify_header`, and `modify_footer` respectively.
 
@@ -157,7 +157,7 @@ CRAN release: 2025-02-23
 - Enhanced a system of data validation and a display of error messages.
 - Easier way of to call `javascript` events by setting
   `$(document).ready(function() { ... })`
-  ([\#1114](https://github.com/pharmaverse/teal/issues/1114)).
+  ([\#1114](https://github.com/insightsengineering/teal/issues/1114)).
 - Provided progress bar for modules loading and data filtering during
   teal app startup.
 - Filter mapping display has a separate icon in the tab.
@@ -238,7 +238,7 @@ CRAN release: 2024-02-08
 #### New features
 
 - Enabled module specific filter panel. See `module_specific` in
-  [`teal::teal_slices`](https://pharmaverse.github.io/teal/reference/teal_slices.md)
+  [`teal::teal_slices`](https://insightsengineering.github.io/teal/reference/teal_slices.md)
   documentation.
 - Enabled capturing and resetting application filter state with
   snapshots. See `?snapshot`.
@@ -250,12 +250,12 @@ CRAN release: 2024-02-08
 #### Breaking changes
 
 - Specifying `filter` argument in
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   requires `teal_slices` object now. Details in documentation of
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md).
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md).
 - Soft deprecated `filters` argument in `module` and replaced it with
   `datanames`. Details in documentation of
-  [`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
 
 #### Miscellaneous
 
@@ -284,7 +284,7 @@ CRAN release: 2024-02-08
   messages to app output.
 - `modules` argument of `init` accepts `teal_module` type of object.
   There is no need to wrap up a single module in
-  [`modules()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`modules()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
   or [`list()`](https://rdrr.io/r/base/list.html).
 - Updated `module_nested_tabs` so that only active modules are
   calculated in a `teal` app.
@@ -313,7 +313,7 @@ CRAN release: 2024-02-08
 #### New features
 
 - Added the support for custom `bslib` bootstrap themes in
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   apps, please read more in the new `teal-bs-themes` vignette.
 
 #### Enhancements
@@ -352,7 +352,7 @@ CRAN release: 2024-02-08
   `module` which supports reporting is included then a
   `reporter_previewer_module` is included.
 - Added default arguments to
-  [`module()`](https://pharmaverse.github.io/teal/reference/teal_modules.md)
+  [`module()`](https://insightsengineering.github.io/teal/reference/teal_modules.md)
   and the server argument is now a function where the second argument
   can be `...` or `datasets`.
 
@@ -383,17 +383,17 @@ CRAN release: 2024-02-08
 - `teal.logger`: standardizes logging within `teal` framework.
 
 The `teal` package contains the code to create apps
-([`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)),
+([`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)),
 to create a module
-([`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md))
+([`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md))
 and to group modules in the app
-([`teal::modules`](https://pharmaverse.github.io/teal/reference/teal_modules.md)).
+([`teal::modules`](https://insightsengineering.github.io/teal/reference/teal_modules.md)).
 `teal` depends on `teal.transform` and `teal.data` which contain the
 functions that `teal` app creators are likely to need. The other package
 `teal` only imports from and therefore `teal` module creators should
 either fully specify functions from these packages when required or
 import them into custom packages as
-[`library(teal)`](https://pharmaverse.github.io/teal/) will not
+[`library(teal)`](https://insightsengineering.github.io/teal/) will not
 load them.
 
 #### New features
@@ -480,7 +480,7 @@ load them.
 - Added support for
   [`shiny::moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)
   passed to the server parameter of
-  [`teal::module`](https://pharmaverse.github.io/teal/reference/teal_modules.md).
+  [`teal::module`](https://insightsengineering.github.io/teal/reference/teal_modules.md).
 
 - Added `teal.threshold_slider_vs_checkboxgroup` as an R option: if a
   categorical variable has more than this number of unique values, the
@@ -552,7 +552,7 @@ load them.
 #### New features
 
 - Allow passing `MultiAssayExperiment` to the
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   using `mae_dataset` function or through the connectors.
 - Refactored filter panel to use `MultiAssayExperiment` objects. Filters
   can be set on a subject level (`colData` of `MAE` object) and on a
@@ -588,7 +588,7 @@ load them.
 #### Enhancements
 
 - `modules` parameter of
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   function can also receive a `list` except `root_modules` function
   call.
 - Added `split` and `merge` methods to the `JoinKeys` object.
@@ -675,9 +675,9 @@ load them.
   includes refactor of the all data and dataset structures together with
   refactor of `FilteredData` class.
 - New `JoinKeys` class (with
-  [`join_keys()`](https://pharmaverse.github.io/teal.data/latest-tag/reference/join_keys.html)
+  [`join_keys()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_keys.html)
   constructors and
-  [`join_key()`](https://pharmaverse.github.io/teal.data/latest-tag/reference/join_key.html)
+  [`join_key()`](https://insightsengineering.github.io/teal.data/latest-tag/reference/join_key.html)
   constructor for its elements) to store joining key columns between
   datasets.
 - Refactored the most basic `dataset()` constructor, added
@@ -694,7 +694,7 @@ load them.
 - Duplicated lines of code passed to `teal::cdisc_dataset` and other
   `teal::RelationalDataset` constructors should now be shown when
   getting the code from
-  [`teal::cdisc_data`](https://pharmaverse.github.io/teal.data/latest-tag/reference/cdisc_data.html)
+  [`teal::cdisc_data`](https://insightsengineering.github.io/teal.data/latest-tag/reference/cdisc_data.html)
   objects and other `teal::RelationalData` objects.
 - Added ability to press “Enter” key without having to set focus to the
   Submit button for delayed data loading.
@@ -731,7 +731,7 @@ load them.
   those of types `numeric`, `logical`, `factor`, `character` and `Date`
 - Fixed `mutate_data` to accept the whole scope of objects for `vars`.
 - Clarified
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   function documentation to state that custom `CSS` loading code with
   [`htmltools::htmlDependency`](https://rstudio.github.io/htmltools/reference/htmlDependency.html)
   should be included in the `header` argument rather than inside UI
@@ -772,7 +772,7 @@ load them.
 - Replace existing `RelationalData` class with abstract class
   `RelationalDataCollection` and rename `RelationalDataList` class as
   `RelationalData`. The `data` argument to
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   is now always a `RelationalData` object.
 - Added `fun_cdisc_dataset_connector` to enable providing a custom
   function which returning a dataset.
@@ -833,24 +833,24 @@ load them.
 
 - New modules were created to create a module of nested `teal` modules,
   then another one that adds the right filter pane to each tab. The
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   function stays unchanged.
 
 - The
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   function now returns a UI function with an optional `id` argument.
   This allows to embed it into other applications. A split view of two
   `teal` applications side-by-side is one such example and shown in a
   vignette.
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   was turned into a wrapper function around `module_teal_with_splash.R`
   and developers that want to embed `teal` as a `shiny` module should
   directly work with these functions (`ui_teal_with_splash` and
   `srv_teal_with_splash`) instead of
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md).
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md).
 
 - The
-  [`teal::init`](https://pharmaverse.github.io/teal/reference/init.md)
+  [`teal::init`](https://insightsengineering.github.io/teal/reference/init.md)
   function now has a title parameter to set the title of the browser
   window.
 
@@ -883,7 +883,7 @@ load them.
   `set_datasets_data` function located in `init_datasets.R` file.
 - Renamed `get_dataset()` method to `get_data()`.
 - Renamed `get_filter_call()` method to
-  [`get_filter_expr()`](https://pharmaverse.github.io/teal.slice/latest-tag/reference/get_filter_expr.html);
+  [`get_filter_expr()`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/get_filter_expr.html);
   returns an expression rather than a list.
 - Removed argument `isolate` from `get_data()` method and similar
   methods. You must `isolate` it yourself as needed. If you want to

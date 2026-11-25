@@ -22,7 +22,7 @@ The object is determined by what's selected in Choose a dataset input in UI.
 The object can be anything that can be handled by renderPrint().
 See the vignette(&quot;transform-module-output&quot;, package = &quot;teal&quot;) or teal_transform_module
 to read more about decorators.">
-<meta property="og:image" content="https://pharmaverse.github.io/teal/logo.svg">
+<meta property="og:image" content="https://insightsengineering.github.io/teal/logo.svg">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -126,7 +126,7 @@ to read more about decorators.">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -136,7 +136,7 @@ to read more about decorators.">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.svg" class="logo" alt=""><h1>An example <code>teal</code> module</h1>
-      <small class="dont-index">Source: <a href="https://github.com/pharmaverse/teal/blob/v1.2.1/R/dummy_functions.R" class="external-link"><code>R/dummy_functions.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/insightsengineering/teal/blob/v1.2.1/R/dummy_functions.R" class="external-link"><code>R/dummy_functions.R</code></a></small>
       <div class="d-none name"><code>example_module.Rd</code></div>
     </div>
 
@@ -214,7 +214,7 @@ Since the server function returns a <code>teal_report</code> object, this makes 
 the reporting functionality will be turned on automatically by the <code>teal</code> framework.</p>
 <p>For more information on reporting in <code>teal</code>, see the vignettes:</p>
 <ul>
-<li><p><code><a href="https://pharmaverse.github.io/teal.reporter/latest-tag/articles/reportable-shiny-application.html">vignette("reportable-shiny-application", package = "teal.reporter")</a></code></p></li>
+<li><p><code><a href="https://insightsengineering.github.io/teal.reporter/latest-tag/articles/reportable-shiny-application.html">vignette("reportable-shiny-application", package = "teal.reporter")</a></code></p></li>
 <li><p><code>vignette("adding-support-for-reporting-to-custom-modules", package = "teal")</code></p></li>
 </ul>
 </div>
@@ -236,7 +236,7 @@ the reporting functionality will be turned on automatically by the <code>teal</c
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a>
 </h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">app</span> <span class="op">&lt;-</span> <span class="fu"><a href="init.html">init</a></span><span class="op">(</span></span></span>
-<span class="r-in"><span>  data <span class="op">=</span> <span class="fu"><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>IRIS <span class="op">=</span> <span class="va">iris</span>, MTCARS <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  data <span class="op">=</span> <span class="fu"><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>IRIS <span class="op">=</span> <span class="va">iris</span>, MTCARS <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  modules <span class="op">=</span> <span class="fu">example_module</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>

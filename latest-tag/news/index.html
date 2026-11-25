@@ -12,7 +12,7 @@
 <script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Changelog">
-<meta property="og:image" content="https://pharmaverse.github.io/teal/logo.svg">
+<meta property="og:image" content="https://insightsengineering.github.io/teal/logo.svg">
 <link rel="stylesheet" href="../consent.css">
 <script src="../consent.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -116,7 +116,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/pharmaverse/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/insightsengineering/teal" aria-label="View on Github"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
@@ -126,7 +126,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.svg" class="logo" alt=""><h1>Changelog</h1>
-      <small>Source: <a href="https://github.com/pharmaverse/teal/blob/v1.2.1/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
+      <small>Source: <a href="https://github.com/insightsengineering/teal/blob/v1.2.1/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
     <div class="section level2">
@@ -136,8 +136,8 @@
 <h4 id="bug-fixes-1-2-1">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-2-1"></a>
 </h4>
 <ul>
-<li>Fixed reporter not resetting after the shiny session ends, which resulted in report cards being persistent across the same application (<a href="https://github.com/pharmaverse/teal/issues/1723" class="external-link">#1723</a>).</li>
-<li>Fixed teal apps failing to render when installed as a pre-built binary due to build-time <code>bslib</code> scss paths frozen in the default <code>bs_theme</code> object. The default theme is now built lazily at runtime (<a href="https://github.com/pharmaverse/teal/issues/1722" class="external-link">#1722</a>).</li>
+<li>Fixed reporter not resetting after the shiny session ends, which resulted in report cards being persistent across the same application (<a href="https://github.com/insightsengineering/teal/issues/1723" class="external-link">#1723</a>).</li>
+<li>Fixed teal apps failing to render when installed as a pre-built binary due to build-time <code>bslib</code> scss paths frozen in the default <code>bs_theme</code> object. The default theme is now built lazily at runtime (<a href="https://github.com/insightsengineering/teal/issues/1722" class="external-link">#1722</a>).</li>
 </ul>
 </div>
 </div>
@@ -149,9 +149,9 @@
 <h4 id="enhancements-1-2-0">Enhancements<a class="anchor" aria-label="anchor" href="#enhancements-1-2-0"></a>
 </h4>
 <ul>
-<li>Improved print method for <code>teal_module</code> object (<a href="https://github.com/pharmaverse/teal/issues/1685" class="external-link">#1685</a>).</li>
-<li>Added opt-in URL-based module navigation, controlled by <code>options(teal.enable_deep_linking = TRUE)</code> (default: <code>FALSE</code>). When enabled, the active module is reflected in the URL as <code>?active_module=&lt;module path&gt;</code>, and navigating to such a URL or using the browser’s back/forward buttons switches to the corresponding tab (<a href="https://github.com/pharmaverse/teal/issues/1699" class="external-link">#1699</a>).</li>
-<li>Exported new utility functions to support module decorators: <code><a href="../reference/module_transform_data.html">srv_transform_teal_data()</a></code>, <code><a href="../reference/module_transform_data.html">ui_transform_teal_data()</a></code> and <code><a href="../reference/check_decorators.html">check_decorators()</a></code> (<a href="https://github.com/pharmaverse/teal/issues/1697" class="external-link">#1697</a>).</li>
+<li>Improved print method for <code>teal_module</code> object (<a href="https://github.com/insightsengineering/teal/issues/1685" class="external-link">#1685</a>).</li>
+<li>Added opt-in URL-based module navigation, controlled by <code>options(teal.enable_deep_linking = TRUE)</code> (default: <code>FALSE</code>). When enabled, the active module is reflected in the URL as <code>?active_module=&lt;module path&gt;</code>, and navigating to such a URL or using the browser’s back/forward buttons switches to the corresponding tab (<a href="https://github.com/insightsengineering/teal/issues/1699" class="external-link">#1699</a>).</li>
+<li>Exported new utility functions to support module decorators: <code><a href="../reference/module_transform_data.html">srv_transform_teal_data()</a></code>, <code><a href="../reference/module_transform_data.html">ui_transform_teal_data()</a></code> and <code><a href="../reference/check_decorators.html">check_decorators()</a></code> (<a href="https://github.com/insightsengineering/teal/issues/1697" class="external-link">#1697</a>).</li>
 <li>Added <code>teal.snapshot_manager.enable</code> option (default: <code>TRUE</code>) to control whether the Snapshot Manager panel is rendered. Setting it to <code>FALSE</code> hides the panel and skips its server logic.</li>
 </ul>
 </div>
@@ -179,7 +179,7 @@
 </h4>
 <ul>
 <li>
-<code>init</code> and <code>srv_teal</code> have new <code>reporter</code> parameter, that allows to pre-define <code><a href="https://pharmaverse.github.io/teal.reporter/latest-tag/reference/Reporter.html">teal.reporter::Reporter</a></code> object to be used for storing the content of the report. You can also globally disable reporting by setting <code>reporter = NULL</code> (and <code>disable = TRUE</code> in <code>ui_teal</code> for cases when <code>ui_teal</code> is used as shiny module).</li>
+<code>init</code> and <code>srv_teal</code> have new <code>reporter</code> parameter, that allows to pre-define <code><a href="https://insightsengineering.github.io/teal.reporter/latest-tag/reference/Reporter.html">teal.reporter::Reporter</a></code> object to be used for storing the content of the report. You can also globally disable reporting by setting <code>reporter = NULL</code> (and <code>disable = TRUE</code> in <code>ui_teal</code> for cases when <code>ui_teal</code> is used as shiny module).</li>
 </ul>
 </div>
 </div>
@@ -228,12 +228,12 @@
 <h4 id="new-features-0-16-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-16-0"></a>
 </h4>
 <ul>
-<li>Possible to call <code>ui_teal</code> and <code>srv_teal</code> directly in any application by delivering <code>data</code> argument as a <code>reactive</code> returning <code>teal_data</code> object (<a href="https://github.com/pharmaverse/teal/issues/669" class="external-link">#669</a>).</li>
-<li>Since introduction of <code>ui_teal</code> and <code>srv_teal</code> functions, the <code>id</code> argument in <code>init</code> is being deprecated (<a href="https://github.com/pharmaverse/teal/issues/1438" class="external-link">#1438</a>).</li>
+<li>Possible to call <code>ui_teal</code> and <code>srv_teal</code> directly in any application by delivering <code>data</code> argument as a <code>reactive</code> returning <code>teal_data</code> object (<a href="https://github.com/insightsengineering/teal/issues/669" class="external-link">#669</a>).</li>
+<li>Since introduction of <code>ui_teal</code> and <code>srv_teal</code> functions, the <code>id</code> argument in <code>init</code> is being deprecated (<a href="https://github.com/insightsengineering/teal/issues/1438" class="external-link">#1438</a>).</li>
 <li>Introduce <code>ui_session_info</code> and <code>srv_session_info</code> shiny module to create the user session info and teal app lockfile download button.</li>
-<li>Introduced <code>teal_transform_module</code> to provide a way to interactively modify data delivered to <code>teal_module</code>’s <code>server</code> and to decorate module outputs, along with a vignette to demonstrate its usage (<a href="https://github.com/pharmaverse/teal/issues/1228" class="external-link">#1228</a>, <a href="https://github.com/pharmaverse/teal/issues/1384" class="external-link">#1384</a>).</li>
+<li>Introduced <code>teal_transform_module</code> to provide a way to interactively modify data delivered to <code>teal_module</code>’s <code>server</code> and to decorate module outputs, along with a vignette to demonstrate its usage (<a href="https://github.com/insightsengineering/teal/issues/1228" class="external-link">#1228</a>, <a href="https://github.com/insightsengineering/teal/issues/1384" class="external-link">#1384</a>).</li>
 <li>Introduced a new argument <code>once = FALSE</code> in <code>teal_data_module</code> to possibly reload data during a run time.</li>
-<li>Possibility to download lockfile to restore app session for reproducibility (<a href="https://github.com/pharmaverse/teal/issues/479" class="external-link">#479</a>).</li>
+<li>Possibility to download lockfile to restore app session for reproducibility (<a href="https://github.com/insightsengineering/teal/issues/479" class="external-link">#479</a>).</li>
 <li>Datasets which name starts with <code>.</code> are ignored when <code>module</code>’s <code>datanames</code> is set as <code>"all"</code>.</li>
 <li>Added warning when reserved <code>datanames</code>, such as <code>all</code> and <code>.raw_data</code> are being used.</li>
 </ul>
@@ -242,7 +242,7 @@
 <h4 id="breaking-changes-0-16-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-0-16-0"></a>
 </h4>
 <ul>
-<li>Setting <code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/datanames.html">datanames()</a></code> on <code>data</code> passed to teal application no longer has effect. In order to change <code>teal_module</code>’s <code>datanames</code> one should modify <code>module$datanames</code>.</li>
+<li>Setting <code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/datanames.html">datanames()</a></code> on <code>data</code> passed to teal application no longer has effect. In order to change <code>teal_module</code>’s <code>datanames</code> one should modify <code>module$datanames</code>.</li>
 <li>
 <code>landing_popup_module()</code> is deprecated. Please use <code><a href="../reference/add_landing_modal.html">add_landing_modal()</a></code> function to add a landing popup for your teal application.</li>
 <li>
@@ -257,7 +257,7 @@
 </h4>
 <ul>
 <li>Enhanced a system of data validation and a display of error messages.</li>
-<li>Easier way of to call <code>javascript</code> events by setting <code>$(document).ready(function() { ... })</code> (<a href="https://github.com/pharmaverse/teal/issues/1114" class="external-link">#1114</a>).</li>
+<li>Easier way of to call <code>javascript</code> events by setting <code>$(document).ready(function() { ... })</code> (<a href="https://github.com/insightsengineering/teal/issues/1114" class="external-link">#1114</a>).</li>
 <li>Provided progress bar for modules loading and data filtering during teal app startup.</li>
 <li>Filter mapping display has a separate icon in the tab.</li>
 <li>Environment of the <code>data</code> passed to the <code>teal_module</code>’s server consists unfiltered datasets contained in <code>.raw_data</code>.</li>
@@ -494,7 +494,7 @@
 <li>
 <code>teal.logger</code>: standardizes logging within <code>teal</code> framework.</li>
 </ul>
-<p>The <code>teal</code> package contains the code to create apps (<code><a href="../reference/init.html">teal::init</a></code>), to create a module (<code><a href="../reference/teal_modules.html">teal::module</a></code>) and to group modules in the app (<code><a href="../reference/teal_modules.html">teal::modules</a></code>). <code>teal</code> depends on <code>teal.transform</code> and <code>teal.data</code> which contain the functions that <code>teal</code> app creators are likely to need. The other package <code>teal</code> only imports from and therefore <code>teal</code> module creators should either fully specify functions from these packages when required or import them into custom packages as <code><a href="https://pharmaverse.github.io/teal/">library(teal)</a></code> will not load them.</p>
+<p>The <code>teal</code> package contains the code to create apps (<code><a href="../reference/init.html">teal::init</a></code>), to create a module (<code><a href="../reference/teal_modules.html">teal::module</a></code>) and to group modules in the app (<code><a href="../reference/teal_modules.html">teal::modules</a></code>). <code>teal</code> depends on <code>teal.transform</code> and <code>teal.data</code> which contain the functions that <code>teal</code> app creators are likely to need. The other package <code>teal</code> only imports from and therefore <code>teal</code> module creators should either fully specify functions from these packages when required or import them into custom packages as <code><a href="https://insightsengineering.github.io/teal/">library(teal)</a></code> will not load them.</p>
 <div class="section level4">
 <h4 id="new-features-0-11-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-11-0"></a>
 </h4>
@@ -730,7 +730,7 @@
 </h4>
 <ul>
 <li>Support for data-standard independent input and filtering. That includes refactor of the all data and dataset structures together with refactor of <code>FilteredData</code> class.</li>
-<li>New <code>JoinKeys</code> class (with <code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/join_keys.html">join_keys()</a></code> constructors and <code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/join_key.html">join_key()</a></code> constructor for its elements) to store joining key columns between datasets.</li>
+<li>New <code>JoinKeys</code> class (with <code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/join_keys.html">join_keys()</a></code> constructors and <code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/join_key.html">join_key()</a></code> constructor for its elements) to store joining key columns between datasets.</li>
 <li>Refactored the most basic <code>dataset()</code> constructor, added <code>cdisc_dataset()</code> constructor and <code>as_cdisc()</code> conversion function.</li>
 <li>Soft-deprecate removed class constructors and obsolete functions (e.g. <code>keys()</code>).</li>
 <li>Added <code>get_keys()</code> and <code>set_keys()</code> functions to extract and manipulate datasets primary keys respectively.</li>
@@ -741,7 +741,7 @@
 <h4 id="bug-fixes-0-9-3">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-9-3"></a>
 </h4>
 <ul>
-<li>Duplicated lines of code passed to <code>teal::cdisc_dataset</code> and other <code>teal::RelationalDataset</code> constructors should now be shown when getting the code from <code><a href="https://pharmaverse.github.io/teal.data/latest-tag/reference/cdisc_data.html">teal::cdisc_data</a></code> objects and other <code>teal::RelationalData</code> objects.</li>
+<li>Duplicated lines of code passed to <code>teal::cdisc_dataset</code> and other <code>teal::RelationalDataset</code> constructors should now be shown when getting the code from <code><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/cdisc_data.html">teal::cdisc_data</a></code> objects and other <code>teal::RelationalData</code> objects.</li>
 <li>Added ability to press “Enter” key without having to set focus to the Submit button for delayed data loading.</li>
 <li>Allow <code>variable_choices</code> to use datasets with missing labels.</li>
 <li>Fixed bug that ignores input of <code>NULL</code> to <code>selected</code> argument of <code>select_spec</code> function.</li>
@@ -847,7 +847,7 @@
 <code>FilteredData</code> is now fully reactive. Now filtered data is lazy evaluated as per need. This further opens the door to bookmarking <code>teal</code> apps (bookmarking currently works for the right filtering panel, but we will make this feature more sophisticated in a future release, each module must be reviewed and adapted if it contains <code>reactiveValues</code>).</li>
 <li>Datasets and materialized connectors are provided to <code>FilteredData</code> by <code>set_datasets_data</code> function located in <code>init_datasets.R</code> file.</li>
 <li>Renamed <code>get_dataset()</code> method to <code>get_data()</code>.</li>
-<li>Renamed <code>get_filter_call()</code> method to <code><a href="https://pharmaverse.github.io/teal.slice/latest-tag/reference/get_filter_expr.html">get_filter_expr()</a></code>; returns an expression rather than a list.</li>
+<li>Renamed <code>get_filter_call()</code> method to <code><a href="https://insightsengineering.github.io/teal.slice/latest-tag/reference/get_filter_expr.html">get_filter_expr()</a></code>; returns an expression rather than a list.</li>
 <li>Removed argument <code>isolate</code> from <code>get_data()</code> method and similar methods. You must <code>isolate</code> it yourself as needed. If you want to temporarily deactivate <code>shiny</code> errors due to missing errors, you can set <code>options(shiny.suppressMissingContextError = TRUE)</code>. In general, avoid <code>isolate</code> as this breaks reactivity.</li>
 <li>We added a development module to add several filters at once, e.g. safety filters. This is to be evaluated before it is converted into a proper module and made available to end-users.</li>
 </ul>
