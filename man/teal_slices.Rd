@@ -29,7 +29,7 @@ match names of data sets and vector elements match variable names in respective 
 specify which variables are allowed to be filtered; see \code{Details}.}
 
 \item{count_type}{\emph{This is a new feature. Do kindly share your opinions on
-\href{https://github.com/insightsengineering/teal.slice/}{\code{teal.slice}'s GitHub repository}.}
+\href{https://github.com/pharmaverse/teal.slice/}{\code{teal.slice}'s GitHub repository}.}
 
 (\code{character(1)}) string specifying how observations are tallied by these filter states.
 Possible options:
