@@ -123,7 +123,7 @@ app applies filters. See argument descriptions for details.
 - example-1:
 
   [Open in
-  Shinylive](https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKcqagSgB0ItMnGYFStAG5wABAB4AtNIBmAVwhjaJdj2kAVLAFUAogIFLa1cozmKu1APoBnOgTiP2A6dLtOXcdgAmUKRQ0PDSALzSfGC0jLSOMbjSEixhMlExAMqocAS0bknStAGR0WCOufmFYDy4nt5w3L60roHBobAZ5XEJRamM6WXZcKjcGAAyFADmpAAWRSXDFaPN1DPzMXUNPs6t-g1eQSFDmbHxiXjFpWfUJNP2uSHUl8nipOvLE-fST9yv0jgAA9UNYzgAFODPSYbObSAB80gArDEGtsIF5dn52icussYKQCCwAQNTuUYKhposbuTCcT7BSqbV6hjpDA0KghNMynRHKQPKyvDAiAEVOsAIxlAgeCpVAoAmKOVYOdYQWYLZmHNkisVwABMUplBKJjEcDMpWxZXi80zu9Ga5ksIkcyzuaseUP+qNZ-AgvoEHJsxUE-IaxygZR84fYvRdUVjyWNxLKSdN6KFOvWcekvNDgu1ovWRszcHFlq1wsLBzAld1eq2aKtygsVjKjqsAn9giU0hjwlE4ik2h0IAajjmQlYAEF0OwOQASFS0ZILpWMKSMX0AXwEYC3AF0gA)
+  Shinylive](https://shinylive.io/r/app/#code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKcqagSgB0ItMnGYFStAG5wABAB4AtNIBmAVwhjaJdj2kAVLAFUAogIFLa1cozmKu1APoBnOgTiP2A6dLtOXcdgAmUKRQ0PDSALzSfGC0jLSOMbjSEixhMlExAMqocAS0bknStAGR0WCOufmFYDy4nt5w3L60roHBobAZ5XEJRamM6WXZcKjcGAAyFADmpAAWRSXDFaPN1DPzMXUNPs6t-g1eQSFDmbHxiXjFpWfUJNP2uSHUl8nipOvLE-fST9yv0jgAA9UNYzgAFODPSYbObSAB80gArDEGtsIF5dn52icussYKQCCwAQNTuUYKhposbuTCcT7BSqbV6hjpDAiAEVOsnFVaOYCGV9MYWV4YGhUEJpmU6I5SB5WaKOVy4ABGMoEDwVXk1ZIxRyrBzrCCzBbMw5spXrABM6s1BKJjEcDMpWxFXmk0zu9Ga5ksIkcyzuxseUP+qNZ-AgkYE4psxUEcoaxygZR8yfYvQDUUzyXtxLKecd6MVnPWWekMsTCotpYOYHZtZVrvNDeVdstcCtWzRbt9VjKfZEAmjgiU0gzwlE4ik2h0IAajjmQlYAEF0OxxQASFS0ZJb-WMKSMSMAXwEYBPAF0gA)
 
 ## Examples
 
@@ -135,6 +135,7 @@ filter <- teal_slices(
     dataname = "iris", id = "long_petals", title = "Long petals", expr = "Petal.Length > 5"
   ),
   teal_slice(dataname = "mtcars", varname = "mpg", id = "mtcars_mpg"),
+  module_specific = TRUE,
   mapping = list(
     module1 = c("species", "sepal_length"),
     module2 = c("mtcars_mpg"),

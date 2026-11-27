@@ -21,6 +21,10 @@
 - Appsilon becomes a core contributor and joins F. Hoffmann-La Roche AG
   as a copyright holder of teal, working alongside the wider contributor
   community.
+- The
+  [`teal_slices()`](https://pharmaverse.github.io/teal/reference/teal_slices.md)
+  example now sets `module_specific = TRUE`, so that its `mapping` of
+  filters to modules is applied.
 
 #### Bug fixes
 
