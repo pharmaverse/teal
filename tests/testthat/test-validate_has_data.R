@@ -38,6 +38,23 @@ testthat::test_that("validate_has_data allow_inf argument ignores non-numeric co
   testthat::expect_error(validate_has_data(data, 3, allow_inf = FALSE))
 })
 
+testthat::test_that("validate_has_data checks allow_inf even when min_nrow is NULL", {
+  testthat::expect_error(
+    validate_has_data(data[, c("x", "z")], allow_inf = FALSE),
+    "Dataframe contains Inf values which is not allowed."
+  )
+  testthat::expect_error(
+    validate_has_data(data.frame(x = c(1, -Inf)), allow_inf = FALSE),
+    "Dataframe contains Inf values which is not allowed."
+  )
+  testthat::expect_silent(validate_has_data(data[, c("x", "y")], allow_inf = FALSE))
+})
+
+testthat::test_that("validate_has_data throws error when allow_inf is not a flag", {
+  testthat::expect_error(validate_has_data(data, allow_inf = "no"), "Assertion on 'allow_inf' failed")
+  testthat::expect_error(validate_has_data(data, allow_inf = NA), "Assertion on 'allow_inf' failed")
+})
+
 testthat::test_that("validate_has_data returns message when msg argument is set", {
   testthat::expect_error(
     validate_has_data(data, 11, msg = "Check data."),

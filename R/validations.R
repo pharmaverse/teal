@@ -48,6 +48,7 @@ validate_has_data <- function(x,
                               msg = NULL) {
   checkmate::assert_string(msg, null.ok = TRUE)
   checkmate::assert_data_frame(x)
+  checkmate::assert_flag(allow_inf)
   if (!is.null(min_nrow)) {
     if (complete) {
       complete_index <- stats::complete.cases(x)
@@ -64,13 +65,13 @@ validate_has_data <- function(x,
         )
       ))
     }
+  }
 
-    if (!allow_inf) {
-      validate(need(
-        all(vapply(x, function(col) !is.numeric(col) || !any(is.infinite(col)), logical(1))),
-        "Dataframe contains Inf values which is not allowed."
-      ))
-    }
+  if (!allow_inf) {
+    validate(need(
+      all(vapply(x, function(col) !is.numeric(col) || !any(is.infinite(col)), logical(1))),
+      "Dataframe contains Inf values which is not allowed."
+    ))
   }
 }
 
