@@ -48,6 +48,7 @@ validate_has_data <- function(x,
                               msg = NULL) {
   checkmate::assert_string(msg, null.ok = TRUE)
   checkmate::assert_data_frame(x)
+  checkmate::assert_flag(allow_inf)
   if (!is.null(min_nrow)) {
     if (complete) {
       complete_index <- stats::complete.cases(x)
