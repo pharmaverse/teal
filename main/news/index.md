@@ -30,6 +30,10 @@
 - Multiple validation messages for the same input are now all displayed,
   each on its own line
   ([\#1717](https://github.com/pharmaverse/teal/issues/1717)).
+- [`validate_has_data()`](https://pharmaverse.github.io/teal/reference/validate_has_data.md)
+  now checks for infinite values when `allow_inf = FALSE` and `min_nrow`
+  is `NULL`, and asserts that `allow_inf` is a flag
+  ([\#1761](https://github.com/pharmaverse/teal/issues/1761)).
 
 ## teal 1.2.1
 
