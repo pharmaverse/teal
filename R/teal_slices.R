@@ -49,6 +49,7 @@
 #'     dataname = "iris", id = "long_petals", title = "Long petals", expr = "Petal.Length > 5"
 #'   ),
 #'   teal_slice(dataname = "mtcars", varname = "mpg", id = "mtcars_mpg"),
+#'   module_specific = TRUE,
 #'   mapping = list(
 #'     module1 = c("species", "sepal_length"),
 #'     module2 = c("mtcars_mpg"),
